@@ -1,0 +1,45 @@
+;	.IMPORT	_irq_rtn
+;	.IMPORT	_irq_rtn1
+;	.IMPORT	__INITSCT
+	.IMPORT	_cstart
+	.IMPORT	_main
+	.EXPORT	INIT
+	.EXPORT	__D_ROM
+	.EXPORT	__D_BGN
+	.EXPORT	__D_END
+	.EXPORT	__B_BGN
+	.EXPORT	__B_END
+
+;	.SECTION    P,CODE, LOCATE=H'0000
+	.SECTION    P,CODE,ALIGN=2
+; NOTE: set for h8s/2357 processor vector table
+	.DATA.L	INIT
+	.ORG H'0080
+;	.DATA.L	_irq_rtn
+;	.org H'00A0
+;	.DATA.L	_irq_rtn1
+;	.ORG H'0200
+
+	.SECTION    D,DATA,ALIGN=2
+	.SECTION    R,DATA,ALIGN=2
+	.SECTION    B,DATA,ALIGN=2
+	.SECTION    C,DATA,ALIGN=2
+__D_ROM	.DATA.L	(STARTOF D)
+__D_BGN	.DATA.L	(STARTOF R)
+__D_END	.DATA.L	(STARTOF R) + (SIZEOF R)
+__B_BGN	.DATA.L	(STARTOF B)
+__B_END	.DATA.L	(STARTOF B) + (SIZEOF B)
+
+	.SECTION    P,CODE,ALIGN=2
+INIT:
+	MOV.L	#(STARTOF STACK) + (SIZEOF STACK),ER7
+    ORC	#H'80,CCR 
+;	JSR	@__INITSCT	;Error in their code 
+	JSR	@_cstart	;Use CMX intialization code
+	JSR	@_main
+INIT_E:
+      	BRA	INIT_E
+	.SECTION    STACK,DATA,ALIGN=2
+        .RES.W      H'1000
+
+	.END

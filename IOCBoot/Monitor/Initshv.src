@@ -1,0 +1,220 @@
+;;; Initshv.src
+
+;-----------------------------------------------------------------------------
+;
+;   H8S/2623	HDI Monitor shadow vector table	
+;							
+; 	15-03-99	DTH
+;	Version: 1.0 2633 DGL 1/10/01 -- Built from the HMSE (IAR) 2623 Monitor
+;
+;				Defines the shadow vector table for the H8S/2633 ONLY.
+;				This has been defined from scratch, rather than from #defining
+;				for this target as the code was getting out of hand, having 
+;				been ported from one platform to another.
+;
+;-----------------------------------------------------------------------------
+
+	.section PMONITOR,CODE
+	.IMPORT	__UNDEFINED
+	.EXPORT  _initshv
+
+IV	.EQU __UNDEFINED + H'5a000000	; Jump instructions to __UNDEFINED	
+
+_initshv
+
+	; Push the scratch registers onto the stack
+	;-------------------------------------------------------------------------
+	MOV.L ER6, @-ER7
+	MOV.L ER5, @-ER7
+
+	MOV.L #0,ER5
+	
+	; Set the start value of the shadow vector table
+	;-------------------------------------------------------------------------
+	MOV.L	#H'200000, ER6		; Start of external RAM
+
+
+; The actual shadow vector table...
+; - signifies UNDEFINED or RESERVED.
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(0,ER6)	    ; Vector 000 : POWER ON RESET
+	MOV.L	ER5,@(4,ER6)	    ; Vector 001 : MANUAL RESET
+	MOV.L	ER5,@(8,ER6)	    ; Vector 002 : -
+	MOV.L	ER5,@(H'C,ER6)	    ; Vector 003 : -
+	MOV.L	ER5,@(H'10,ER6)	    ; Vector 004 : -
+
+	MOV.L 	#IV,ER5
+	MOV.L	ER5,@(H'14,ER6)	    ; Vector 005 : TRACE
+	MOV.L	ER5,@(H'18,ER6)	    ; Vector 006 : Direct Transition
+
+	MOV.L 	#0,ER5
+	MOV.L	ER5,@(H'1C,ER6)	    ; Vector 007 : NMI
+	MOV.L	ER5,@(H'20,ER6)	    ; Vector 008 : TRAPA(0)
+
+	MOV.L	#IV,ER5
+	MOV.L	ER5,@(H'24,ER6)	    ; Vector 009 : TRAPA(1)
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(H'28,ER6)	    ; Vector 010 : TRAPA(2)
+	MOV.L	ER5,@(H'2C,ER6)	    ; Vector 011 : TRAPA(3)
+
+	MOV.L	#0,ER5  
+	MOV.L	ER5,@(H'30,ER6)	    ; Vector 012 : -
+	MOV.L	ER5,@(H'34,ER6)	    ; Vector 013 : -
+	MOV.L	ER5,@(H'38,ER6)	    ; Vector 014 : -
+	MOV.L	ER5,@(H'3C,ER6)	    ; Vector 015 : -
+
+	MOV.L	#IV,ER5             
+	MOV.L	ER5,@(H'40,ER6)	    ; Vector 016 : IRQ0
+	MOV.L	ER5,@(H'44,ER6)     ; Vector 017 : IRQ1
+	MOV.L	ER5,@(H'48,ER6)	    ; Vector 018 : IRQ2
+	MOV.L	ER5,@(H'4C,ER6)	    ; Vector 019 : IRQ3
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(H'50,ER6)	    ; Vector 020 : IRQ4
+	MOV.L	ER5,@(H'54,ER6)	    ; Vector 021 : IRQ5
+	MOV.L	ER5,@(H'58,ER6)	    ; Vector 022 : IRQ6
+	MOV.L	ER5,@(H'5C,ER6)	    ; Vector 023 : IRQ7
+	MOV.L	ER5,@(H'60,ER6)		; Vector 024 : SWDTEND
+	MOV.L	ER5,@(H'64,ER6)	    ; Vector 025 : WOVI0
+	MOV.L	ER5,@(H'68,ER6)	    ; Vector 026 : CMI
+	MOV.L	ER5,@(H'6C,ER6)		; Vector 027 : PC BREAK
+	MOV.L	ER5,@(H'70,ER6)		; Vector 028 : ADI
+
+	MOV.L	#0,ER5
+	MOV.L	ER5,@(H'74,ER6)	    ; Vector 029 : -
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(H'78,ER6)	    ; Vector 030 : -
+	MOV.L	ER5,@(H'7C,ER6)	    ; Vector 031 : -
+
+	MOV.L	#IV,ER5             
+	MOV.L	ER5,@(H'80,ER6)		; Vector 032 : TGI0A
+	MOV.L	ER5,@(H'84,ER6)		; Vector 033 : TGI0B
+	MOV.L	ER5,@(H'88,ER6)		; Vector 034 : TGI0C
+	MOV.L	ER5,@(H'8C,ER6)		; Vector 035 : TGI0D
+	MOV.L	ER5,@(H'90,ER6)		; Vector 036 : TCI0V
+
+	MOV.L	#0,ER5
+	MOV.L	ER5,@(H'94,ER6)	    ; Vector 037 : -
+	MOV.L	ER5,@(H'98,ER6)	    ; Vector 038 : -
+	MOV.L	ER5,@(H'9C,ER6)	    ; Vector 039 : -
+
+;-----------------------------------------------------------------------------
+	MOV.L	#IV,ER5             
+	MOV.L	ER5,@(H'A0,ER6)		; Vector 040 : TGI1A
+	MOV.L	ER5,@(H'A4,ER6)		; Vector 041 : TGI1B
+	MOV.L	ER5,@(H'A8,ER6)		; Vector 042 : TCI1V
+	MOV.L	ER5,@(H'AC,ER6)		; Vector 043 : TCI1U
+	MOV.L	ER5,@(H'B0,ER6)		; Vector 044 : TGI2A
+	MOV.L	ER5,@(H'B4,ER6)		; Vector 045 : TGI2B
+	MOV.L	ER5,@(H'B8,ER6)		; Vector 046 : TCI2V
+	MOV.L	ER5,@(H'BC,ER6)		; Vector 047 : TGI2U
+	MOV.L	ER5,@(H'C0,ER6)		; Vector 048 : TGI3A
+	MOV.L	ER5,@(H'C4,ER6)		; Vector 049 : TGI3B
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(H'C8,ER6)		; Vector 050 : TGI3C
+	MOV.L	ER5,@(H'CC,ER6)		; Vector 051 : TGI3D
+	MOV.L	ER5,@(H'D0,ER6)		; Vector 052 : TGI3V
+
+	MOV.L	#0,ER5
+	MOV.L	ER5,@(H'D4,ER6)	    ; Vector 053 : -
+	MOV.L	ER5,@(H'D8,ER6)	    ; Vector 054 : -
+	MOV.L	ER5,@(H'DC,ER6)	    ; Vector 055 : -
+
+	MOV.L	#IV,ER5                                   
+	MOV.L	ER5,@(H'E0,ER6)		; Vector 056 : TGI4A
+	MOV.L	ER5,@(H'E4,ER6)		; Vector 057 : TGI4B
+	MOV.L	ER5,@(H'E8,ER6)		; Vector 058 : TGI4V
+	MOV.L	ER5,@(H'EC,ER6)		; Vector 059 : TGI4U
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(H'F0,ER6)		; Vector 060 : TGI5A
+	MOV.L	ER5,@(H'F4,ER6)		; Vector 061 : TGI5B
+	MOV.L	ER5,@(H'F8,ER6)		; Vector 062 : TGI5V
+	MOV.L	ER5,@(H'FC,ER6)		; Vector 063 : TGI5U
+
+	MOV.L #0,ER5
+	MOV.L	ER5,@(H'100,ER6)	; Vector 064 : -
+	MOV.L	ER5,@(H'104,ER6)	; Vector 065 : - 
+	MOV.L	ER5,@(H'108,ER6)	; Vector 066 : -
+	MOV.L	ER5,@(H'10C,ER6)    ; Vector 067 : -
+	MOV.L	ER5,@(H'110,ER6)	; Vector 068 : -
+	MOV.L	ER5,@(H'114,ER6)	; Vector 069 : -
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(H'118,ER6)	; Vector 070 : -
+	MOV.L	ER5,@(H'11C,ER6)    ; Vector 071 : -
+	MOV.L	ER5,@(H'120,ER6)	; Vector 072 : -
+	MOV.L	ER5,@(H'124,ER6)	; Vector 073 : -
+	MOV.L	ER5,@(H'128,ER6)	; Vector 074 : -
+	MOV.L	ER5,@(H'12C,ER6)	; Vector 075 : -
+	MOV.L	ER5,@(H'130,ER6)    ; Vector 076 : -
+	MOV.L	ER5,@(H'134,ER6)    ; Vector 077 : -
+	MOV.L	ER5,@(H'138,ER6)    ; Vector 078 : -
+	MOV.L	ER5,@(H'13C,ER6)    ; Vector 079 : -
+
+;-----------------------------------------------------------------------------
+	MOV.L	#IV,ER5
+	MOV.L	ER5,@(H'140,ER6)	; Vector 080 : ERI0
+	MOV.L	ER5,@(H'144,ER6)	; Vector 081 : RXI0
+	MOV.L	ER5,@(H'148,ER6)	; Vector 082 : TXI0
+	MOV.L	ER5,@(H'14C,ER6)	; Vector 083 : TEI0
+	MOV.L	ER5,@(H'150,ER6)	; Vector 084 : ERI1
+	MOV.L	ER5,@(H'154,ER6)	; Vector 085 : RXI1
+	MOV.L	ER5,@(H'158,ER6)	; Vector 086 : TXI1
+	MOV.L	ER5,@(H'15C,ER6)	; Vector 087 : TEI1
+	MOV.L	ER5,@(H'160,ER6)	; Vector 088 : ERI2
+	MOV.L	ER5,@(H'164,ER6)	; Vector 089 : RXI2
+;-----------------------------------------------------------------------------
+	MOV.L	ER5,@(H'168,ER6)	; Vector 090 : TXI2
+	MOV.L	ER5,@(H'16C,ER6)	; Vector 091 : TEI2
+	MOV.L	ER5,@(H'170,ER6)	; Vector 092 : CMIA0
+	MOV.L	ER5,@(H'174,ER6)	; Vector 093 : CMIB0
+	MOV.L	ER5,@(H'178,ER6)	; Vector 094 : OVI0
+	MOV.L	#0,ER5
+	MOV.L	ER5,@(H'17C,ER6)	; Vector 095 : -
+	MOV.L	#IV,ER5
+	MOV.L	ER5,@(H'180,ER6)	; Vector 096 : CMIA1
+	MOV.L	ER5,@(H'184,ER6)	; Vector 097 : CMIB1
+	MOV.L	ER5,@(H'188,ER6)	; Vector 098 : OVI1
+	MOV.L	#0,ER5
+	MOV.L	ER5,@(H'18C,ER6)	; Vector 099 : -
+;-----------------------------------------------------------------------------
+	MOV.L	#IV,ER5
+	MOV.L	ER5,@(H'190,ER6)	; Vector 100 : IICI0
+	MOV.L	ER5,@(H'194,ER6)	; Vector 101 : DDCSW1
+	MOV.L	ER5,@(H'198,ER6)	; Vector 102 : IICI1
+	MOV.L	#0,ER5
+	MOV.L	ER5,@(H'19C,ER6)	; Vector 103 : -
+	MOV.L	ER5,@(H'1A0,ER6)	; Vector 104 : -
+	MOV.L	ER5,@(H'1A4,ER6)	; Vector 105 : - 
+	MOV.L	ER5,@(H'1A8,ER6)	; Vector 106 : -
+	MOV.L	ER5,@(H'1AC,ER6)	; Vector 107 : -
+	MOV.L	ER5,@(H'1B0,ER6)	; Vector 108 : -
+	MOV.L	ER5,@(H'1B4,ER6)	; Vector 109 : -
+	MOV.L	ER5,@(H'1B8,ER6)	; Vector 110 : -
+	MOV.L	ER5,@(H'1BC,ER6)	; Vector 111 : -
+	MOV.L	ER5,@(H'1C0,ER6)	; Vector 112 : -
+	MOV.L	ER5,@(H'1C4,ER6)	; Vector 113 : -
+	MOV.L	ER5,@(H'1C8,ER6)	; Vector 114 : -
+	MOV.L	ER5,@(H'1CC,ER6)	; Vector 115 : - 
+	MOV.L	ER5,@(H'1D0,ER6)	; Vector 116 : -
+	MOV.L	ER5,@(H'1D4,ER6)	; Vector 117 : -
+	MOV.L	ER5,@(H'1D8,ER6)	; Vector 118 : -
+	MOV.L	ER5,@(H'1DC,ER6)	; Vector 119 : -
+
+	MOV.L	#IV,ER5
+	MOV.L	ER5,@(H'1E0,ER6)	; Vector 120 : ERI3 
+	MOV.L	ER5,@(H'1E4,ER6)	; Vector 121 : RXI3 
+	MOV.L	ER5,@(H'1E8,ER6)	; Vector 122 : TXI3 
+	MOV.L	ER5,@(H'1EC,ER6)	; Vector 123 : TEI3 
+	MOV.L	ER5,@(H'1F0,ER6)	; Vector 124 : ERI4
+	MOV.L	ER5,@(H'1F4,ER6)	; Vector 125 : RXI4 
+	MOV.L	ER5,@(H'1F8,ER6)	; Vector 126 : TXI4
+	MOV.L	ER5,@(H'1FC,ER6)	; Vector 127 : TEI4 
+
+
+	; Restore the scratch registers onto the stack
+	;-------------------------------------------------------------------------
+	MOV.L @ER7+,ER5
+	MOV.L @ER7+,ER6     
+	
+	RTS
+
+	.END

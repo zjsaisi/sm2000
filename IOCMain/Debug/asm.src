@@ -1,0 +1,152 @@
+          .CPU        2600A:24
+          .EXPORT     _SetNextBlock_Step1
+          .EXPORT     _SetNextBlock_Step2
+          .EXPORT     _GetNextBlock_Step1
+          .EXPORT     _GetNextBlock_Step2
+          .EXPORT     _Quit
+          .EXPORT     _Repeat
+          .EXPORT     _Reboot
+          .EXPORT     _ForceNextBlock
+          .SECTION    P,CODE,ALIGN=2
+          .LINE       "C:\test\newtest\sm2000\iocmain\cmxwrap\asm.c",22
+_SetNextBlock_Step1:             ; function: SetNextBlock_Step1
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          STM.L       (ER4-ER5),@-SP
+          MOV.L       ER0,ER5
+          MOV.L       ER1,ER4
+          .LINE       23
+          .LINE       24
+          MOV.L       ER5,@_$NEXT_BLOCK:32
+          .LINE       25
+          MOV.L       ER4,@_$CURR_BLOCK:32
+          .LINE       26
+          LDM.L       @SP+,(ER4-ER5)
+          POP.L       ER6
+          RTS
+          .LINE       28
+_SetNextBlock_Step2:             ; function: SetNextBlock_Step2
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       29
+          .LINE       31
+	MOV.L @_$NEXT_BLOCK:32, ER4
+	MOV.L @_$CURR_BLOCK:32, ER3
+          .LINE       34
+          POP.L       ER6
+          RTS
+          .LINE       37
+_GetNextBlock_Step1:             ; function: GetNextBlock_Step1
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       38
+          .LINE       40
+	MOV.L ER4, @_$NEXT_BLOCK:32
+	MOV.L ER3, @_$CURR_BLOCK:32	
+          .LINE       44
+          POP.L       ER6
+          RTS
+          .LINE       45
+_GetNextBlock_Step2:             ; function: GetNextBlock_Step2
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          STM.L       (ER4-ER5),@-SP
+          MOV.L       ER0,ER5
+          MOV.L       ER1,ER4
+          .LINE       46
+          .LINE       47
+          MOV.L       ER5,ER5
+          BEQ         L93
+          .LINE       47
+          .LINE       48
+          MOV.L       @_$NEXT_BLOCK:32,ER0
+          MOV.L       ER0,@ER5
+L93:                              
+          .LINE       50
+          MOV.L       ER4,ER4
+          BEQ         L94
+          .LINE       50
+          .LINE       51
+          MOV.L       @_$CURR_BLOCK:32,ER0
+          MOV.L       ER0,@ER4
+L94:                              
+          .LINE       53
+          LDM.L       @SP+,(ER4-ER5)
+          POP.L       ER6
+          RTS
+          .LINE       55
+_ForceNextBlock:                 ; function: ForceNextBlock
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          PUSH.L      ER5
+          MOV.L       ER0,ER5
+          .LINE       56
+          .LINE       57
+          MOV.L       ER5,@_$NEXT_BLOCK:32
+          .LINE       58
+          POP.L       ER5
+          POP.L       ER6
+          RTS
+          .LINE       60
+_Quit:                           ; function: Quit
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       61
+          .LINE       62
+          ORC.B       #-128:8,CCR
+          .LINE       63
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+          .LINE       65
+	MOV.L @_$NEXT_BLOCK:32, ER4
+          .LINE       67
+          TRAPA       #3
+          .LINE       68
+          POP.L       ER6
+          RTS
+          .LINE       70
+_Repeat:                         ; function: Repeat
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       71
+          .LINE       73
+          ORC.B       #-128:8,CCR
+          .LINE       74
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+          .LINE       76
+	MOV.L @_$CURR_BLOCK:32, ER4                                       
+          .LINE       78
+          TRAPA       #3
+          .LINE       79
+          POP.L       ER6
+          RTS
+          .LINE       81
+_Reboot:                         ; function: Reboot
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       82
+          .LINE       84
+          ORC.B       #-128:8,CCR
+          .LINE       85
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+          .LINE       87
+	MOV.L #0:32, ER4
+          .LINE       89
+          TRAPA       #3
+          .LINE       90
+          POP.L       ER6
+          RTS
+          .SECTION    BBootAPI,DATA,ALIGN=2
+_$NEXT_BLOCK:                    ; static: NEXT_BLOCK
+          .RES.L      1
+_$CURR_BLOCK:                    ; static: CURR_BLOCK
+          .RES.L      1
+          .END

@@ -1,0 +1,434 @@
+          .CPU        2600A:24
+          .IMPORT     _GetNextBlock_Step1
+          .IMPORT     _GetNextBlock_Step2
+          .IMPORT     __CmdMonitor__6CDebugFPUl
+          .IMPORT     _main
+          .IMPORT     __INITSCT
+          .IMPORT     _HardwareSetup
+          .IMPORT     _VerifyRAM
+          .IMPORT     _ClearRam
+          .IMPORT     _VerifyROM
+          .IMPORT     _g_monFlag1
+          .IMPORT     _g_monFlag2
+          .IMPORT     _g_systemTicks
+          .IMPORT     _Fatal
+          .IMPORT     _INT_TRAP4
+          .IMPORT     _CompDTCVector
+          .IMPORT     _NMIcapture
+          .IMPORT     _BreakPoint
+          .EXPORT     _g_sBuildDate
+          .EXPORT     _g_sBuildTime
+          .EXPORT     _g_nextBlock
+          .EXPORT     _g_appFailCnt
+          .EXPORT     _g_cmx_started
+          .EXPORT     _Reset
+          .EXPORT     _Quit_Entry
+          .EXPORT     _PowerON_Reset
+          .EXPORT     _GoFailed
+          .EXPORT     _Manual_Reset
+          .EXPORT     _PassCheckSum
+          .SECTION    PResetPRG,CODE,ALIGN=2
+;*** File resetprg.c, Line 91    ; block
+_Quit_Entry:                     ; function: Quit_Entry()
+;*** File resetprg.c, Line 92    ; block
+;*** File resetprg.c, Line 96    ; expression statement
+	MOV.L #H'ffebc0, SP
+;*** File resetprg.c, Line 104   ; expression statement
+          JSR         @_GetNextBlock_Step1
+;*** File resetprg.c, Line 105   ; expression statement
+          MOV.L       #_$tmp:32,ER1
+          MOV.L       #_g_nextBlock:32,ER0
+          JSR         @_GetNextBlock_Step2
+;*** File resetprg.c, Line 106   ; if
+          MOV.L       @_g_nextBlock:32,ER0
+          BNE         L408
+;*** File resetprg.c, Line 106   ; block
+;*** File resetprg.c, Line 107   ; expression statement
+          MOV.L       #_g_appFailCnt:32,ER0
+          MOV.B       @ER0,R1L
+          INC.B       R1L
+          MOV.B       R1L,@ER0
+L408:                             
+;*** File resetprg.c, Line 109   ; expression statement
+          BRA         _Reset
+;*** File resetprg.c, Line 110   ; block
+;*** File resetprg.c, Line 116   ; block
+_PowerON_Reset:                  ; function: PowerON_Reset()
+          MOV.L       #STARTOF S+SIZEOF S:32,SP
+;*** File resetprg.c, Line 117   ; block
+;*** File resetprg.c, Line 118   ; expression statement
+          SUB.L       ER0,ER0
+          MOV.L       ER0,@_g_nextBlock:32
+;*** File resetprg.c, Line 119   ; if
+          MOV.L       #_g_appFailCnt:32,ER1
+          MOV.L       @_g_systemTicks:32,ER0
+          CMP.L       #4320000:32,ER0
+          BLS         L409
+;*** File resetprg.c, Line 119   ; block
+;*** File resetprg.c, Line 120   ; expression statement
+          SUB.B       R0L,R0L
+          BRA         L436
+L409:                             
+;*** File resetprg.c, Line 121   ; block
+;*** File resetprg.c, Line 122   ; expression statement
+          MOV.B       @ER1,R0L
+          INC.B       R0L
+L436:                             
+          MOV.B       R0L,@ER1
+;*** File resetprg.c, Line 125   ; expression statement
+          SUB.L       ER0,ER0
+          MOV.L       ER0,@_g_monFlag1:32
+;*** File resetprg.c, Line 127   ; expression statement
+          BRA         _Reset
+;*** File resetprg.c, Line 128   ; block
+;*** File resetprg.c, Line 145   ; block
+_GoFailed:                       ; function: GoFailed()
+          PUSH.L      ER6
+;*** File resetprg.c, Line 146   ; block
+;*** File resetprg.c, Line 150   ; expression statement
+	MOV.L #H'ffebc0, SP
+;*** File resetprg.c, Line 158   ; expression statement
+          JSR         @_HardwareSetup
+;*** File resetprg.c, Line 134   ; block
+;*** File resetprg.c, Line 136   ; expression statement
+          SUB.B       R0L,R0L
+          MOV.B       R0L,@_g_cmx_started:32
+;*** File resetprg.c, Line 140   ; expression statement
+          MOV.L       #L243:32,ER6
+;*** File resetprg.c, Line 141   ; expression statement
+          MOV.L       ER6,ER0
+          JSR         @_Fatal
+;*** File resetprg.c, Line 160   ; block
+          POP.L       ER6
+          RTS
+;*** File resetprg.c, Line 162   ; block
+_Reset:                          ; function: Reset()
+;*** File resetprg.c, Line 163   ; block
+;*** File resetprg.c, Line 166   ; expression statement
+          SUB.B       R0L,R0L
+          MOV.B       R0L,@_g_cmx_started:32
+;*** File resetprg.c, Line 167   ; expression statement
+          ORC.B       #-128:8,CCR
+;*** File resetprg.c, Line 170   ; expression statement
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+;*** File resetprg.c, Line 171   ; expression statement
+          MOV.B       @16776677:16,R0L
+          AND.B       #-49:8,R0L
+          OR.B        #32:8,R0L
+          MOV.B       R0L,@16776677:16
+;*** File resetprg.c, Line 174   ; expression statement
+          BSET.B      #0,@16776677:16
+;*** File resetprg.c, Line 176   ; expression statement
+          MOV.B       #-1:8,R0L
+          MOV.B       R0L,@16776763:16
+;*** File resetprg.c, Line 179   ; expression statement
+          JSR         @_HardwareSetup
+;*** File resetprg.c, Line 182   ; expression statement
+          JSR         @__INITSCT
+;*** File resetprg.c, Line 184   ; if
+          MOV.L       @_g_nextBlock:32,ER0
+          BNE         L411
+;*** File resetprg.c, Line 185   ; expression statement
+          JSR         @_VerifyROM
+L411:                             
+;*** File resetprg.c, Line 191   ; if
+          MOV.L       @_g_monFlag1:32,ER0
+          CMP.L       #1145197895:32,ER0
+          BNE         L412
+          MOV.L       @_g_monFlag2:32,ER0
+          CMP.L       #1129270868:32,ER0
+          BEQ         L413
+;*** File resetprg.c, Line 191   ; block
+L412:                             
+;*** File resetprg.c, Line 193   ; if
+          MOV.L       @_g_nextBlock:32,ER0
+          BEQ         L414
+;*** File resetprg.c, Line 193   ; block
+;*** File resetprg.c, Line 194   ; expression statement
+          JSR         @_ClearRam
+          BRA         L415
+L414:                             
+;*** File resetprg.c, Line 195   ; block
+;*** File resetprg.c, Line 196   ; expression statement
+          JSR         @_VerifyRAM
+L415:                             
+L413:                             
+;*** File resetprg.c, Line 200   ; expression statement
+          JSR         @__INITSCT
+;*** File resetprg.c, Line 214   ; if
+          MOV.L       @_g_monFlag1:32,ER0
+          CMP.L       #1145197895:32,ER0
+          BNE         L416
+          MOV.L       @_g_monFlag2:32,ER0
+          CMP.L       #1129270868:32,ER0
+          BNE         L416
+;*** File resetprg.c, Line 214   ; block
+;*** File resetprg.c, Line 215   ; expression statement
+          SUB.L       ER0,ER0
+          JSR         @__CmdMonitor__6CDebugFPUl
+L416:                             
+;*** File resetprg.c, Line 219   ; expression statement
+          JSR         @_main
+;*** File resetprg.c, Line 225   ; expression statement
+          SLEEP
+;*** File resetprg.c, Line 226   ; block
+          RTS
+;*** File resetprg.c, Line 229   ; block
+_Manual_Reset:                   ; function: Manual_Reset()
+;*** File resetprg.c, Line 230   ; block
+;*** File resetprg.c, Line 231   ; block
+          RTS
+;*** File resetprg.c, Line 248   ; block
+_PassCheckSum:                   ; function: PassCheckSum()
+          STM.L       (ER2-ER3),@-SP
+          STM.L       (ER4-ER6),@-SP
+          SUB.L       #14:32,SP
+;*** File resetprg.c, Line 249   ; block
+          MOV.L       ER0,@(2:16,SP)
+          MOV.L       ER1,@(6:16,SP)
+;*** File resetprg.c, Line 258   ; expression statement
+          SUB.L       ER6,ER6
+          MOV.L       ER6,ER4
+;*** File resetprg.c, Line 260   ; expression statement
+          MOV.W       #2:16,E2
+;*** File resetprg.c, Line 264   ; expression statement
+          MOV.L       #65536:32,ER3
+;*** File resetprg.c, Line 265   ; expression statement
+          MOV.L       #16320:32,ER5
+;*** File resetprg.c, Line 265   ; do
+L417:                             
+;*** File resetprg.c, Line 265   ; block
+;*** File resetprg.c, Line 266   ; expression statement
+          MOV.L       ER6,ER1
+;*** File resetprg.c, Line 267   ; expression statement
+          MOV.L       @ER3,ER0
+          ADD.L       ER0,ER6
+;*** File resetprg.c, Line 268   ; if
+          MOV.L       ER1,ER0
+          CMP.L       ER6,ER0
+          BLS         L418
+;*** File resetprg.c, Line 268   ; block
+;*** File resetprg.c, Line 269   ; expression statement
+          INC.L       #1,ER4
+L418:                             
+;*** File resetprg.c, Line 271   ; expression statement
+          ADDS.L      #4,ER3
+;*** File resetprg.c, Line 265   ; expression statement
+          DEC.L       #1,ER5
+          BNE         L417
+;*** File resetprg.c, Line 273   ; expression statement
+          MOV.L       #131072:32,ER3
+;*** File resetprg.c, Line 274   ; expression statement
+          SUB.L       ER5,ER5
+          MOV.B       #-128:8,R5H
+;*** File resetprg.c, Line 274   ; do
+L419:                             
+;*** File resetprg.c, Line 274   ; block
+;*** File resetprg.c, Line 275   ; expression statement
+          MOV.L       ER6,ER1
+;*** File resetprg.c, Line 276   ; expression statement
+          MOV.L       @ER3,ER0
+          ADD.L       ER0,ER6
+;*** File resetprg.c, Line 277   ; if
+          MOV.L       ER1,ER0
+          CMP.L       ER6,ER0
+          BLS         L420
+;*** File resetprg.c, Line 277   ; block
+;*** File resetprg.c, Line 278   ; expression statement
+          INC.L       #1,ER4
+L420:                             
+;*** File resetprg.c, Line 280   ; expression statement
+          ADDS.L      #4,ER3
+;*** File resetprg.c, Line 274   ; expression statement
+          DEC.L       #1,ER5
+          BNE         L419
+;*** File resetprg.c, Line 283   ; expression statement
+          MOV.L       @(2:16,SP),ER0
+          MOV.L       ER4,@ER0
+;*** File resetprg.c, Line 284   ; expression statement
+          MOV.L       @(6:16,SP),ER0
+          MOV.L       ER6,@ER0
+;*** File resetprg.c, Line 286   ; if
+          MOV.L       @131064:32,ER0
+          CMP.L       #-1515908556:32,ER0
+          BEQ         L421
+;*** File resetprg.c, Line 286   ; block
+;*** File resetprg.c, Line 287   ; expression statement
+          MOV.W       #1:16,E2
+;*** File resetprg.c, Line 288   ; if
+          CMP.L       ER4,ER0
+          BEQ         L422
+;*** File resetprg.c, Line 288   ; block
+;*** File resetprg.c, Line 288   ; return
+          MOV.W       #-3:16,R0
+          JMP         @L423
+L422:                             
+L421:                             
+;*** File resetprg.c, Line 291   ; if
+          MOV.L       @131068:32,ER0
+          CMP.L       #1515886710:32,ER0
+          BEQ         L424
+;*** File resetprg.c, Line 291   ; block
+;*** File resetprg.c, Line 292   ; expression statement
+          MOV.W       #1:16,E2
+;*** File resetprg.c, Line 293   ; if
+          CMP.L       ER6,ER0
+          BEQ         L425
+;*** File resetprg.c, Line 293   ; block
+;*** File resetprg.c, Line 293   ; return
+          MOV.W       #-1:16,R0
+          JMP         @L423
+L425:                             
+L424:                             
+;*** File resetprg.c, Line 296   ; expression statement
+          SUB.L       ER3,ER3
+;*** File resetprg.c, Line 297   ; if
+          MOV.L       #_PowerON_Reset:32,ER0
+          MOV.L       @0:16,ER1
+          CMP.L       ER0,ER1
+          BEQ         L426
+;*** File resetprg.c, Line 297   ; block
+;*** File resetprg.c, Line 298   ; return
+          MOV.W       #-2:16,R0
+          JMP         @L423
+L426:                             
+;*** File resetprg.c, Line 300   ; expression statement
+          SUB.L       ER5,ER5
+          MOV.B       #1:8,R5L
+;*** File resetprg.c, Line 300   ; for
+          BRA         L428
+L427:                             
+;*** File resetprg.c, Line 300   ; block
+;*** File resetprg.c, Line 301   ; switch
+          MOV.L       ER5,ER6
+          SHLL.L      #2,ER6
+          MOV.W       R5,R4
+          NEG.W       R4
+          SUB.W       #1000:16,R4
+          MOV.L       ER5,ER0
+          MOV.W       E0,E0
+          BNE         L402
+          CMP.W       #11:16,R0
+          BEQ         L399
+          CMP.W       #7:16,R0
+          BEQ         L400
+          CMP.W       #8:16,R0
+          BEQ         L401
+          BRA         L402
+;*** File resetprg.c, Line 301   ; block
+;*** File resetprg.c, Line 302   ; label
+L399:                             
+;*** File resetprg.c, Line 303   ; if
+          MOV.L       ER3,ER0
+          ADD.L       ER6,ER0
+          MOV.L       #_INT_TRAP4:32,ER1
+          MOV.L       @ER0,ER0
+          CMP.L       ER1,ER0
+          BEQ         L431
+;*** File resetprg.c, Line 303   ; block
+;*** File resetprg.c, Line 303   ; return
+          BRA         L439
+;*** File resetprg.c, Line 304   ; continue
+L400:                             
+;*** File resetprg.c, Line 306   ; if
+          MOV.L       ER3,ER0
+          ADD.L       ER6,ER0
+          MOV.L       #_NMIcapture:32,ER1
+          MOV.L       @ER0,ER0
+          CMP.L       ER1,ER0
+          BEQ         L431
+;*** File resetprg.c, Line 306   ; block
+;*** File resetprg.c, Line 306   ; return
+          BRA         L439
+;*** File resetprg.c, Line 307   ; continue
+L401:                             
+;*** File resetprg.c, Line 309   ; if
+          MOV.L       ER3,ER0
+          ADD.L       ER6,ER0
+          MOV.L       #_BreakPoint:32,ER1
+          MOV.L       @ER0,ER0
+          CMP.L       ER1,ER0
+          BEQ         L431
+;*** File resetprg.c, Line 309   ; block
+;*** File resetprg.c, Line 309   ; return
+          BRA         L439
+;*** File resetprg.c, Line 310   ; continue
+L402:                             
+;*** File resetprg.c, Line 312   ; block
+;*** File resetprg.c, Line 312   ; break
+;*** File resetprg.c, Line 314   ; if
+          MOV.L       ER3,ER0
+          ADD.L       ER6,ER0
+          MOV.L       ER6,ER1
+          ADD.L       #2097152:32,ER1
+          MOV.L       @ER0,ER0
+          CMP.L       ER1,ER0
+          BEQ         L434
+;*** File resetprg.c, Line 315   ; block
+;*** File resetprg.c, Line 315   ; return
+L439:                             
+          MOV.W       R4,R0
+          BRA         L423
+L434:                             
+L431:                             
+          INC.L       #1,ER5
+L428:                             
+;*** File resetprg.c, Line 300   ; expression statement
+          CMP.L       #128:32,ER5
+          BCS         L427
+;*** File resetprg.c, Line 318   ; expression statement
+          JSR         @_CompDTCVector
+;*** File resetprg.c, Line 319   ; if
+          CMP.W       #1:16,R0
+          BEQ         L435
+;*** File resetprg.c, Line 319   ; block
+;*** File resetprg.c, Line 319   ; return
+          MOV.W       #-100:16,R0
+          BRA         L423
+L435:                             
+;*** File resetprg.c, Line 320   ; return
+          MOV.W       E2,R0
+;*** File resetprg.c, Line 322   ; block
+L423:                             
+          ADD.L       #14:32,SP
+          LDM.L       @SP+,(ER4-ER6)
+          LDM.L       @SP+,(ER2-ER3)
+          RTS
+          .SECTION    CCheckSum,DATA,ALIGN=2
+_$boot_sumH:                     ; static: boot_sumH
+          .DATA.L     H'A5A51234
+_$boot_sumL:                     ; static: boot_sumL
+          .DATA.L     H'5A5A9876
+          .SECTION    CBldDate,DATA,ALIGN=2
+_$version:                       ; static: version
+          .DATA.L     H'00000001
+_$release_date:                  ; static: release_date
+          .DATA.L     H'0001D5F4
+_$release_number:                ; static: release_number
+          .DATA.L     H'00010001
+_g_sBuildDate:                   ; static: g_sBuildDate
+          .DATA.L     L288
+_g_sBuildTime:                   ; static: g_sBuildTime
+          .DATA.L     L289
+          .SECTION    CResetPRG,DATA,ALIGN=2
+L243:
+          .SDATAZ     <H'0D><H'0A>"Forced to failed mode"<H'0D><H'0A>
+          .SECTION    CBldDate,DATA,ALIGN=2
+L288:
+          .SDATAZ     "May  9 2015"
+L289:
+          .SDATAZ     "11:19:57"
+          .SECTION    BResetPRG,DATA,ALIGN=2
+_g_nextBlock:                    ; static: g_nextBlock
+          .RES.L      1
+_$tmp:                           ; static: tmp
+          .RES.L      1
+_g_appFailCnt:                   ; static: g_appFailCnt
+          .RES.B      1
+_g_cmx_started:                  ; static: g_cmx_started
+          .RES.B      1
+          .SECTION    S,STACK,ALIGN=2
+          .END        _PowerON_Reset

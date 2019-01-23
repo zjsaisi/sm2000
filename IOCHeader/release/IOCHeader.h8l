@@ -1,0 +1,12 @@
+print "Z:\work\newtest\sm2000\iocheader\Release\IOCHeader.map"
+nooptimize
+start CHeadSec(0210000),CHead1(0210200),CHead2(0210400),CHead3(0210600),CHead4(0210800),CHead5(0210A00)
+exclude
+udfcheck
+check_section
+align_section
+output "Z:\work\newtest\sm2000\iocheader\Release\IOCHeader.abs"
+input "Z:\work\newtest\sm2000\iocheader\Release\header.obj"
+library "c:\hew\tools\hitachi\h8\3_0a_0\lib\c8s26n.lib"
+library "c:\hew\tools\hitachi\h8\3_0a_0\lib\ec226n.lib"
+EXI

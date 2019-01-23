@@ -1,0 +1,17 @@
+"Z:\work\newtest\sm2000\iocboot\Release\intprg.src"
+-cpu=2600a:24
+-include="Z:\work\newtest\sm2000\iocboot\H2633F"
+-include="Z:\work\newtest\sm2000\iocboot\Include"
+-include="Z:\work\newtest\sm2000\iocboot\Global"
+-include="Z:\work\newtest\sm2000\iocboot\CMX"
+-include="Z:\work\newtest\sm2000\iocboot\CMXWRAP"
+-include="Z:\work\newtest\sm2000\iocboot\Serial"
+-include="Z:\work\newtest\sm2000\iocboot\Vector"
+-include="Z:\work\newtest\sm2000\iocboot\App"
+-include="Z:\work\newtest\sm2000\iocboot\Monitor"
+-include="Z:\work\newtest\sm2000\iocboot\Download"
+-nodebug
+-object="Z:\work\newtest\sm2000\iocboot\Release\intprg.obj"
+-nolist
+-chgincpath
+-errorpath

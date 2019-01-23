@@ -1,0 +1,9 @@
+-cpu=2600a:24
+-include="Z:\work\newtest\sm2000\iocmain\H2633F","Z:\work\newtest\sm2000\iocmain\Include","Z:\work\newtest\sm2000\iocmain\Global","Z:\work\newtest\sm2000\iocmain\CMX","Z:\work\newtest\sm2000\iocmain\CMXWRAP","Z:\work\newtest\sm2000\iocmain\Serial","Z:\work\newtest\sm2000\iocmain\Vector","Z:\work\newtest\sm2000\iocmain\Download","Z:\work\newtest\sm2000\iocmain\Hardware","Z:\work\newtest\sm2000\iocmain\App","Z:\work\newtest\sm2000\iocmain\Istate","Z:\work\newtest\sm2000\iocmain\CardState","Z:\work\newtest\sm2000\iocmain\Event","Z:\work\newtest\sm2000\iocmain\Bestime","Z:\work\newtest\sm2000\iocmain\Share","Z:\work\newtest\sm2000\iocmain\Flash","Z:\work\newtest\sm2000\iocmain\Debugger","Z:\work\newtest\sm2000\iocmain\NVStore","Z:\work\newtest\sm2000\iocmain\Export","Z:\work\newtest\sm2000\iocmain\RmtDbg","Z:\work\newtest\sm2000\iocmain\Output","Z:\work\newtest\sm2000\iocmain\BestWrap","Z:\work\newtest\sm2000\iocmain\Rubidium"
+-define=_NDEBUG=1,RUN_IN_RAM=1,RUN_IN_ROM=0,NDEBUG=1
+-object="Z:\work\newtest\sm2000\iocmain\Release\mailbox.obj"
+-nolist
+-speed=register,shift,loop,switch,struct,expression,inline=105
+-chgincpath
+"Z:\work\newtest\sm2000\iocmain\cmxwrap\mailbox.cpp"
+-lang=cpp

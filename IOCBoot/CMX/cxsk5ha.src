@@ -1,0 +1,531 @@
+;******************************************************
+;
+;	Copyright (C) 1993-1999
+;	CMX Co.
+;	680 Worcester Road. Ste C
+;	Framingham, Mass 01702
+;
+;	All Rights Reserved
+;
+;	This material is CONFIDENTIAL
+;*******************************************************
+; Version 5.30
+; for Hitachi H8/3XXH & H8S/2000 processor 
+; Note: for 2 byte shorts
+; NOTE: For "ADVANCED" mode
+
+fwlink		.equ	H'00	;forward wait link
+bwlink		.equ	H'04	;backward wait link
+ftlink		.equ	H'08	;forward time link
+btlink		.equ	H'0c	;backward time link
+tcbstate_high	.equ	H'10	;task state    
+tcbstate_low	.equ	H'11	;task state    
+trig		.equ	H'12	;the number of triggers (starts) for task
+priority	.equ	H'13	;task priority, 0 is highest
+tcbtimer	.equ	H'14	;task countdown delay timer
+nxttcb  	.equ	H'16	;ptr to next TCB (task control block)
+task_addr	.equ	H'1a	;address of where task's code begins
+stk_start  	.equ	H'1e	;the task's external ram address to hold 
+stk_save  	.equ	H'22	;the task's external ram address to hold 
+				;task's contexts, when switched
+
+; tcbstate high byte, 1'st byte of tcbstate
+IDLE 		.equ	H'01	;task not able to run, no triggers
+READY 		.equ	H'02	;the task ready to run
+RESUME		.equ	H'04	;the task ready to run, resume where it left off
+RUNNING		.equ	H'08	;the task is the running task
+TIME		.equ	H'10
+	
+; tcbstate low byte, 2'nd byte of tcbstate
+RESOURCE	.equ	H'01	;waiting on time
+WAIT		.equ	H'02	;waiting
+SEND_MESG	.equ	H'08	;waiting for task that recieved message,to wake me
+WAIT_MESG	.equ	H'10	;waiting for message
+FLAGS		.equ	H'20	;waiting on flag
+TIME_EXPIRED	.equ	H'40	;the time period specified has ellapsed
+
+LOW_POWER_ACTIVE .equ 0	;set to 1, to enable K_OS_Low_Power_Func function
+
+SLICE_ENABLE .equ 0	;set to 1, to enable time slicing code testing
+
+CMXTRACKER_ENABLE .equ 0 ;set to 1 if using CMXTRACKER, otherwise 0
+
+ .AIF CMXTRACKER_ENABLE GT 0			
+	.IMPORT	_previoustcb
+	.IMPORT	_cmxtracker_in_task
+ .AENDI
+
+SAVE_MAC .equ 0 ;set to 1 if MAC UNIT registers being used, H8S/2600 only
+
+STM_ENABLE .equ 0 ;set to 1 if processor supports STM & LDM instructions
+			;this MUST be 0 for H8/300H
+
+INTERRUPT_MODE .equ 2 ;set to 0,1,2 or 3. Must be set properly!!!
+
+	.IMPORT	_stack_holder 
+	.IMPORT	_interrupt_stack 
+	.IMPORT	_activetcb 
+	.IMPORT	_active_priority
+	.IMPORT	_cmx_tcb 
+	.IMPORT	_K_I_Intrp_Pipe_Out
+	.IMPORT	_K_I_Timer_Task
+	.IMPORT	_K_OS_Low_Power_Func
+	.IMPORT _TSLICE_SCALE
+	.IMPORT _SLICE_ON
+	.IMPORT _tslice_count
+	.IMPORT	_int_count
+	.IMPORT	_locked_out
+	.IMPORT	_cmx_flag1
+	.IMPORT	_ie_holder
+
+	.EXPORT	_K_OS_Intrp_Entry
+	.EXPORT	_K_OS_Intrp_Exit
+	.EXPORT	_K_I_Sched
+	.EXPORT _K_I_Scheduler
+	.EXPORT	_K_OS_Enable_Interrupts 
+	.EXPORT	_K_OS_Disable_Interrupts 
+	.EXPORT	_K_OS_Save_Interrupts 
+	.EXPORT	_K_OS_Restore_Interrupts 
+
+	.SECTION    P,CODE,ALIGN=2
+
+preempted .equ H'01	;preemption flag position
+do_timer_tsk .equ H'02	;timer task flag position
+do_time_slice .equ H'04	;do time slice, next slice task if possible
+slice_enable .equ H'08	;time slice enabled
+do_coop_sched .equ H'10	;cooperative scheduling flag position
+do_int_pipe .equ H'20	;interrupt pipe needs processing
+idle_flag .equ H'40	;used by CMX to see if all tasks cannot run
+cmx_active .equ H'80	;shows that the CMX OS entered
+			
+bit_preempted .equ 0
+bit_do_timer_tsk .equ 1
+bit_do_time_slice .equ 2
+bit_slice_enable .equ 3
+bit_do_coop_sched .equ 4
+bit_do_int_pipe .equ 5
+bit_idle_flag .equ 6
+bit_cmx_active .equ 7
+
+_K_I_Sched:	       
+ .AIF STM_ENABLE GT 0			
+	STM.L (ER0-ER3),@-ER7
+	STM.L (ER4-ER6),@-ER7
+ .AELSE
+	PUSH.L 	er0
+	PUSH.L 	er1
+	PUSH.L 	er2
+	PUSH.L 	er3
+	PUSH.L 	er4
+	PUSH.L 	er5
+	PUSH.L 	er6
+ .AENDI
+ .AIF SAVE_MAC GT 0			
+	STMAC	MACL,ER0
+	PUSH.L	ER0
+	STMAC	MACH,ER0
+	PUSH.L	ER0
+ .AENDI
+	sub.w	r0,r0	;identify that we came in thru sched function
+	PUSH.W 	r0
+sched_int:
+	mov.L	@_activetcb,ER0		;get current active task tcb
+	mov.b	@(tcbstate_high,ER0),r1l
+	cmp.b	#RUNNING,r1l	;see if task was running
+	beq	set_resume:8	;yes, so set flag indicating the task should
+				;finish its code, because the interrupt
+				;preempted it, during a task locked out
+	
+	MOV.B	#H'FF,R1L		
+	MOV.B	R1L,@_active_priority	;set priority to lowest.
+	bra	sched_cont:8
+set_resume:
+	mov.b	#RESUME,r1l		;save task's new state
+	mov.b	r1l,@(tcbstate_high,ER0)
+sched_cont:
+	mov.L	ER7,@(stk_save,ER0)	;save task's current stack address
+_K_I_Scheduler:	
+ .AIF INTERRUPT_MODE EQ 2			
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AELSE
+	orc	#H'C0,CCR	;turn interrupts off
+ .AENDI
+	mov.b	#1,r1l
+	mov.b	r1l,@_locked_out	;set locked out to 1, critical region
+	mov.l	@_interrupt_stack,ER7	;load in interrupt and K_I_Scheduler stack
+	mov.b	r1l,@_int_count	;set int count to 1, for using stack
+sched_again:
+;
+ .AIF INTERRUPT_MODE GT 1			
+	andc	#H'F8,EXR	;enable interrupts by interrupt level control
+ .AIF INTERRUPT_MODE EQ 3			
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+ .AELSE
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+rescan1:
+	MOV.L	#_cmx_flag1,ER3
+	BTST.B	#bit_do_timer_tsk,@ER3
+	BEQ	rescan2:8
+	BCLR.B	#bit_do_timer_tsk,@ER3
+	PUSH.L	ER0
+	JSR	@_K_I_Timer_Task	;call CMX timer func. that will dec. timers
+	POP.L	ER0
+	MOV.L	#_cmx_flag1,ER3
+rescan2:
+	BTST.B	#bit_do_int_pipe,@ER3
+	BEQ	rescan4:8
+	PUSH.L	ER0
+	JSR	@_K_I_Intrp_Pipe_Out	;go process interrupt pipe contents
+	POP.L	ER0
+	MOV.L	#_cmx_flag1,ER3
+rescan4:
+	BTST.B	#bit_preempted,@ER3	;is preempted flag set
+	BEQ	rescan5:8
+ .AIF INTERRUPT_MODE EQ 2			
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AELSE
+	orc	#H'C0,CCR	;turn interrupts off
+ .AENDI
+	MOV.B	@ER3,R1L
+	and.B	#~(preempted | do_coop_sched | do_time_slice | slice_enable),R1l
+	or.b	#idle_flag,r1l
+	mov.B	r1l,@ER3
+ .AIF INTERRUPT_MODE EQ 2			
+	andc	#H'F8,EXR	;enable interrupts by interrupt level control
+ .AELSE
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+	MOV.L	#_cmx_tcb,ER0
+	MOV.L	@(nxttcb,ER0),ER0		;load in highest priority user task
+	BRA	midpaus2:8		;now go see if ready
+rescan5:
+	BTST.B	#bit_do_coop_sched,@ER3	;test cooperative schedule flag
+	BEQ	rescan6:8
+ .AIF INTERRUPT_MODE EQ 2			
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AELSE
+	orc	#H'C0,CCR	;turn interrupts off
+ .AENDI
+	MOV.B	@ER3,R1L
+	and.B	#~(do_coop_sched | do_time_slice | slice_enable),R1l
+	mov.B	r1l,@ER3
+ .AIF INTERRUPT_MODE EQ 2			
+	andc	#H'F8,EXR	;enable interrupts by interrupt level control
+ .AELSE
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+	BRA	findready:8		;get next task in line
+rescan6:
+ .AIF SLICE_ENABLE GT 0			
+	BTST.B	#bit_do_time_slice,@ER3
+	BEQ	midpaus2:8		;go test task state
+	BCLR.B	#bit_do_time_slice,@ER3
+	BRA	findready:8		;get next task in line
+ .AENDI
+midpaus2:
+	MOV.b	@(tcbstate_high,ER0),R2l	;get task state
+	AND.b	#RESUME | READY,R2l	;see if capable of running.
+	BNE	task_resume:8		;yes, let task run
+findready:
+	MOV.L	@(nxttcb,ER0),ER0	;get next task according to priority
+	MOV.L	#_cmx_tcb,ER1	;see if at end of linked list	
+	CMP.L	ER1,ER0
+	BNE	midpaus2:8	;no, go test this task to see if runnable
+ .AIF LOW_POWER_ACTIVE GT 0
+	BTST.B	#bit_idle_flag,@ER3	;see if we tested all tasks
+	BEQ	no_power_down:8	;no, then no power down
+power_down:
+	JSR	@_K_OS_Low_Power_Func	;go to user written low power mode
+no_power_down:
+ .AENDI
+	MOV.L	#_cmx_tcb,ER0	;get highest priority user task
+	MOV.L	@(nxttcb,ER0),ER0
+	jmp 	@rescan1	;go test flags again
+task_resume:	
+ .AIF INTERRUPT_MODE EQ 2			
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AELSE
+	orc	#H'C0,CCR	;turn interrupts off
+ .AENDI
+	MOV.B	@ER3,R1l
+	AND.B	#~(idle_flag | do_time_slice),R1l
+	MOV.B	R1l,@ER3
+	and.b	#do_int_pipe | do_timer_tsk,r1l ;test to see if bit(s) set
+	BEQ	resume_good:8	;no then go let task run
+	JMP	@sched_again	;yes, then process bits first
+resume_good:
+	MOV.B	#0,R1L		
+	MOV.B	R1L,@_locked_out	;clear locked out count
+	MOV.B	R1L,@_int_count	;clear interrupt count
+	MOV.B	@(priority,ER0),R1l	;get task's priority
+	MOV.B	R1l,@_active_priority	;load into global 
+ .AIF SLICE_ENABLE GT 0			
+	MOV.B	@_SLICE_ON,R1L	;see if time slicing enabled
+	BEQ	no_slice:8
+	BTST.B	#bit_slice_enable,@ER3	;test slice bit
+	BNE	no_slice:8		;already set, good
+	BSET.B	#bit_slice_enable,@ER3	;set it
+	MOV.B	@_TSLICE_SCALE,R1l	;now load time slice count
+	MOV.B	R1l,@_tslice_count
+no_slice:
+ .AENDI
+	MOV.L	ER0,@_activetcb	;load _activetcb with current task
+ .AIF CMXTRACKER_ENABLE GT 0			
+	MOV.L	@_previoustcb,ER1		;get current active task tcb
+	CMP.L	er0,er1
+	BEQ	same1
+	MOV.L	ER0,@_previoustcb
+	PUSH.L	ER0
+	PUSH.W	R2
+	JSR 	@_cmxtracker_in_task
+	POP.W	R2
+	POP.L	ER0
+same1:
+ .AENDI
+	mov.b	#RUNNING,R1l		;show that task is now executing
+	mov.b 	r1l,@(tcbstate_high,ER0)	;store task new state
+	and.b	#READY,R2l	;now see if task should start or resume
+	BNE	task_ready:8	;task should start at beginning brace
+	mov.L	@(stk_save,ER0),ER7	;task is resuming, load stack address
+	POP.W 	R0
+	bne	done_scheduler:8		;go to interrupt exit routine	
+ .AIF SAVE_MAC GT 0			
+	POP.L	ER0
+	LDMAC	ER0,MACH
+	POP.L	ER0
+	LDMAC	ER0,MACL
+ .AENDI
+ .AIF STM_ENABLE GT 0			
+	LDM.L @ER7+,(ER4-ER6)
+	LDM.L @ER7+,(ER0-ER3)
+ .AELSE
+	POP.L	ER6
+	POP.L	ER5
+	POP.L	ER4
+	POP.L	ER3
+	POP.L	ER2
+	POP.L	ER1
+	POP.L	ER0	;restore registers
+ .AENDI
+ .AIF INTERRUPT_MODE EQ 2			
+	andc	#H'F8,EXR	;enable interrupts by interrupt level control
+ .AELSE
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+ 	rts		;this will NOT POP CCR reg, ONLY the return address
+done_scheduler:
+ .AIF SAVE_MAC GT 0			
+	POP.L	ER0
+	LDMAC	ER0,MACH
+	POP.L	ER0
+	LDMAC	ER0,MACL
+ .AENDI
+ .AIF STM_ENABLE GT 0			
+	LDM.L @ER7+,(ER4-ER6)
+	LDM.L @ER7+,(ER0-ER3)
+ .AELSE
+	POP.L	ER6
+	POP.L	ER5
+	POP.L	ER4
+	POP.L	ER3
+	POP.L	ER2
+	POP.L	ER1
+	POP.L	ER0	;restore registers
+ .AENDI
+ 	rte		;this will POP CCR and return address
+
+task_ready:
+	mov.L	@(stk_start,ER0),ER7	;get task start stack address
+	mov.L	@(task_addr,ER0),ER1	;it's location in ROM
+ .AIF INTERRUPT_MODE EQ 2			
+	andc	#H'F8,EXR	;enable interrupts by interrupt level control
+ .AELSE
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+	jmp	@er1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 		jsr	K_OS_Intrp_Entry
+; OFFSET frame will look like this 
+; (INTERRUPT MODE 0 & 1 for H8S/2000 family & 300H)
+; 29	PC
+; 28	CCR	
+; 24	PC: = interrupt return address, instruction AFTER jsr -> will be 
+;	      replaced by ER0
+; 20	ER1
+; 16	ER2
+; 12	ER3
+; 8	ER4
+; 4	ER5
+; 0	ER6
+; (With MAC enabled, offsets above increase by 8!)	
+;	
+
+; OFFSET frame will look like this 
+; (INTERRUPT MODE 2 & 3 for H8S/2000 family)
+; 31	PC
+; 30	CCR	
+; 28	EXR
+; 24	PC: = interrupt return address, instruction AFTER jsr -> will be 
+;	      replaced by ER0
+; 20	ER1
+; 16	ER2
+; 12	ER3
+; 8	ER4
+; 4	ER5
+; 0	ER6
+; (With MAC enabled, offsets above increase by 8!)	
+
+_K_OS_Intrp_Entry:	
+; for jsr call
+ .AIF STM_ENABLE GT 0			
+	PUSH.L 	ER1	;save R1
+	STM.L (ER2-ER3),@-ER7
+	STM.L (ER4-ER6),@-ER7
+ .AELSE
+	PUSH.L 	ER1	;save R1 up to R6
+	PUSH.L 	ER2
+	PUSH.L 	ER3
+	PUSH.L 	ER4
+	PUSH.L 	ER5
+	PUSH.L 	ER6	
+ .AENDI
+; For all interrupt modes EXCEPT 2, I and UI BIT is set disabling interrupts
+ .AIF INTERRUPT_MODE EQ 2			
+	STC.B	EXR,R2L		;save IVL level
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AENDI
+	MOV.L	@(24,ER7),ER6	;get address to return to
+	MOV.L	ER0,@(24,ER7)	;now save R0
+ .AIF SAVE_MAC GT 0			
+	STMAC	MACL,ER0
+	PUSH.L	ER0
+	STMAC	MACH,ER0
+	PUSH.L	ER0
+;	MOV.L	@(32,ER7),ER6	;get address to return to
+;	MOV.L	ER0,@(32,ER7)	;now save R0
+; .AELSE
+;	MOV.L	@(24,ER7),ER6	;get address to return to
+;	MOV.L	ER0,@(24,ER7)	;now save R0
+ .AENDI
+	MOV.B	@_cmx_flag1,R1L
+	BTST.B	#bit_cmx_active,R1L	;see if CMX RTOS invoked
+	BEQ	K_OS_Intrp_Entry_exit:8	;no, then exit
+ 	MOV.b	@_int_count,R1L	;see if interrupt count > 0
+	bne	no_stack_load:8	;yes, then interrupt stack already loaded
+	mov.L	ER7,@_stack_holder 	;NO, save task stack
+	mov.L	@_interrupt_stack,ER7	;switch in interrupt stack
+no_stack_load:
+ 	INC.b	R1L	;increment interrupt count
+ 	MOV.b	R1L,@_int_count
+K_OS_Intrp_Entry_exit:
+ .AIF INTERRUPT_MODE EQ 2			
+	ldc	r2l,EXR	;put back EXR level to what it was
+ .AENDI
+	jmp 	@ER6	;return to interrupt handler
+
+_K_OS_Intrp_Exit:	
+; for jsr call
+;	;CALL here instead of executing RTE at the end of an ISR.
+;	;Only use this if K_OS_Intrp_Entry was called first.
+	
+	ADDS.L	#4,ER7		;adjust stack pointer for call
+ .AIF INTERRUPT_MODE EQ 2			
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AELSE
+	orc	#H'C0,CCR	;turn interrupts off
+ .AENDI
+	MOV.B	@_cmx_flag1,R3L
+	BTST.B	#bit_cmx_active,R3L	;see if CMX RTOS invoked
+	BEQ	done_scheduler
+ 	MOV.b	@_int_count,R1L	;get interrupt count byte
+	DEC.B	R1L
+ 	MOV.B	R1L,@_int_count	;decrement interrupt count byte
+ 	bne	done_scheduler	;if non zero, then nested or in K_I_Scheduler
+	mov.L	@_stack_holder,ER7	;zero, then switch back original stack
+ 	MOV.b	@_locked_out,R1L	;test locked out count byte
+	bne	done_scheduler		;if non zero, in critical region
+ .AIF INTERRUPT_MODE EQ 2			
+ .AIF SAVE_MAC GT 0			
+	MOV.B	@(36,ER7),R2L	;get EXR value
+ .AELSE
+	MOV.B	@(28,ER7),R2L	;get EXR value
+ .AENDI
+	AND.B	#H'07,R2L
+	bne	done_scheduler	;if non zero, must go back to an earlier interrupt
+ .AENDI
+	and.b	#(do_int_pipe | preempted | do_timer_tsk | do_time_slice | do_coop_sched),R3L
+	beq	done_scheduler		;none are set, exit
+jmp_sched_int:
+	INC.B	R1L		;inc. locked out count (in critical region)
+	MOV.b	R1L,@_locked_out
+	mov.w	#1,r0		;identify to exit K_I_Scheduler using RTE 
+	PUSH.w 	r0
+ .AIF INTERRUPT_MODE GT 1			
+; The reason for doing it this way, is so we can obtain trace bit
+ .AIF SAVE_MAC GT 0			
+	MOV.B	@(38,ER7),R2L	;get EXR value
+ .AELSE
+	MOV.B	@(30,ER7),R2L	;get EXR value
+ .AENDI
+	ldc	r2l,EXR	;put back EXR level to what it was (level would be zero!)
+ .AIF INTERRUPT_MODE EQ 3			
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+ .AELSE
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+	JMP	@sched_int	;go to K_I_Scheduler
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+_K_OS_Disable_Interrupts: 
+ .AIF INTERRUPT_MODE EQ 2			
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AELSE
+	orc	#H'C0,CCR	;turn interrupts off
+ .AENDI
+	rts
+
+_K_OS_Enable_Interrupts: 
+ .AIF INTERRUPT_MODE GT 1			
+	andc	#H'F8,EXR	;enable interrupts by interrupt level control
+ .AIF INTERRUPT_MODE EQ 3			
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+ .AELSE
+	andc	#H'3F,CCR	;enable interrupts
+ .AENDI
+	rts
+
+_K_OS_Save_Interrupts: 
+	PUSH.L 	ER0
+ .AIF INTERRUPT_MODE EQ 2			
+	stc 	EXR,R0L
+	orc	#H'07,EXR	;turn interrupts off by interrupt level control
+ .AELSE
+	stc 	CCR,R0L
+	orc	#H'C0,CCR	;turn interrupts off
+ .AENDI
+	mov.b	R0L,@_ie_holder	;save current interrupt state
+	POP.L	ER0	;restore registers
+	rts
+
+_K_OS_Restore_Interrupts: 
+	PUSH.L 	ER0
+	mov.b	@_ie_holder,R0L	;restore current interrupt state
+ .AIF INTERRUPT_MODE EQ 2			
+	ldc	R0L,EXR
+ .AELSE
+	ldc	R0L,CCR
+ .AENDI
+	POP.L	ER0	;restore registers
+	rts
+
+	.END
+

@@ -1,0 +1,562 @@
+          .CPU        2600A:24
+          .EXPORT     _INT_Treace
+          .EXPORT     _INT_Direct_Transition
+          .EXPORT     _INT_NMI
+          .EXPORT     _INT_TRAP1
+          .EXPORT     _INT_TRAP2
+          .EXPORT     _INT_TRAP3
+          .EXPORT     _INT_TRAP4
+          .EXPORT     _INT_IRQ0
+          .EXPORT     _INT_IRQ1
+          .EXPORT     _INT_IRQ2
+          .EXPORT     _INT_IRQ3
+          .EXPORT     _INT_IRQ5
+          .EXPORT     _INT_IRQ7
+          .EXPORT     _INT_SWDTEND_DTC
+          .EXPORT     _INT_WOVI0
+          .EXPORT     _INT_CMI
+          .EXPORT     _INT_PC_Break
+          .EXPORT     _INT_WOVI1
+          .EXPORT     _INT_TGI0A_TPU0
+          .EXPORT     _INT_TGI0B_TPU0
+          .EXPORT     _INT_TGI0C_TPU0
+          .EXPORT     _INT_TGI0D_TPU0
+          .EXPORT     _INT_TCI0V_TPU0
+          .EXPORT     _INT_TGI1A_TPU1
+          .EXPORT     _INT_TGI1B_TPU1
+          .EXPORT     _INT_TCI1V_TPU1
+          .EXPORT     _INT_TCI1U_TPU1
+          .EXPORT     _INT_TGI2A_TPU2
+          .EXPORT     _INT_TGI2B_TPU2
+          .EXPORT     _INT_TCI2V_TPU2
+          .EXPORT     _INT_TCI2U_TPU2
+          .EXPORT     _INT_TGI3A_TPU3
+          .EXPORT     _INT_TGI3B_TPU3
+          .EXPORT     _INT_TGI3C_TPU3
+          .EXPORT     _INT_TGI3D_TPU3
+          .EXPORT     _INT_TCI3V_TPU3
+          .EXPORT     _INT_TGI4A_TPU4
+          .EXPORT     _INT_TGI4B_TPU4
+          .EXPORT     _INT_TCI4V_TPU4
+          .EXPORT     _INT_TCI4U_TPU4
+          .EXPORT     _INT_TGI5A_TPU5
+          .EXPORT     _INT_TGI5B_TPU5
+          .EXPORT     _INT_TCI5V_TPU5
+          .EXPORT     _INT_TCI5U_TPU5
+          .EXPORT     _INT_CMIB0A
+          .EXPORT     _INT_OVI0A
+          .EXPORT     _INT_CMIA1A
+          .EXPORT     _INT_CMIB1A
+          .EXPORT     _INT_OVI1A
+          .EXPORT     _INT_DEND0A
+          .EXPORT     _INT_DEND0B
+          .EXPORT     _INT_DEND1A
+          .EXPORT     _INT_DEND1B
+          .EXPORT     _INT_ERI2_SCI2
+          .EXPORT     _INT_RXI2_SCI2
+          .EXPORT     _INT_TXI2_SCI2
+          .EXPORT     _INT_TEI2_SCI2
+          .EXPORT     _INT_CMIA0B
+          .EXPORT     _INT_CMIB0B
+          .EXPORT     _INT_OVI0B
+          .EXPORT     _INT_CMIB1B
+          .EXPORT     _INT_OVI1B
+          .EXPORT     _INT_IICI0
+          .EXPORT     _INT_DDCSWI
+          .EXPORT     _INT_IICI1
+          .EXPORT     _Dummy
+          .SECTION    PIntPRG,CODE,ALIGN=2
+		.IMPORT		_K_OS_Intrp_Entry  
+		.IMPORT		_K_OS_Intrp_Exit 
+		.IMPORT		_RTOS_TICK
+		.IMPORT		_sci3_rxd
+		.IMPORT		_sci3_txd
+		.IMPORT		_sci3_txd_idle
+		.IMPORT		_sci4_rxd_error
+		.IMPORT		_sci4_rxd
+		.IMPORT		_sci4_txd
+		.IMPORT		_sci4_txd_idle
+		
+;*** File intprg.cpp, Line 51    ; block
+_INT_Treace:                     ; function: INT_Treace()
+;*** File intprg.cpp, Line 51    ; block
+;*** File intprg.cpp, Line 51    ; block
+          RTE
+;*** File intprg.cpp, Line 53    ; block
+_INT_Direct_Transition:          ; function: INT_Direct_Transition()
+;*** File intprg.cpp, Line 53    ; block
+;*** File intprg.cpp, Line 53    ; block
+          RTE
+;*** File intprg.cpp, Line 55    ; block
+_INT_NMI:                        ; function: INT_NMI()
+;*** File intprg.cpp, Line 55    ; block
+;*** File intprg.cpp, Line 55    ; block
+          RTE
+;*** File intprg.cpp, Line 57    ; block
+_INT_TRAP1:                      ; function: INT_TRAP1()
+;*** File intprg.cpp, Line 57    ; block
+;*** File intprg.cpp, Line 57    ; block
+          RTE
+;*** File intprg.cpp, Line 59    ; block
+_INT_TRAP2:                      ; function: INT_TRAP2()
+;*** File intprg.cpp, Line 59    ; block
+;*** File intprg.cpp, Line 59    ; block
+          RTE
+;*** File intprg.cpp, Line 61    ; block
+_INT_TRAP3:                      ; function: INT_TRAP3()
+;*** File intprg.cpp, Line 61    ; block
+;*** File intprg.cpp, Line 61    ; block
+          RTE
+;*** File intprg.cpp, Line 63    ; block
+_INT_TRAP4:                      ; function: INT_TRAP4()
+;*** File intprg.cpp, Line 63    ; block
+;*** File intprg.cpp, Line 63    ; block
+          RTE
+;*** File intprg.cpp, Line 73    ; block
+_INT_IRQ0:                       ; function: INT_IRQ0()
+;*** File intprg.cpp, Line 73    ; block
+;*** File intprg.cpp, Line 73    ; block
+          RTE
+;*** File intprg.cpp, Line 75    ; block
+_INT_IRQ1:                       ; function: INT_IRQ1()
+;*** File intprg.cpp, Line 75    ; block
+;*** File intprg.cpp, Line 75    ; block
+          RTE
+;*** File intprg.cpp, Line 77    ; block
+_INT_IRQ2:                       ; function: INT_IRQ2()
+;*** File intprg.cpp, Line 77    ; block
+;*** File intprg.cpp, Line 77    ; block
+          RTE
+;*** File intprg.cpp, Line 79    ; block
+_INT_IRQ3:                       ; function: INT_IRQ3()
+;*** File intprg.cpp, Line 79    ; block
+;*** File intprg.cpp, Line 79    ; block
+          RTE
+		.IMPORT _isr_fpga1
+		.EXPORT _INT_IRQ4
+_INT_IRQ4:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_isr_fpga1:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+;*** File intprg.cpp, Line 96    ; block
+_INT_IRQ5:                       ; function: INT_IRQ5()
+;*** File intprg.cpp, Line 96    ; block
+;*** File intprg.cpp, Line 96    ; block
+          RTE
+		.IMPORT _isr_fpga2
+		.EXPORT _INT_IRQ6
+_INT_IRQ6:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_isr_fpga2:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+;*** File intprg.cpp, Line 114   ; block
+_INT_IRQ7:                       ; function: INT_IRQ7()
+;*** File intprg.cpp, Line 114   ; block
+;*** File intprg.cpp, Line 114   ; block
+          RTE
+;*** File intprg.cpp, Line 116   ; block
+_INT_SWDTEND_DTC:                ; function: INT_SWDTEND_DTC()
+;*** File intprg.cpp, Line 116   ; block
+;*** File intprg.cpp, Line 116   ; block
+          RTE
+;*** File intprg.cpp, Line 118   ; block
+_INT_WOVI0:                      ; function: INT_WOVI0()
+;*** File intprg.cpp, Line 118   ; block
+;*** File intprg.cpp, Line 118   ; block
+          RTE
+;*** File intprg.cpp, Line 120   ; block
+_INT_CMI:                        ; function: INT_CMI()
+;*** File intprg.cpp, Line 120   ; block
+;*** File intprg.cpp, Line 120   ; block
+          RTE
+;*** File intprg.cpp, Line 122   ; block
+_INT_PC_Break:                   ; function: INT_PC_Break()
+;*** File intprg.cpp, Line 122   ; block
+;*** File intprg.cpp, Line 122   ; block
+          RTE
+		.IMPORT		_isr_adc   
+		.EXPORT		_INT_ADI
+_INT_ADI:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_isr_adc:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+;*** File intprg.cpp, Line 140   ; block
+_INT_WOVI1:                      ; function: INT_WOVI1()
+;*** File intprg.cpp, Line 140   ; block
+;*** File intprg.cpp, Line 140   ; block
+          RTE
+;*** File intprg.cpp, Line 146   ; block
+_INT_TGI0A_TPU0:                 ; function: INT_TGI0A_TPU0()
+;*** File intprg.cpp, Line 146   ; block
+;*** File intprg.cpp, Line 146   ; block
+          RTE
+;*** File intprg.cpp, Line 148   ; block
+_INT_TGI0B_TPU0:                 ; function: INT_TGI0B_TPU0()
+;*** File intprg.cpp, Line 148   ; block
+;*** File intprg.cpp, Line 148   ; block
+          RTE
+;*** File intprg.cpp, Line 150   ; block
+_INT_TGI0C_TPU0:                 ; function: INT_TGI0C_TPU0()
+;*** File intprg.cpp, Line 150   ; block
+;*** File intprg.cpp, Line 150   ; block
+          RTE
+;*** File intprg.cpp, Line 152   ; block
+_INT_TGI0D_TPU0:                 ; function: INT_TGI0D_TPU0()
+;*** File intprg.cpp, Line 152   ; block
+;*** File intprg.cpp, Line 152   ; block
+          RTE
+;*** File intprg.cpp, Line 154   ; block
+_INT_TCI0V_TPU0:                 ; function: INT_TCI0V_TPU0()
+;*** File intprg.cpp, Line 154   ; block
+;*** File intprg.cpp, Line 154   ; block
+          RTE
+;*** File intprg.cpp, Line 162   ; block
+_INT_TGI1A_TPU1:                 ; function: INT_TGI1A_TPU1()
+;*** File intprg.cpp, Line 162   ; block
+;*** File intprg.cpp, Line 162   ; block
+          RTE
+;*** File intprg.cpp, Line 164   ; block
+_INT_TGI1B_TPU1:                 ; function: INT_TGI1B_TPU1()
+;*** File intprg.cpp, Line 164   ; block
+;*** File intprg.cpp, Line 164   ; block
+          RTE
+;*** File intprg.cpp, Line 166   ; block
+_INT_TCI1V_TPU1:                 ; function: INT_TCI1V_TPU1()
+;*** File intprg.cpp, Line 166   ; block
+;*** File intprg.cpp, Line 166   ; block
+          RTE
+;*** File intprg.cpp, Line 168   ; block
+_INT_TCI1U_TPU1:                 ; function: INT_TCI1U_TPU1()
+;*** File intprg.cpp, Line 168   ; block
+;*** File intprg.cpp, Line 168   ; block
+          RTE
+;*** File intprg.cpp, Line 170   ; block
+_INT_TGI2A_TPU2:                 ; function: INT_TGI2A_TPU2()
+;*** File intprg.cpp, Line 170   ; block
+;*** File intprg.cpp, Line 170   ; block
+          RTE
+;*** File intprg.cpp, Line 172   ; block
+_INT_TGI2B_TPU2:                 ; function: INT_TGI2B_TPU2()
+;*** File intprg.cpp, Line 172   ; block
+;*** File intprg.cpp, Line 172   ; block
+          RTE
+;*** File intprg.cpp, Line 174   ; block
+_INT_TCI2V_TPU2:                 ; function: INT_TCI2V_TPU2()
+;*** File intprg.cpp, Line 174   ; block
+;*** File intprg.cpp, Line 174   ; block
+          RTE
+;*** File intprg.cpp, Line 176   ; block
+_INT_TCI2U_TPU2:                 ; function: INT_TCI2U_TPU2()
+;*** File intprg.cpp, Line 176   ; block
+;*** File intprg.cpp, Line 176   ; block
+          RTE
+;*** File intprg.cpp, Line 178   ; block
+_INT_TGI3A_TPU3:                 ; function: INT_TGI3A_TPU3()
+;*** File intprg.cpp, Line 178   ; block
+;*** File intprg.cpp, Line 178   ; block
+          RTE
+;*** File intprg.cpp, Line 180   ; block
+_INT_TGI3B_TPU3:                 ; function: INT_TGI3B_TPU3()
+;*** File intprg.cpp, Line 180   ; block
+;*** File intprg.cpp, Line 180   ; block
+          RTE
+;*** File intprg.cpp, Line 182   ; block
+_INT_TGI3C_TPU3:                 ; function: INT_TGI3C_TPU3()
+;*** File intprg.cpp, Line 182   ; block
+;*** File intprg.cpp, Line 182   ; block
+          RTE
+;*** File intprg.cpp, Line 184   ; block
+_INT_TGI3D_TPU3:                 ; function: INT_TGI3D_TPU3()
+;*** File intprg.cpp, Line 184   ; block
+;*** File intprg.cpp, Line 184   ; block
+          RTE
+;*** File intprg.cpp, Line 186   ; block
+_INT_TCI3V_TPU3:                 ; function: INT_TCI3V_TPU3()
+;*** File intprg.cpp, Line 186   ; block
+;*** File intprg.cpp, Line 186   ; block
+          RTE
+;*** File intprg.cpp, Line 194   ; block
+_INT_TGI4A_TPU4:                 ; function: INT_TGI4A_TPU4()
+;*** File intprg.cpp, Line 194   ; block
+;*** File intprg.cpp, Line 194   ; block
+          RTE
+;*** File intprg.cpp, Line 196   ; block
+_INT_TGI4B_TPU4:                 ; function: INT_TGI4B_TPU4()
+;*** File intprg.cpp, Line 196   ; block
+;*** File intprg.cpp, Line 196   ; block
+          RTE
+;*** File intprg.cpp, Line 198   ; block
+_INT_TCI4V_TPU4:                 ; function: INT_TCI4V_TPU4()
+;*** File intprg.cpp, Line 198   ; block
+;*** File intprg.cpp, Line 198   ; block
+          RTE
+;*** File intprg.cpp, Line 200   ; block
+_INT_TCI4U_TPU4:                 ; function: INT_TCI4U_TPU4()
+;*** File intprg.cpp, Line 200   ; block
+;*** File intprg.cpp, Line 200   ; block
+          RTE
+;*** File intprg.cpp, Line 202   ; block
+_INT_TGI5A_TPU5:                 ; function: INT_TGI5A_TPU5()
+;*** File intprg.cpp, Line 202   ; block
+;*** File intprg.cpp, Line 202   ; block
+          RTE
+;*** File intprg.cpp, Line 204   ; block
+_INT_TGI5B_TPU5:                 ; function: INT_TGI5B_TPU5()
+;*** File intprg.cpp, Line 204   ; block
+;*** File intprg.cpp, Line 204   ; block
+          RTE
+;*** File intprg.cpp, Line 206   ; block
+_INT_TCI5V_TPU5:                 ; function: INT_TCI5V_TPU5()
+;*** File intprg.cpp, Line 206   ; block
+;*** File intprg.cpp, Line 206   ; block
+          RTE
+;*** File intprg.cpp, Line 208   ; block
+_INT_TCI5U_TPU5:                 ; function: INT_TCI5U_TPU5()
+;*** File intprg.cpp, Line 208   ; block
+;*** File intprg.cpp, Line 208   ; block
+          RTE
+		.EXPORT		_INT_CMIA0A
+_INT_CMIA0A:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_RTOS_TICK:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+;*** File intprg.cpp, Line 235   ; block
+_INT_CMIB0A:                     ; function: INT_CMIB0A()
+;*** File intprg.cpp, Line 235   ; block
+;*** File intprg.cpp, Line 235   ; block
+          RTE
+;*** File intprg.cpp, Line 237   ; block
+_INT_OVI0A:                      ; function: INT_OVI0A()
+;*** File intprg.cpp, Line 237   ; block
+;*** File intprg.cpp, Line 237   ; block
+          RTE
+;*** File intprg.cpp, Line 241   ; block
+_INT_CMIA1A:                     ; function: INT_CMIA1A()
+;*** File intprg.cpp, Line 241   ; block
+;*** File intprg.cpp, Line 241   ; block
+          RTE
+;*** File intprg.cpp, Line 243   ; block
+_INT_CMIB1A:                     ; function: INT_CMIB1A()
+;*** File intprg.cpp, Line 243   ; block
+;*** File intprg.cpp, Line 243   ; block
+          RTE
+;*** File intprg.cpp, Line 245   ; block
+_INT_OVI1A:                      ; function: INT_OVI1A()
+;*** File intprg.cpp, Line 245   ; block
+;*** File intprg.cpp, Line 245   ; block
+          RTE
+;*** File intprg.cpp, Line 249   ; block
+_INT_DEND0A:                     ; function: INT_DEND0A()
+;*** File intprg.cpp, Line 249   ; block
+;*** File intprg.cpp, Line 249   ; block
+          RTE
+;*** File intprg.cpp, Line 251   ; block
+_INT_DEND0B:                     ; function: INT_DEND0B()
+;*** File intprg.cpp, Line 251   ; block
+;*** File intprg.cpp, Line 251   ; block
+          RTE
+;*** File intprg.cpp, Line 253   ; block
+_INT_DEND1A:                     ; function: INT_DEND1A()
+;*** File intprg.cpp, Line 253   ; block
+;*** File intprg.cpp, Line 253   ; block
+          RTE
+;*** File intprg.cpp, Line 255   ; block
+_INT_DEND1B:                     ; function: INT_DEND1B()
+;*** File intprg.cpp, Line 255   ; block
+;*** File intprg.cpp, Line 255   ; block
+          RTE
+		.IMPORT		_sci0_rxd_error
+		.EXPORT		_INT_ERI0_SCI0
+_INT_ERI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L654:
+		.IMPORT		_sci0_rxd
+		.EXPORT		_INT_RXI0_SCI0
+_INT_RXI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L655:
+		.IMPORT		_sci0_txd
+		.EXPORT		_INT_TXI0_SCI0
+_INT_TXI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L656:
+		.IMPORT		_sci0_txd_idle
+		.EXPORT		_INT_TEI0_SCI0
+_INT_TEI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L657:
+		.IMPORT		_sci1_rxd_error
+		.EXPORT		_INT_ERI1_SCI1
+_INT_ERI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L658:
+		.IMPORT		_sci1_rxd
+		.EXPORT		_INT_RXI1_SCI1
+_INT_RXI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L659:
+		.IMPORT		_sci1_txd
+		.EXPORT		_INT_TXI1_SCI1
+_INT_TXI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L660:
+		.IMPORT		_sci1_txd_idle
+		.EXPORT		_INT_TEI1_SCI1
+_INT_TEI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+;*** File intprg.cpp, Line 416   ; block
+_INT_ERI2_SCI2:                  ; function: INT_ERI2_SCI2()
+;*** File intprg.cpp, Line 416   ; block
+;*** File intprg.cpp, Line 416   ; block
+          RTE
+;*** File intprg.cpp, Line 418   ; block
+_INT_RXI2_SCI2:                  ; function: INT_RXI2_SCI2()
+;*** File intprg.cpp, Line 418   ; block
+;*** File intprg.cpp, Line 418   ; block
+          RTE
+;*** File intprg.cpp, Line 420   ; block
+_INT_TXI2_SCI2:                  ; function: INT_TXI2_SCI2()
+;*** File intprg.cpp, Line 420   ; block
+;*** File intprg.cpp, Line 420   ; block
+          RTE
+;*** File intprg.cpp, Line 422   ; block
+_INT_TEI2_SCI2:                  ; function: INT_TEI2_SCI2()
+;*** File intprg.cpp, Line 422   ; block
+;*** File intprg.cpp, Line 422   ; block
+          RTE
+;*** File intprg.cpp, Line 424   ; block
+_INT_CMIA0B:                     ; function: INT_CMIA0B()
+;*** File intprg.cpp, Line 424   ; block
+;*** File intprg.cpp, Line 424   ; block
+          RTE
+;*** File intprg.cpp, Line 426   ; block
+_INT_CMIB0B:                     ; function: INT_CMIB0B()
+;*** File intprg.cpp, Line 426   ; block
+;*** File intprg.cpp, Line 426   ; block
+          RTE
+;*** File intprg.cpp, Line 428   ; block
+_INT_OVI0B:                      ; function: INT_OVI0B()
+;*** File intprg.cpp, Line 428   ; block
+;*** File intprg.cpp, Line 428   ; block
+          RTE
+		.EXPORT		_INT_CMIA1B
+_INT_CMIA1B:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_RTOS_TICK:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+;*** File intprg.cpp, Line 454   ; block
+_INT_CMIB1B:                     ; function: INT_CMIB1B()
+;*** File intprg.cpp, Line 454   ; block
+;*** File intprg.cpp, Line 454   ; block
+          RTE
+;*** File intprg.cpp, Line 456   ; block
+_INT_OVI1B:                      ; function: INT_OVI1B()
+;*** File intprg.cpp, Line 456   ; block
+;*** File intprg.cpp, Line 456   ; block
+          RTE
+;*** File intprg.cpp, Line 460   ; block
+_INT_IICI0:                      ; function: INT_IICI0()
+;*** File intprg.cpp, Line 460   ; block
+;*** File intprg.cpp, Line 460   ; block
+          RTE
+;*** File intprg.cpp, Line 462   ; block
+_INT_DDCSWI:                     ; function: INT_DDCSWI()
+;*** File intprg.cpp, Line 462   ; block
+;*** File intprg.cpp, Line 462   ; block
+          RTE
+;*** File intprg.cpp, Line 464   ; block
+_INT_IICI1:                      ; function: INT_IICI1()
+;*** File intprg.cpp, Line 464   ; block
+;*** File intprg.cpp, Line 464   ; block
+          RTE
+		.IMPORT		_sci3_rxd_error
+		.EXPORT		_INT_ERI3_SCI3
+_INT_ERI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L661:
+		.EXPORT		_INT_RXI3_SCI3
+_INT_RXI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L662:
+		.EXPORT		_INT_TXI3_SCI3
+_INT_TXI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L663:
+		.EXPORT		_INT_TEI3_SCI3
+_INT_TEI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L664:
+		.EXPORT		_INT_ERI4_SCI4
+_INT_ERI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L665:
+		.EXPORT		_INT_RXI4_SCI4
+_INT_RXI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L666:
+		.EXPORT		_INT_TXI4_SCI4
+_INT_TXI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L667:
+		.EXPORT		_INT_TEI4_SCI4
+_INT_TEI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+;*** File intprg.cpp, Line 597   ; block
+_Dummy:                          ; function: Dummy()
+;*** File intprg.cpp, Line 597   ; block
+;*** File intprg.cpp, Line 597   ; block
+          RTE
+          .END

@@ -1,0 +1,8 @@
+-------- PROJECT GENERATOR --------
+PROJECT NAME :	IOCHeader
+PROJECT DIRECTORY :	c:\miao\ioc\latest\IOCHeader
+CPU SERIES :	2600
+TOOLCHAIN NAME :	Hitachi H8S,H8/300 Standard Toolchain
+TOOLCHAIN VERSION :	3.0A.0
+LIBRARY NAME :	c8s26n.lib, ec226n.lib
+

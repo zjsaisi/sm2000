@@ -1,0 +1,8 @@
+-------- PROJECT GENERATOR --------
+PROJECT NAME :	mc4000
+PROJECT DIRECTORY :	C:\test\newtest\mc4000
+CPU SERIES :	2600
+TOOLCHAIN NAME :	Hitachi H8S,H8/300 Standard Toolchain
+TOOLCHAIN VERSION :	3.0A.0
+LIBRARY NAME :	c8s26a.lib, ec226a.lib
+

@@ -1,0 +1,2188 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -ws=C:\Users\ADMINI~1\AppData\Local\Temp\$OP56D8.tmp 
+
+
+
+LINK SUBCOMMANDS
+
+EXCLUDE
+ALIGN_SECTION
+INPUT "C:\Users\ADMINI~1\AppData\Local\Temp\$OP56E8.tmp"
+OUTPUT "Z:\work\newtest\sm2000\iocboot\Release\Boot.abs"
+FORM A
+START DVECTTBL,DINTTBL(00)
+START CDTC,PMONITOR,CMONITOR,INTVEC,INTV2,INT_DTC(0400)
+START PResetPRG,PIntPRG,D,C$DSEC,C$BSEC,C$VTBL,DHEAP,DCMX,CResetPRG,C(010000)
+START CBldDate(01ff00)
+START CCheckSum(01fff8)
+START P(020000)
+START STACK,BBootAPI,BCMX,RCMX,BHEAP(03c0000)
+START BRTC,BMONITOR(0ffb000)
+START BMONFLAG,BResetPRG,RHEAP,BSCI,B,R(0ffb200)
+START S(0ffebc0)
+ROM (D,R)
+ROM (DHEAP,RHEAP)
+ROM (DCMX,RCMX)
+SYSROF
+PRINT "Z:\work\newtest\sm2000\iocboot\Release\Boot.map"
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+DVECTTBL                          H'00000000  -  H'00000007  H'00000008
+              vecttbl                          Boot                            
+
+* TOTAL ADDRESS *                 H'00000000  -  H'00000007  H'00000008
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+DINTTBL                           H'00000008  -  H'000001FF  H'000001F8
+              vecttbl                          Boot                            
+
+* TOTAL ADDRESS *                 H'00000008  -  H'000001FF  H'000001F8
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CDTC                              H'00000400  -  H'000004FF  H'00000100
+              dtc_vector                       Boot                            
+
+* TOTAL ADDRESS *                 H'00000400  -  H'000004FF  H'00000100
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+PMONITOR                          H'00000500  -  H'000007AB  H'000002AC
+              execute                          Boot                            
+                                  H'000007AC  -  H'00000B3B  H'00000390
+              initshv                          Boot                            
+                                  H'00000B3C  -  H'00000BA1  H'00000066
+              cstartup                         Boot                            
+                                  H'00000BA2  -  H'00000D7F  H'000001DE
+              msghndl                          Boot                            
+                                  H'00000D80  -  H'00000F65  H'000001E6
+              branch                           Boot                            
+                                  H'00000F66  -  H'000012C1  H'0000035C
+              break                            Boot                            
+                                  H'000012C2  -  H'00001F09  H'00000C48
+              control                          Boot                            
+                                  H'00001F0A  -  H'000022FB  H'000003F2
+              exe                              Boot                            
+                                  H'000022FC  -  H'00002427  H'0000012C
+              ilreslv1                         Boot                            
+                                  H'00002428  -  H'0000245D  H'00000036
+              ilreslv2                         Boot                            
+                                  H'0000245E  -  H'000024D3  H'00000076
+              ilreslv3                         Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     2
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+PMONITOR                          H'000024D4  -  H'0000252D  H'0000005A
+              ilreslv4                         Boot                            
+                                  H'0000252E  -  H'000025A5  H'00000078
+              init                             Boot                            
+                                  H'000025A6  -  H'00002601  H'0000005C
+              instleng                         Boot                            
+                                  H'00002602  -  H'0000273B  H'0000013A
+              main                             Boot                            
+                                  H'0000273C  -  H'00002AFB  H'000003C0
+              bptable                          Boot                            
+                                  H'00002AFC  -  H'0000326D  H'00000772
+              sci_mon                          Boot                            
+
+* TOTAL ADDRESS *                 H'00000500  -  H'0000326D  H'00002D6E
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CMONITOR                          H'0000326E  -  H'00003293  H'00000026
+              msghndl                          Boot                            
+                                  H'00003294  -  H'000032BD  H'0000002A
+              control                          Boot                            
+
+* TOTAL ADDRESS *                 H'0000326E  -  H'000032BD  H'00000050
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+INTVEC                            H'000032BE  -  H'000032C5  H'00000008
+              cstartup                         Boot                            
+
+* TOTAL ADDRESS *                 H'000032BE  -  H'000032C5  H'00000008
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+INTV2                             H'000032C6  -  H'000034BD  H'000001F8
+              intv                             Boot                            
+
+* TOTAL ADDRESS *                 H'000032C6  -  H'000034BD  H'000001F8
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+INT_DTC                           H'000034BE  -  H'00003597  H'000000DA
+              dtc                              Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     3
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+* TOTAL ADDRESS *                 H'000034BE  -  H'00003597  H'000000DA
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+PResetPRG                         H'00010000  -  H'00010303  H'00000304
+              resetprg                         Boot                            
+
+* TOTAL ADDRESS *                 H'00010000  -  H'00010303  H'00000304
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+PIntPRG                           H'00010304  -  H'00010495  H'00000192
+              intprg                           Boot                            
+
+* TOTAL ADDRESS *                 H'00010304  -  H'00010495  H'00000192
+
+
+ATTRIBUTE  :   DATA  NOSHR ROM
+
+D                                 H'00010496  -  H'00010496  H'00000000
+              starth8s                         Boot                            
+                                  H'00010496  -  H'00010496  H'00000000
+              dbsct                            Boot                            
+                                  H'00010496  -  H'00010498  H'00000003
+              resource                         Boot                            
+                                  H'0001049A  -  H'000104D3  H'0000003A
+              baseprocess                      Boot                            
+                                  H'000104D4  -  H'000104D4  H'00000001
+              queue                            Boot                            
+                                  H'000104D6  -  H'000104D7  H'00000002
+              rtc                              Boot                            
+                                  H'000104D8  -  H'000104DB  H'00000004
+              debugprocess                     Boot                            
+                                  H'000104DC  -  H'000104E3  H'00000008
+              allprocess                       Boot                            
+                                  H'000104E4  -  H'000104E7  H'00000004
+              userprocess                      Boot                            
+                                  H'000104E8  -  H'000104EF  H'00000008
+              ptpprocess                       Boot                            
+                                  H'000104F0  -  H'000104F1  H'00000002
+              memblock                         Boot                            
+                                  H'000104F2  -  H'000104F2  H'00000001
+              crc16                            Boot                            
+                                  H'000104F4  -  H'000104F7  H'00000004
+              _freeptr                         Boot                            
+
+* TOTAL ADDRESS *                 H'00010496  -  H'000104F7  H'00000062
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     4
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C$DSEC                            H'000104F8  -  H'0001051B  H'00000024
+              dbsct                            Boot                            
+                                  H'0001051C  -  H'0001051C  H'00000000
+              _initsct                         Boot                            
+
+* TOTAL ADDRESS *                 H'000104F8  -  H'0001051B  H'00000024
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C$BSEC                            H'0001051C  -  H'00010523  H'00000008
+              dbsct                            Boot                            
+                                  H'00010524  -  H'00010524  H'00000000
+              _initsct                         Boot                            
+
+* TOTAL ADDRESS *                 H'0001051C  -  H'00010523  H'00000008
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C$VTBL                            H'00010524  -  H'0001052B  H'00000008
+              intprg                           Boot                            
+                                  H'0001052C  -  H'00010583  H'00000058
+              baseprocess                      Boot                            
+                                  H'00010584  -  H'0001058B  H'00000008
+              queue                            Boot                            
+                                  H'0001058C  -  H'0001059B  H'00000010
+              rtc                              Boot                            
+                                  H'0001059C  -  H'000105EB  H'00000050
+              sci                              Boot                            
+                                  H'000105EC  -  H'000105F3  H'00000008
+              boot                             Boot                            
+                                  H'000105F4  -  H'0001060B  H'00000018
+              debug                            Boot                            
+                                  H'0001060C  -  H'00010663  H'00000058
+              debugprocess                     Boot                            
+                                  H'00010664  -  H'00010673  H'00000010
+              allprocess                       Boot                            
+                                  H'00010674  -  H'000106CB  H'00000058
+              userprocess                      Boot                            
+                                  H'000106CC  -  H'000106F3  H'00000028
+              debugdl                          Boot                            
+                                  H'000106F4  -  H'000106FB  H'00000008
+              ymodemrecv                       Boot                            
+                                  H'000106FC  -  H'00010743  H'00000048
+              storage                          Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     5
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C$VTBL                            H'00010744  -  H'000107A3  H'00000060
+              ptpprocess                       Boot                            
+                                  H'000107A4  -  H'000107B3  H'00000010
+              ptplink                          Boot                            
+                                  H'000107B4  -  H'000107C3  H'00000010
+              ptpisr                           Boot                            
+                                  H'000107C4  -  H'000107CB  H'00000008
+              intqueue                         Boot                            
+                                  H'000107CC  -  H'000107D3  H'00000008
+              memblock                         Boot                            
+                                  H'000107D4  -  H'000107DB  H'00000008
+              memblocklist                     Boot                            
+                                  H'000107DC  -  H'000107E3  H'00000008
+              memheap                          Boot                            
+                                  H'000107E4  -  H'000107EB  H'00000008
+              crc16                            Boot                            
+                                  H'000107EC  -  H'000107F3  H'00000008
+              dtcsci                           Boot                            
+                                  H'000107F4  -  H'00010803  H'00000010
+              ptpdnldsend                      Boot                            
+                                  H'00010804  -  H'00010813  H'00000010
+              ptpdnldrecv                      Boot                            
+                                  H'00010814  -  H'00010873  H'00000060
+              ptpdnldprocess                   Boot                            
+                                  H'00010874  -  H'0001087B  H'00000008
+              mailbox                          Boot                            
+                                  H'0001087C  -  H'000108CB  H'00000050
+              amd29dl161db                     Boot                            
+                                  H'000108CC  -  H'0001091B  H'00000050
+              amd29b16                         Boot                            
+                                  H'0001091C  -  H'00010923  H'00000008
+              watchdog                         Boot                            
+
+* TOTAL ADDRESS *                 H'00010524  -  H'00010923  H'00000400
+
+
+ATTRIBUTE  :   DATA  NOSHR ROM
+
+DHEAP                             H'00010924  -  H'00010927  H'00000004
+              sbrk                             Boot                            
+                                  H'00010928  -  H'00010928  H'00000000
+              dbsct                            Boot                            
+
+* TOTAL ADDRESS *                 H'00010924  -  H'00010927  H'00000004
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     6
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR ROM
+
+DCMX                              H'00010928  -  H'00010928  H'00000000
+              dbsct                            Boot                            
+                                  H'00010928  -  H'0001092F  H'00000008
+              cmx_init                         Boot                            
+
+* TOTAL ADDRESS *                 H'00010928  -  H'0001092F  H'00000008
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CResetPRG                         H'00010930  -  H'00010949  H'0000001A
+              resetprg                         Boot                            
+
+* TOTAL ADDRESS *                 H'00010930  -  H'00010949  H'0000001A
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'0001094A  -  H'0001095D  H'00000014
+              starth8s                         Boot                            
+                                  H'0001095E  -  H'00010967  H'0000000A
+              cmx_init                         Boot                            
+                                  H'00010968  -  H'0001096C  H'00000005
+              baseprocess                      Boot                            
+                                  H'0001096E  -  H'00010985  H'00000018
+              rtc                              Boot                            
+                                  H'00010986  -  H'000109A0  H'0000001B
+              sci                              Boot                            
+                                  H'000109A2  -  H'00010A53  H'000000B2
+              boot                             Boot                            
+                                  H'00010A54  -  H'00010C4B  H'000001F8
+              ram_vect                         Boot                            
+                                  H'00010C4C  -  H'00011412  H'000007C7
+              debug                            Boot                            
+                                  H'00011414  -  H'0001161F  H'0000020C
+              allprocess                       Boot                            
+                                  H'00011620  -  H'00011D32  H'00000713
+              debugdl                          Boot                            
+                                  H'00011D34  -  H'00011E5D  H'0000012A
+              btmondl                          Boot                            
+                                  H'00011E5E  -  H'00011E8D  H'00000030
+              ymodemrecv                       Boot                            
+                                  H'00011E8E  -  H'00011F8D  H'00000100
+              dtc_vector                       Boot                            
+                                  H'00011F8E  -  H'0001217E  H'000001F1
+              ptplink                          Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     7
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'00012180  -  H'000121BB  H'0000003C
+              memblocklist                     Boot                            
+                                  H'000121BC  -  H'000121C7  H'0000000C
+              dtcsci                           Boot                            
+                                  H'000121C8  -  H'000122DB  H'00000114
+              ptpdnldsend                      Boot                            
+                                  H'000122DC  -  H'00012456  H'0000017B
+              ptpdnldrecv                      Boot                            
+                                  H'00012458  -  H'00012468  H'00000011
+              ptpdnldprocess                   Boot                            
+                                  H'0001246A  -  H'000125A9  H'00000140
+              amd29dl161db                     Boot                            
+                                  H'000125AA  -  H'000125B1  H'00000008
+              _fmtout                          Boot                            
+                                  H'000125B2  -  H'000125B5  H'00000004
+              _sbrk_si                         Boot                            
+                                  H'000125B6  -  H'000126B5  H'00000100
+              _ctype                           Boot                            
+                                  H'000126B6  -  H'0001273D  H'00000088
+              _its                             Boot                            
+                                  H'0001273E  -  H'00012745  H'00000008
+              _log10                           Boot                            
+                                  H'00012746  -  H'00012825  H'000000E0
+              _pow5                            Boot                            
+                                  H'00012826  -  H'00012929  H'00000104
+              _power                           Boot                            
+                                  H'0001292A  -  H'00012A55  H'0000012C
+              constd                           Boot                            
+                                  H'00012A56  -  H'00012AD1  H'0000007C
+              trncmask                         Boot                            
+
+* TOTAL ADDRESS *                 H'0001094A  -  H'00012AD1  H'00002188
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CBldDate                          H'0001FF00  -  H'0001FF28  H'00000029
+              resetprg                         Boot                            
+
+* TOTAL ADDRESS *                 H'0001FF00  -  H'0001FF28  H'00000029
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CCheckSum                         H'0001FFF8  -  H'0001FFFF  H'00000008
+              resetprg                         Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     8
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+* TOTAL ADDRESS *                 H'0001FFF8  -  H'0001FFFF  H'00000008
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'00020000  -  H'00020281  H'00000282
+              cxsk5ha                          Boot                            
+                                  H'00020282  -  H'00020313  H'00000092
+              starth8s                         Boot                            
+                                  H'00020314  -  H'0002032B  H'00000018
+              intprg                           Boot                            
+                                  H'0002032C  -  H'000203D3  H'000000A8
+              asm                              Boot                            
+                                  H'000203D4  -  H'00020637  H'00000264
+              hwsetup                          Boot                            
+                                  H'00020638  -  H'00020675  H'0000003E
+              sbrk                             Boot                            
+                                  H'00020676  -  H'000206C3  H'0000004E
+              resource                         Boot                            
+                                  H'000206C4  -  H'0002070F  H'0000004C
+              cstart                           Boot                            
+                                  H'00020710  -  H'00020B8D  H'0000047E
+              cmx_init                         Boot                            
+                                  H'00020B8E  -  H'00020FB7  H'0000042A
+              baseprocess                      Boot                            
+                                  H'00020FB8  -  H'00021163  H'000001AC
+              queue                            Boot                            
+                                  H'00021164  -  H'00021859  H'000006F6
+              rtc                              Boot                            
+                                  H'0002185A  -  H'000227E1  H'00000F88
+              sci                              Boot                            
+                                  H'000227E2  -  H'00022979  H'00000198
+              timer                            Boot                            
+                                  H'0002297A  -  H'00022D6D  H'000003F4
+              boot                             Boot                            
+                                  H'00022D6E  -  H'00022DF7  H'0000008A
+              ram_vect                         Boot                            
+                                  H'00022DF8  -  H'0002426D  H'00001476
+              debug                            Boot                            
+                                  H'0002426E  -  H'00024507  H'0000029A
+              debugprocess                     Boot                            
+                                  H'00024508  -  H'00025565  H'0000105E
+              allprocess                       Boot                            
+                                  H'00025566  -  H'00025827  H'000002C2
+              userprocess                      Boot                            
+                                  H'00025828  -  H'00026C69  H'00001442
+              debugdl                          Boot                            
+                                  H'00026C6A  -  H'00027B49  H'00000EE0
+              btmondl                          Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     9
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'00027B4A  -  H'00028937  H'00000DEE
+              ymodemrecv                       Boot                            
+                                  H'00028938  -  H'00028E2B  H'000004F4
+              storage                          Boot                            
+                                  H'00028E2C  -  H'00028E2C  H'00000000
+              version                          Boot                            
+                                  H'00028E2C  -  H'000292D9  H'000004AE
+              loader                           Boot                            
+                                  H'000292DA  -  H'00029311  H'00000038
+              dtc_vector                       Boot                            
+                                  H'00029312  -  H'0002957B  H'0000026A
+              ptpprocess                       Boot                            
+                                  H'0002957C  -  H'0002AB87  H'0000160C
+              ptplink                          Boot                            
+                                  H'0002AB88  -  H'0002BE4D  H'000012C6
+              ptpisr                           Boot                            
+                                  H'0002BE4E  -  H'0002C04D  H'00000200
+              intqueue                         Boot                            
+                                  H'0002C04E  -  H'0002C1EB  H'0000019E
+              memblock                         Boot                            
+                                  H'0002C1EC  -  H'0002C5D9  H'000003EE
+              memblocklist                     Boot                            
+                                  H'0002C5DA  -  H'0002C791  H'000001B8
+              memheap                          Boot                            
+                                  H'0002C792  -  H'0002C929  H'00000198
+              crc16                            Boot                            
+                                  H'0002C92A  -  H'0002CB53  H'0000022A
+              dtcsci                           Boot                            
+                                  H'0002CB54  -  H'0002D381  H'0000082E
+              ptpdnldsend                      Boot                            
+                                  H'0002D382  -  H'0002DC19  H'00000898
+              ptpdnldrecv                      Boot                            
+                                  H'0002DC1A  -  H'0002E317  H'000006FE
+              ptpdnldprocess                   Boot                            
+                                  H'0002E318  -  H'0002E3CB  H'000000B4
+              mailbox                          Boot                            
+                                  H'0002E3CC  -  H'0002E4FF  H'00000134
+              amd29dl161db                     Boot                            
+                                  H'0002E500  -  H'0002EE63  H'00000964
+              amd29b16                         Boot                            
+                                  H'0002EE64  -  H'0002EEBF  H'0000005C
+              watchdog                         Boot                            
+                                  H'0002EEC0  -  H'0002EF1B  H'0000005C
+              _initsct                         Boot                            
+                                  H'0002EF1C  -  H'0002F021  H'00000106
+              free                             Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    10
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'0002F022  -  H'0002F17B  H'0000015A
+              malloc                           Boot                            
+                                  H'0002F17C  -  H'0002F1A5  H'0000002A
+              memcpy                           Boot                            
+                                  H'0002F1A6  -  H'0002F1E3  H'0000003E
+              memset                           Boot                            
+                                  H'0002F1E4  -  H'0002F237  H'00000054
+              sprintf                          Boot                            
+                                  H'0002F238  -  H'0002F25B  H'00000024
+              strcat                           Boot                            
+                                  H'0002F25C  -  H'0002F285  H'0000002A
+              strcmp                           Boot                            
+                                  H'0002F286  -  H'0002F2A1  H'0000001C
+              strcpy                           Boot                            
+                                  H'0002F2A2  -  H'0002F2BD  H'0000001C
+              strlen                           Boot                            
+                                  H'0002F2BE  -  H'0002F309  H'0000004C
+              strncmp                          Boot                            
+                                  H'0002F30A  -  H'0002F34B  H'00000042
+              strncpy                          Boot                            
+                                  H'0002F34C  -  H'0002F3B3  H'00000068
+              strstr                           Boot                            
+                                  H'0002F3B4  -  H'0002F3D9  H'00000026
+              divl3                            Boot                            
+                                  H'0002F3DA  -  H'0002F415  H'0000003C
+              divul3                           Boot                            
+                                  H'0002F416  -  H'0002F42B  H'00000016
+              CMX_GO                           Boot                            
+                                  H'0002F42C  -  H'0002F4EB  H'000000C0
+              CXCTCOM                          Boot                            
+                                  H'0002F4EC  -  H'0002F553  H'00000068
+              CXCTSTP                          Boot                            
+                                  H'0002F554  -  H'0002F641  H'000000EE
+              CXESIG                           Boot                            
+                                  H'0002F642  -  H'0002F6CB  H'0000008A
+              CXEWATM                          Boot                            
+                                  H'0002F6CC  -  H'0002F713  H'00000048
+              CXMSBXEV                         Boot                            
+                                  H'0002F714  -  H'0002F82F  H'0000011C
+              CXMSSEN1                         Boot                            
+                                  H'0002F830  -  H'0002F931  H'00000102
+              CXMSWAT                          Boot                            
+                                  H'0002F932  -  H'0002F9FB  H'000000CA
+              CXQADD                           Boot                            
+                                  H'0002F9FC  -  H'0002FA53  H'00000058
+              CXQCRE                           Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    11
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'0002FA54  -  H'0002FB11  H'000000BE
+              CXQRMV                           Boot                            
+                                  H'0002FB12  -  H'0002FC09  H'000000F8
+              CXRSREL                          Boot                            
+                                  H'0002FC0A  -  H'0002FD35  H'0000012C
+              CXRSRSV1                         Boot                            
+                                  H'0002FD36  -  H'0002FDD7  H'000000A2
+              CXSEMPST                         Boot                            
+                                  H'0002FDD8  -  H'0002FE17  H'00000040
+              CXTPRI                           Boot                            
+                                  H'0002FE18  -  H'0002FE87  H'00000070
+              CXTTRIG                          Boot                            
+                                  H'0002FE88  -  H'0002FF45  H'000000BE
+              CXTWAK                           Boot                            
+                                  H'0002FF46  -  H'0002FF6B  H'00000026
+              CXTWATM                          Boot                            
+                                  H'0002FF6C  -  H'0003005D  H'000000F2
+              TIMERTSK                         Boot                            
+                                  H'0003005E  -  H'000300E5  H'00000088
+              CXTCRE1                          Boot                            
+                                  H'000300E6  -  H'00031C8F  H'00001BAA
+              _fmtout                          Boot                            
+                                  H'00031C90  -  H'00031D07  H'00000078
+              memcmp                           Boot                            
+                                  H'00031D08  -  H'00031D1F  H'00000018
+              mull3                            Boot                            
+                                  H'00031D20  -  H'00031D87  H'00000068
+              mvn3                             Boot                            
+                                  H'00031D88  -  H'00031DBF  H'00000038
+              CXDELINK                         Boot                            
+                                  H'00031DC0  -  H'00031E01  H'00000042
+              CXPRI_IN                         Boot                            
+                                  H'00031E02  -  H'00031E4D  H'0000004C
+              CXQRST                           Boot                            
+                                  H'00031E4E  -  H'00031E6D  H'00000020
+              CX_COPY                          Boot                            
+                                  H'00031E6E  -  H'00031EAB  H'0000003E
+              CXGETPTR                         Boot                            
+                                  H'00031EAC  -  H'00031FDB  H'00000130
+              CXTSTTIM                         Boot                            
+                                  H'00031FDC  -  H'00032377  H'0000039C
+              _dti                             Boot                            
+                                  H'00032378  -  H'00032519  H'000001A2
+              _its                             Boot                            
+                                  H'0003251A  -  H'00032537  H'0000001E
+              mv83                             Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    12
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'00032538  -  H'00032545  H'0000000E
+              ned3                             Boot                            
+                                  H'00032546  -  H'0003256D  H'00000028
+              _allzero                         Boot                            
+                                  H'0003256E  -  H'00032657  H'000000EA
+              _calcnpw                         Boot                            
+                                  H'00032658  -  H'000326FB  H'000000A4
+              _log10                           Boot                            
+                                  H'000326FC  -  H'0003277B  H'00000080
+              _lsfts                           Boot                            
+                                  H'0003277C  -  H'000327A3  H'00000028
+              _pow5                            Boot                            
+                                  H'000327A4  -  H'00032825  H'00000082
+              _rsfts                           Boot                            
+                                  H'00032826  -  H'000328E5  H'000000C0
+              _sub                             Boot                            
+                                  H'000328E6  -  H'0003298F  H'000000AA
+              _unpack                          Boot                            
+                                  H'00032990  -  H'00032A3B  H'000000AC
+              cmpd3                            Boot                            
+                                  H'00032A3C  -  H'00032ABF  H'00000084
+              _mult64                          Boot                            
+                                  H'00032AC0  -  H'00032C0B  H'0000014C
+              _power                           Boot                            
+                                  H'00032C0C  -  H'00032CF7  H'000000EC
+              _rnd                             Boot                            
+                                  H'00032CF8  -  H'00032D83  H'0000008C
+              _setsbit                         Boot                            
+                                  H'00032D84  -  H'00032DAF  H'0000002C
+              dslc3                            Boot                            
+                                  H'00032DB0  -  H'00032DDB  H'0000002C
+              dsruc3                           Boot                            
+                                  H'00032DDC  -  H'00032E5D  H'00000082
+              dtol3                            Boot                            
+                                  H'00032E5E  -  H'00032E8F  H'00000032
+              itod3                            Boot                            
+                                  H'00032E90  -  H'00033151  H'000002C2
+              muld3                            Boot                            
+                                  H'00033152  -  H'0003320B  H'000000BA
+              frexp                            Boot                            
+                                  H'0003320C  -  H'0003333D  H'00000132
+              modf                             Boot                            
+                                  H'0003333E  -  H'0003338B  H'0000004E
+              _lsft                            Boot                            
+                                  H'0003338C  -  H'0003352D  H'000001A2
+              _mult                            Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    13
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'0003352E  -  H'000335C7  H'0000009A
+              _pow10                           Boot                            
+                                  H'000335C8  -  H'00033683  H'000000BC
+              dtoid                            Boot                            
+                                  H'00033684  -  H'00033775  H'000000F2
+              idtod                            Boot                            
+                                  H'00033776  -  H'00033855  H'000000E0
+              in_modfd                         Boot                            
+                                  H'00033856  -  H'000338A5  H'00000050
+              _add                             Boot                            
+                                  H'000338A6  -  H'00033A89  H'000001E4
+              in_addd                          Boot                            
+                                  H'00033A8A  -  H'00033A95  H'0000000C
+              in_eqd                           Boot                            
+                                  H'00033A96  -  H'00033B31  H'0000009C
+              in_trncd                         Boot                            
+                                  H'00033B32  -  H'00033BC5  H'00000094
+              in_cmpd                          Boot                            
+
+* TOTAL ADDRESS *                 H'00020000  -  H'00033BC5  H'00013BC6
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+STACK                             H'003C0000  -  H'003C1FFF  H'00002000
+              starth8s                         Boot                            
+
+* TOTAL ADDRESS *                 H'003C0000  -  H'003C1FFF  H'00002000
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BBootAPI                          H'003C2000  -  H'003C2007  H'00000008
+              asm                              Boot                            
+
+* TOTAL ADDRESS *                 H'003C2000  -  H'003C2007  H'00000008
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BCMX                              H'003C2008  -  H'003C490F  H'00002908
+              cmx_init                         Boot                            
+
+* TOTAL ADDRESS *                 H'003C2008  -  H'003C490F  H'00002908
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    14
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR RAM
+
+RCMX                              H'003C4910  -  H'003C4910  H'00000000
+              dbsct                            Boot                            
+                                  H'003C4910  -  H'003C4917  H'00000008
+              cmx_init                         Boot                            
+
+* TOTAL ADDRESS *                 H'003C4910  -  H'003C4917  H'00000008
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BHEAP                             H'003C4918  -  H'003FC917  H'00038000
+              sbrk                             Boot                            
+
+* TOTAL ADDRESS *                 H'003C4918  -  H'003FC917  H'00038000
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BRTC                              H'00FFB000  -  H'00FFB00B  H'0000000C
+              rtc                              Boot                            
+
+* TOTAL ADDRESS *                 H'00FFB000  -  H'00FFB00B  H'0000000C
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BMONITOR                          H'00FFB00C  -  H'00FFB06F  H'00000064
+              msghndl                          Boot                            
+                                  H'00FFB070  -  H'00FFB0A5  H'00000036
+              control                          Boot                            
+                                  H'00FFB0A6  -  H'00FFB0A9  H'00000004
+              exe                              Boot                            
+                                  H'00FFB0AA  -  H'00FFB0B5  H'0000000C
+              main                             Boot                            
+                                  H'00FFB0B6  -  H'00FFB11A  H'00000065
+              bptable                          Boot                            
+                                  H'00FFB11C  -  H'00FFB12F  H'00000014
+              sci_mon                          Boot                            
+
+* TOTAL ADDRESS *                 H'00FFB00C  -  H'00FFB12F  H'00000124
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BMONFLAG                          H'00FFB200  -  H'00FFB209  H'0000000A
+              debug                            Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    15
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+* TOTAL ADDRESS *                 H'00FFB200  -  H'00FFB209  H'0000000A
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BResetPRG                         H'00FFB20A  -  H'00FFB213  H'0000000A
+              resetprg                         Boot                            
+
+* TOTAL ADDRESS *                 H'00FFB20A  -  H'00FFB213  H'0000000A
+
+
+ATTRIBUTE  :   DATA  NOSHR RAM
+
+RHEAP                             H'00FFB214  -  H'00FFB217  H'00000004
+              sbrk                             Boot                            
+                                  H'00FFB218  -  H'00FFB218  H'00000000
+              dbsct                            Boot                            
+
+* TOTAL ADDRESS *                 H'00FFB214  -  H'00FFB217  H'00000004
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+BSCI                              H'00FFB218  -  H'00FFB227  H'00000010
+              sci                              Boot                            
+
+* TOTAL ADDRESS *                 H'00FFB218  -  H'00FFB227  H'00000010
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'00FFB228  -  H'00FFB228  H'00000000
+              starth8s                         Boot                            
+                                  H'00FFB228  -  H'00FFB228  H'00000000
+              dbsct                            Boot                            
+                                  H'00FFB228  -  H'00FFB228  H'00000001
+              g_cmx                            Boot                            
+                                  H'00FFB22A  -  H'00FFB230  H'00000007
+              cmx_init                         Boot                            
+                                  H'00FFB232  -  H'00FFB235  H'00000004
+              rtc                              Boot                            
+                                  H'00FFB236  -  H'00FFB23B  H'00000006
+              allprocess                       Boot                            
+                                  H'00FFB23C  -  H'00FFB23D  H'00000002
+              exe                              Boot                            
+                                  H'00FFB23E  -  H'00FFB43D  H'00000200
+              crc16                            Boot                            
+                                  H'00FFB43E  -  H'00FFB441  H'00000004
+              ptpdnldprocess                   Boot                            
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    16
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'00FFB442  -  H'00FFB443  H'00000002
+              _errno                           Boot                            
+
+* TOTAL ADDRESS *                 H'00FFB228  -  H'00FFB443  H'0000021C
+
+
+ATTRIBUTE  :   DATA  NOSHR RAM
+
+R                                 H'00FFB444  -  H'00FFB444  H'00000000
+              starth8s                         Boot                            
+                                  H'00FFB444  -  H'00FFB444  H'00000000
+              dbsct                            Boot                            
+                                  H'00FFB444  -  H'00FFB446  H'00000003
+              resource                         Boot                            
+                                  H'00FFB448  -  H'00FFB481  H'0000003A
+              baseprocess                      Boot                            
+                                  H'00FFB482  -  H'00FFB482  H'00000001
+              queue                            Boot                            
+                                  H'00FFB484  -  H'00FFB485  H'00000002
+              rtc                              Boot                            
+                                  H'00FFB486  -  H'00FFB489  H'00000004
+              debugprocess                     Boot                            
+                                  H'00FFB48A  -  H'00FFB491  H'00000008
+              allprocess                       Boot                            
+                                  H'00FFB492  -  H'00FFB495  H'00000004
+              userprocess                      Boot                            
+                                  H'00FFB496  -  H'00FFB49D  H'00000008
+              ptpprocess                       Boot                            
+                                  H'00FFB49E  -  H'00FFB49F  H'00000002
+              memblock                         Boot                            
+                                  H'00FFB4A0  -  H'00FFB4A0  H'00000001
+              crc16                            Boot                            
+                                  H'00FFB4A2  -  H'00FFB4A5  H'00000004
+              _freeptr                         Boot                            
+
+* TOTAL ADDRESS *                 H'00FFB444  -  H'00FFB4A5  H'00000062
+
+
+ATTRIBUTE  :   STACK NOSHR
+
+S                                 H'00FFEBC0  -  H'00FFEBC0  H'00000000
+              cstartup                         Boot                            
+                                  H'00FFEBC0  -  H'00FFEBC0  H'00000000
+              resetprg                         Boot                            
+
+* TOTAL ADDRESS *                 H'00FFEBC0  -  H'00FFEBC0  H'00000000
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+$$in_cmpd                         H'00033B32               DAT
+$$trunc_mask                      H'00012A56               DAT
+$CMPD$3                           H'00032990               DAT
+$DIVL$3                           H'0002F3B4               DAT
+$DIVUL$3                          H'0002F3DA               DAT
+$DSLC$3                           H'00032D84               DAT
+$DSRUC$3                          H'00032DB0               DAT
+$DTOL$3                           H'00032DDC               DAT
+$ITOD$3                           H'00032E5E               DAT
+$MULD$3                           H'00032F46               DAT
+$MULL$3                           H'00031D08               DAT
+$MV8$3                            H'0003251A               DAT
+$MVN$3                            H'00031D20               DAT
+$NED$3                            H'00032538               DAT
+INIT                              H'00020302               DAT
+_AddBreakPoint                    H'000027A0               ENT
+_BPdisable                        H'00001214               ENT
+_BPenable                         H'00001198               ENT
+_BPincrementCount                 H'000029FE               ENT
+_BPinitialise                     H'00000F66               ENT
+_BPremove                         H'00000FDC               ENT
+_BPremoveAll                      H'000010DC               ENT
+_BPresetCounts                    H'00002AB4               ENT
+_BPrestoreInst                    H'00001072               ENT
+_BPrestoreTrap                    H'000010BA               ENT
+_BPset                            H'00000F8C               ENT
+_BPsetInstruction                 H'00002A5C               ENT
+_BreakPoint                       H'000005A8               DAT
+_BreakPointExists                 H'0000273C               ENT
+_BuildReplyMessage                H'00000D00               ENT
+_Capability                       H'00003294               DAT
+_CheckRam                         H'000229A0               ENT
+_ClearRam                         H'00022C62               ENT
+_ClearRx                          H'00002B4A               ENT
+_CompDTCVector                    H'000292DA               ENT
+_ConditionsOK                     H'00001024               ENT
+_CreateTask                       H'00020ED8               ENT
+_Dummy                            H'00010494               DAT
+_Execute                          H'000006FE               DAT
+_ExecuteUserCode                  H'00002170               ENT
+_Execute_return_code              H'00FFB23C               DAT
+_Fatal                            H'00022AEE               ENT
+_GetBreakPoint                    H'00002918               ENT
+_GetBreakPointByIndex             H'00002994               ENT
+_GetGPSSeconds                    H'00021776               ENT
+_GetMailBoxAssignment             H'000206AA               ENT
+_GetMailBoxUsed                   H'000206BC               ENT
+_GetNextBlock_Step1               H'00020350               DAT
+_GetNextBlock_Step2               H'00020362               DAT
+_GetRawTick                       H'00021846               ENT
+_GetRegister                      H'000013C4               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     2
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_GetResourceAssignment            H'00020676               ENT
+_GetResourceUsed                  H'00020688               ENT
+_GetSemaAssignment                H'00020690               ENT
+_GetSemaUsed                      H'000206A2               ENT
+_GoFailed                         H'00010078               DAT
+_HardwareSetup                    H'000203D4               ENT
+_ILResolve_1                      H'00002366               ENT
+_ILResolve_1a                     H'000022FC               ENT
+_ILResolve_2                      H'00002428               ENT
+_ILResolve_3                      H'0000245E               ENT
+_ILResolve_4                      H'000024D4               ENT
+_INT_ADI                          H'00010336               DAT
+_INT_CMI                          H'00010332               DAT
+_INT_CMIA0A                       H'0001036E               DAT
+_INT_CMIA0B                       H'00010406               DAT
+_INT_CMIA1A                       H'00010380               DAT
+_INT_CMIA1B                       H'0001040C               DAT
+_INT_CMIB0A                       H'0001037C               DAT
+_INT_CMIB0B                       H'00010408               DAT
+_INT_CMIB1A                       H'00010382               DAT
+_INT_CMIB1B                       H'0001041A               DAT
+_INT_DDCSWI                       H'00010420               DAT
+_INT_DEND0A                       H'00010386               DAT
+_INT_DEND0B                       H'00010388               DAT
+_INT_DEND1A                       H'0001038A               DAT
+_INT_DEND1B                       H'0001038C               DAT
+_INT_Direct_Transition            H'00010306               DAT
+_INT_ERI0_SCI0                    H'0001038E               DAT
+_INT_ERI1_SCI1                    H'000103C6               DAT
+_INT_ERI2_SCI2                    H'000103FE               DAT
+_INT_ERI3_SCI3                    H'00010424               DAT
+_INT_ERI4_SCI4                    H'0001045C               DAT
+_INT_IICI0                        H'0001041E               DAT
+_INT_IICI1                        H'00010422               DAT
+_INT_IRQ0                         H'0001031E               DAT
+_INT_IRQ1                         H'00010320               DAT
+_INT_IRQ2                         H'00010322               DAT
+_INT_IRQ3                         H'00010324               DAT
+_INT_IRQ4                         H'00010326               DAT
+_INT_IRQ5                         H'00010328               DAT
+_INT_IRQ6                         H'0001032A               DAT
+_INT_IRQ7                         H'0001032C               DAT
+_INT_NMI                          H'00010308               DAT
+_INT_OVI0A                        H'0001037E               DAT
+_INT_OVI0B                        H'0001040A               DAT
+_INT_OVI1A                        H'00010384               DAT
+_INT_OVI1B                        H'0001041C               DAT
+_INT_PC_Break                     H'00010334               DAT
+_INT_RXI0_SCI0                    H'0001039C               DAT
+_INT_RXI1_SCI1                    H'000103D4               DAT
+_INT_RXI2_SCI2                    H'00010400               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     3
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_INT_RXI3_SCI3                    H'00010432               DAT
+_INT_RXI4_SCI4                    H'0001046A               DAT
+_INT_SWDTEND_DTC                  H'0001032E               DAT
+_INT_TCI0V_TPU0                   H'00010342               DAT
+_INT_TCI1U_TPU1                   H'0001034A               DAT
+_INT_TCI1V_TPU1                   H'00010348               DAT
+_INT_TCI2U_TPU2                   H'00010352               DAT
+_INT_TCI2V_TPU2                   H'00010350               DAT
+_INT_TCI3V_TPU3                   H'0001035C               DAT
+_INT_TCI4U_TPU4                   H'00010364               DAT
+_INT_TCI4V_TPU4                   H'00010362               DAT
+_INT_TCI5U_TPU5                   H'0001036C               DAT
+_INT_TCI5V_TPU5                   H'0001036A               DAT
+_INT_TEI0_SCI0                    H'000103B8               DAT
+_INT_TEI1_SCI1                    H'000103F0               DAT
+_INT_TEI2_SCI2                    H'00010404               DAT
+_INT_TEI3_SCI3                    H'0001044E               DAT
+_INT_TEI4_SCI4                    H'00010486               DAT
+_INT_TGI0A_TPU0                   H'0001033A               DAT
+_INT_TGI0B_TPU0                   H'0001033C               DAT
+_INT_TGI0C_TPU0                   H'0001033E               DAT
+_INT_TGI0D_TPU0                   H'00010340               DAT
+_INT_TGI1A_TPU1                   H'00010344               DAT
+_INT_TGI1B_TPU1                   H'00010346               DAT
+_INT_TGI2A_TPU2                   H'0001034C               DAT
+_INT_TGI2B_TPU2                   H'0001034E               DAT
+_INT_TGI3A_TPU3                   H'00010354               DAT
+_INT_TGI3B_TPU3                   H'00010356               DAT
+_INT_TGI3C_TPU3                   H'00010358               DAT
+_INT_TGI3D_TPU3                   H'0001035A               DAT
+_INT_TGI4A_TPU4                   H'0001035E               DAT
+_INT_TGI4B_TPU4                   H'00010360               DAT
+_INT_TGI5A_TPU5                   H'00010366               DAT
+_INT_TGI5B_TPU5                   H'00010368               DAT
+_INT_TRAP1                        H'0001030A               DAT
+_INT_TRAP2                        H'0001030C               DAT
+_INT_TRAP3                        H'0001030E               DAT
+_INT_TRAP4                        H'00010310               DAT
+_INT_TXI0_SCI0                    H'000103AA               DAT
+_INT_TXI1_SCI1                    H'000103E2               DAT
+_INT_TXI2_SCI2                    H'00010402               DAT
+_INT_TXI3_SCI3                    H'00010440               DAT
+_INT_TXI4_SCI4                    H'00010478               DAT
+_INT_Treace                       H'00010304               DAT
+_INT_WOVI0                        H'00010330               DAT
+_INT_WOVI1                        H'00010338               DAT
+_InMsgHndl                        H'00002602               ENT
+_InitBreakTable                   H'000029F4               ENT
+_InitExecution                    H'00001F0A               ENT
+_InitMonitor                      H'0000254C               ENT
+_InitSCI                          H'00003188               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     4
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_IsBSRJSR                         H'00001F0E               ENT
+_IsBranch                         H'00000DBE               ENT
+_IsJmp                            H'00000DE4               ENT
+_IsTrap                           H'00001F34               ENT
+_K_Event_Signal                   H'0002F554               ENT
+_K_Event_Wait                     H'0002F642               ENT
+_K_I_Copy                         H'00031E4E               ENT
+_K_I_Cyclic_Common                H'0002F42C               ENT
+_K_I_Func_Return                  H'00020B6A               ENT
+_K_I_Get_Ptr                      H'00031E6E               ENT
+_K_I_Intrp_Pipe_In                H'000208F4               ENT
+_K_I_Intrp_Pipe_Out               H'0002098E               ENT
+_K_I_Mesg_Send_Common             H'0002F714               ENT
+_K_I_Mesg_Wait_Common             H'0002F830               ENT
+_K_I_Priority_In                  H'00031DC0               ENT
+_K_I_Que_Add_Common               H'0002F932               ENT
+_K_I_Que_Get_Common               H'0002FA54               ENT
+_K_I_Resource_Common              H'0002FC0A               ENT
+_K_I_Sched                        H'00020000               DAT
+_K_I_Scheduler                    H'00020046               DAT
+_K_I_Time_Common                  H'00031EAC               ENT
+_K_I_Timer_Task                   H'0002FF6C               ENT
+_K_I_Unlink                       H'00031D88               ENT
+_K_I_Wake_Common                  H'0002FE88               ENT
+_K_Mbox_Event_Set                 H'0002F6CC               ENT
+_K_OS_Disable_Interrupts          H'0002024E               DAT
+_K_OS_Enable_Interrupts           H'00020254               DAT
+_K_OS_Init                        H'00020710               ENT
+_K_OS_Intrp_Entry                 H'00020198               DAT
+_K_OS_Intrp_Exit                  H'000201F0               DAT
+_K_OS_Low_Power_Func              H'00020B8C               ENT
+_K_OS_Restore_Interrupts          H'00020270               DAT
+_K_OS_Save_Interrupts             H'0002025A               DAT
+_K_OS_Start                       H'0002F416               ENT
+_K_OS_Task_Slot_Get               H'00020B34               ENT
+_K_OS_Tick_Get_Ctr                H'00020B4E               ENT
+_K_OS_Tick_Update                 H'00020AA8               ENT
+_K_Que_Create                     H'0002F9FC               ENT
+_K_Que_Reset                      H'00031E02               ENT
+_K_Resource_Release               H'0002FB12               ENT
+_K_Semaphore_Post                 H'0002FD36               ENT
+_K_Task_Create_Stack              H'0003005E               ENT
+_K_Task_Priority                  H'0002FDD8               ENT
+_K_Task_Start                     H'0002FE18               ENT
+_K_Task_Wait                      H'0002FF46               ENT
+_K_Timer_Stop                     H'0002F4EC               ENT
+_LastAddress                      H'00002B04               ENT
+_LoadLong                         H'000012FE               ENT
+_LoadRAMVect                      H'00022D6E               ENT
+_LoadRegister                     H'0000136E               ENT
+_LoadShort                        H'00001322               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     5
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_MAX_CYCLIC_TIMERS                H'003C4912               DAT
+_MAX_MAILBOXES                    H'003C4913               DAT
+_MAX_QUEUES                       H'003C4914               DAT
+_MAX_RESOURCES                    H'003C4911               DAT
+_MAX_SEMAPHORES                   H'003C4915               DAT
+_MAX_TASKS                        H'003C4910               DAT
+_MakeLong                         H'000012C2               ENT
+_MakeShort                        H'00001332               ENT
+_Manual_Reset                     H'00010154               DAT
+_MaxNumberOfBP                    H'00002AF8               ENT
+_MemoryMessage                    H'0000159A               ENT
+_MemorySetInit                    H'00001642               ENT
+_MsgHnd_Stage1                    H'00000BA2               ENT
+_MsgInBuffer                      H'00FFB00C               DAT
+_MsgOutBuffer                     H'00FFB03E               DAT
+_NMIcapture                       H'0000059E               DAT
+_NumberOfBP                       H'00002AF0               ENT
+_OutMsgHndl                       H'00002654               ENT
+_PassCheckSum                     H'00010156               DAT
+_PowerON_Reset                    H'00010036               DAT
+_Quit                             H'00020394               DAT
+_Quit_Entry                       H'00010000               DAT
+_RAMFail                          H'00022C88               ENT
+_RAM_INT_Vectors                  H'00010A54               DAT
+_RESET_Vectors                    H'00000000               DAT
+_RTC_SCALE                        H'003C4916               DAT
+_RTC_TICK                         H'0002172A               ENT
+_RTOS_TICK                        H'000217AE               ENT
+_Reboot                           H'000203C0               DAT
+_RecoverIsr                       H'000013E2               ENT
+_RegisterMessage                  H'000014F4               ENT
+_RemoveBreakPoint                 H'0000286E               ENT
+_Repeat                           H'000203AA               DAT
+_Reset                            H'000100A0               DAT
+_ResetReceiveBuffer               H'00002530               ENT
+_ResetSystemFlags                 H'0000252E               ENT
+_RunOverBreakPoint                H'0000210A               ENT
+_RxBuffer                         H'00FFB0B0               DAT
+_RxChar                           H'00002B0E               ENT
+_RxInterruptsOff                  H'00003268               ENT
+_RxInterruptsOn                   H'00003262               ENT
+_RxMessage                        H'00002C14               ENT
+_Rx_Error                         H'00FFB0B4               DAT
+_SCIrx                            H'00000504               DAT
+_SCIrxError                       H'0000058C               DAT
+_SLICE_ON                         H'003C47FB               DAT
+_SetGPSSeconds                    H'00021798               ENT
+_SetNextBlock_Step1               H'0002032C               DAT
+_SetNextBlock_Step2               H'0002033E               DAT
+_SetRegister                      H'00001350               ENT
+_SetVerify                        H'00002AFC               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     6
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_Set_MaxRxBuffer_Size             H'0000324E               ENT
+_Set_MaxTxBuffer_Size             H'00003258               ENT
+_StartCMX                         H'00022990               ENT
+_StepCode                         H'00001F46               ENT
+_StoreChar                        H'00002B72               ENT
+_TSLICE_SCALE                     H'003C4917               DAT
+_TxBuffer                         H'00FFB0AC               DAT
+_TxByte                           H'00002B64               ENT
+_TxMessage                        H'000030EE               ENT
+_Tx_Error                         H'00FFB0B5               DAT
+_Tx_Mesg_Length                   H'00FFB0AA               DAT
+_UBtoSL                           H'00000D9E               ENT
+_UStoSL                           H'00000D80               ENT
+_VerifyRAM                        H'00022C92               ENT
+_VerifyROM                        H'00022CBC               ENT
+_Writable                         H'00000F6A               ENT
+__2PAID                           H'00012996               DAT
+CYModemRecv::ACK                  H'00011E61               DAT
+CMemHeap::Allocate(int)           H'0002C6F6               ENT
+CPTPIsr::AppendByte(char)         H'0002AD68               ENT
+CQueue::Append(const unsigned char*)
+                                  H'000210E6               ENT
+CIntQueue::Append(int)            H'0002BFAE               ENT
+__B_BGN                           H'00010956               DAT
+__B_END                           H'0001095A               DAT
+CAllProcess::BlinkChoice(void)    H'00025456               ENT
+CDebug::ByteToASCII(unsigned char,char*)
+                                  H'00023798               ENT
+CYModemRecv::CAN                  H'00011E63               DAT
+CYModemRecv::C                    H'00011E64               DAT
+CAllProcess::CheckBoot(void)      H'00024FB4               ENT
+CLoader::CheckDLDBlock(unsigned long,unsigned long*)
+                                  H'00028FA6               ENT
+CAmd29B16::CheckDevice(void)      H'0002EBDA               ENT
+CAllProcess::CheckDldHeader(const char*)
+                                  H'0002547A               ENT
+CSci::CheckInput(void)            H'00021DF8               ENT
+CPTPIsr::CheckInput(void)         H'0002B31A               ENT
+CCodeStorage::CheckIntegrity(unsigned long*)
+                                  H'00028C16               ENT
+CDtcSci::CheckVector(unsigned int)
+                                  H'0002CB1E               ENT
+CCodeStorage::CloseStorage(unsigned long)
+                                  H'00028D78               ENT
+CPTPDnldRecv::CloseStorage(void)  H'0002DBB8               ENT
+CPTPDnldSend::CloseStorage(void)  H'0002D31C               ENT
+CSci::Close(void)                 H'00022344               ENT
+CAmd29B16::Close(void)            H'0002EE10               ENT
+CDebug::CmdBlank(unsigned long*,unsigned char)
+                                  H'0002388C               ENT
+CDebug::CmdCheckRam(unsigned long*)
+                                  H'00023EDC               ENT
+CDebugDL::CmdDir(unsigned long*)  H'0002665E               ENT
+CDebug::CmdDump(unsigned long*,signed char)
+                                  H'0002358A               ENT
+CDebug::CmdErase(unsigned long*)  H'000237F0               ENT
+CDebug::CmdFill(unsigned long*,signed char,int)
+                                  H'00023AD2               ENT
+CDebugDL::CmdFlash(unsigned long*)
+                                  H'000267B4               ENT
+CDebug::CmdHelp(unsigned long*)   H'000234B4               ENT
+CDebug::CmdMonitor(unsigned long*)
+                                  H'00023EA2               ENT
+CDebug::CmdReset(unsigned long*)  H'00023E5E               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     7
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+CDebugDL::CmdSetDate(unsigned long*)
+                                  H'0002624A               ENT
+CDebugDL::CmdSetTime(unsigned long*)
+                                  H'000263DC               ENT
+CDebugDL::CmdSystem(unsigned long*)
+                                  H'0002656E               ENT
+__D_BGN                           H'0001094E               DAT
+__D_END                           H'00010952               DAT
+__D_ROM                           H'0001094A               DAT
+CPTPLink::DataRequest(void)       H'0002A852               ENT
+CRTC::DaysOfMonth(int,int)        H'000214C4               ENT
+CRTC::DaysOfYear(int)             H'0002142E               ENT
+CAllProcess::DebugOutput(const char*,int,unsigned long)
+                                  H'00025056               ENT
+CPTPDnldProcess::DebugOutput(const char*)
+                                  H'0002E13C               ENT
+CPTPLink::DebugOutput(const char*,int,int)
+                                  H'0002A638               ENT
+CCheapTimer::Delay(long)          H'000228F0               ENT
+CIntQueue::DeleteTop(void)        H'0002BFFE               ENT
+CBtmonDL::DumpDLDRecord(dld_struct*)
+                                  H'00026F60               ENT
+CYModemRecv::EOT                  H'00011E60               DAT
+CCodeStorage::EndOfStorage(void)  H'00028E1A               ENT
+CPTPLink::EnterConn(void)         H'0002A58E               ENT
+CPTPLink::EnterDisc(int)          H'0002A4AE               ENT
+CPTPProcess::Entry1(void)         H'0002946E               ENT
+CPTPProcess::Entry2(void)         H'000294C4               ENT
+CUserProcess::Entry(void)         H'00025762               ENT
+CDebugProcess::Entry(void)        H'00024446               ENT
+CPTPDnldProcess::Entry(void)      H'0002DF34               ENT
+CAmd29B16::EraseSector(unsigned long)
+                                  H'0002E63E               ENT
+CPTPProcess::EventDispatch(unsigned short)
+                                  H'00029572               ENT
+CBaseProcess::EventDispatch(unsigned short)
+                                  H'00020ED0               ENT
+CPTPDnldProcess::EventDispatch(unsigned short)
+                                  H'0002E026               ENT
+CPTPLink::EventDispatch(unsigned short)
+                                  H'00029890               ENT
+CBaseProcess::EventEntry(unsigned short)
+                                  H'00020E6C               ENT
+CPTPProcess::EventTimeOut(void)   H'00029568               ENT
+CBaseProcess::EventTimeOut(void)  H'00020ED2               ENT
+CPTPDnldProcess::EventTimeOut(void)
+                                  H'0002DFC2               ENT
+CPTPLink::EventTimeOut(void)      H'0002A2CC               ENT
+CDebugDL::ExtendedExecCmd(int,unsigned long*)
+                                  H'00025A76               ENT
+CDebugDL::ExtendedGetCmd(const char*,int*)
+                                  H'00025A18               ENT
+CDebugDL::ExtendedListHelp(void)  H'00026180               ENT
+__FOURD                           H'0001297E               DAT
+CPTPLink::FindClient(unsigned char)
+                                  H'0002AAD6               ENT
+CPTPDnldProcess::FirmwareVersionQuery(CMemBlock*)
+                                  H'0002E196               ENT
+CAllProcess::ForceDebugOutput(const char*)
+                                  H'000250AE               ENT
+CSci::ForceSend(const char*,int)  H'00022236               ENT
+CRTC::GetAbsoluteSecond(void)     H'00021296               ENT
+CSci::GetBaudRate(void)           H'00021B38               ENT
+CPTPIsr::GetBaudRate(void)        H'0002B6C8               ENT
+CMemBlockList::GetBlock(int)      H'0002C36E               ENT
+CDtcSci::GetCh(char*)             H'0002CAB0               ENT
+CMemBlock::GetCtrl2(void)         H'0002C1E2               ENT
+CRTC::GetDateTime(int*,int*,int*,int*,int*,int*)
+                                  H'000212E8               ENT
+CAllProcess::GetDebugProcess(void)
+                                  H'0002504E               ENT
+CAmd29B16::GetEraseDelay(int)     H'0002EE30               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     8
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+CAllProcess::GetFpgaDone(void)    H'0002546C               ENT
+CRTC::GetGPSSeconds(void)         H'000212C4               ENT
+CAllProcess::GetHardwareRevision(void)
+                                  H'00025458               ENT
+CBaseProcess::GetProcess(int)     H'00020D7E               ENT
+CBaseProcess::GetStackStatus(unsigned short*,unsigned short*,unsigned short**)
+                                  H'00020DA6               ENT
+CQueue::GetTop(unsigned char*)    H'00021120               ENT
+CAllProcess::GetUserProcess(void)
+                                  H'00025046               ENT
+__HALFD                           H'0001295A               DAT
+__HLFPAID                         H'000129A2               DAT
+__IFINFD                          H'00012942               DAT
+__IFNAND                          H'0001292A               DAT
+__IFONED                          H'0001294E               DAT
+__IFZEROD                         H'00012936               DAT
+__INITSCT                         H'0002EEC0               DAT
+CPTPLink::IndicateCmd(void)       H'00029F08               ENT
+CPTPLink::IndicateDataError(void)
+                                  H'00029E9A               ENT
+CPTPLink::IndicateData(void)      H'000299C0               ENT
+CCRC16::InitCRC16(void)           H'0002C8A8               ENT
+CRTC::IsLeapYear(int)             H'0002147C               ENT
+CAmd29B16::IsWithinRange(unsigned long)
+                                  H'0002EDC2               ENT
+__LOGE2D                          H'000129BA               DAT
+CDebug::LWordToASCII(unsigned long,char*)
+                                  H'00023A34               ENT
+CLoader::Load(unsigned long,unsigned long*,unsigned long*)
+                                  H'0002908C               ENT
+CAllProcess::MakeBootChoice(Ccomm*,int)
+                                  H'00025150               ENT
+__N2PAID                          H'00012A26               DAT
+CYModemRecv::NAK                  H'00011E62               DAT
+__NFOURD                          H'00012A0E               DAT
+__NHALFD                          H'000129EA               DAT
+__NHLFPAID                        H'00012A32               DAT
+__NIFINFD                         H'000129D2               DAT
+__NIFONED                         H'000129DE               DAT
+__NIFZEROD                        H'000129C6               DAT
+__NLOGE2D                         H'00012A4A               DAT
+__NPAID                           H'00012A1A               DAT
+__NQUOPAID                        H'00012A3E               DAT
+__NQUOTD                          H'000129F6               DAT
+__NTWOD                           H'00012A02               DAT
+CPTPLink::NextSequence(unsigned char)
+                                  H'0002A490               ENT
+CBaseProcess::Notify(unsigned long,unsigned long)
+                                  H'00020ED4               ENT
+CPTPDnldProcess::Notify(unsigned long,unsigned long)
+                                  H'0002E0DC               ENT
+CCodeStorage::OpenStorage(unsigned long)
+                                  H'00028CC6               ENT
+CSci::Open(void)                  H'00022316               ENT
+CAmd29B16::Open(void)             H'0002EDEC               ENT
+__PAID                            H'0001298A               DAT
+CBaseProcess::Pause(unsigned short)
+                                  H'00020F8A               ENT
+CPTPLink::PostFrame(const char*,unsigned short,unsigned char)
+                                  H'0002A710               ENT
+CMemBlockList::PrintStatus(Ccomm*)
+                                  H'0002C400               ENT
+CMemHeap::PrintStatus(Ccomm*)     H'0002C762               ENT
+CPTPLink::PrintStatus(Ccomm*)     H'0002A8EE               ENT
+CYModemRecv::Purge(void)          H'0002888C               ENT
+__QUOPAID                         H'000129AE               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     9
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+__QUOTD                           H'00012966               DAT
+CBtmonDL::ReadByteFromCom(unsigned char*,long)
+                                  H'0002794C               ENT
+CDebug::ReadCmd(int*,unsigned long*)
+                                  H'00023046               ENT
+CLoader::ReadDLDRecord(unsigned char*,dld_struct*)
+                                  H'00028E34               ENT
+CBtmonDL::ReadMessage(void)       H'0002756C               ENT
+CBtmonDL::ReadWordFromCom(unsigned short*,long)
+                                  H'000279B0               ENT
+CAmd29B16::ReadWords(unsigned long,unsigned short*,unsigned long)
+                                  H'0002ED46               ENT
+CCodeStorage::Read(char*,int)     H'00028C38               ENT
+CAllProcess::Reboot(void)         H'0002542A               ENT
+CBtmonDL::ReceiveDLDRecord(void)  H'00027026               ENT
+CMailBox::ReceiveMail(void)       H'0002E3B6               ENT
+CPTPDnldRecv::ReceivePacket(CMemBlock*)
+                                  H'0002D46A               ENT
+CPTPDnldSend::ReceivePacket(CMemBlock*)
+                                  H'0002CDBA               ENT
+CSci::Receive(char*,int,long)     H'00021DAC               ENT
+CYModemRecv::RecvBlockZero(char*)
+                                  H'00028150               ENT
+CYModemRecv::RecvBlock(unsigned char*,char*,int)
+                                  H'000282DE               ENT
+CSci::Recv(char*,int,long,int)    H'00021E4A               ENT
+CMemBlockList::Release(CMemBlock*)
+                                  H'0002C3C2               ENT
+CMemBlock::Release(void)          H'0002C188               ENT
+CPTPLink::ReportError(int,int)    H'0002985A               ENT
+CPTPLink::ReportFrame(int,int)    H'0002975A               ENT
+CAllProcess::ReportVersion(Ccomm*)
+                                  H'00024E68               ENT
+CMemBlockList::Reset(void)        H'0002C2E6               ENT
+CMemHeap::Reset(void)             H'0002C736               ENT
+CBtmonDL::RespondAck(void)        H'000277BE               ENT
+CBtmonDL::RespondPing(void)       H'00027828               ENT
+CPTPLink::Restart(void)           H'0002A5DC               ENT
+CCodeStorage::Rewind(void)        H'00028C08               ENT
+CPTPIsr::RtrvFrame(int,char*,int)
+                                  H'0002B0F4               ENT
+CYModemRecv::SOH                  H'00011E5E               DAT
+CYModemRecv::STX                  H'00011E5F               DAT
+CAllProcess::SecondTick(void)     H'000250EE               ENT
+CPTPLink::SendCmd(unsigned char,unsigned char,unsigned char)
+                                  H'0002A5F6               ENT
+CPTPLink::SendData(const char*,int,unsigned char)
+                                  H'0002A6BC               ENT
+CPTPIsr::SendFrame(const char*,int,const char*)
+                                  H'0002ADDC               ENT
+CMailBox::SendMail(void*)         H'0002E36A               ENT
+CPTPDnldSend::SendPacket(void)    H'0002D1FE               ENT
+CAllProcess::SendStr(const char*)
+                                  H'00024F74               ENT
+CDebug::SendStr(const char*,int)  H'00023408               ENT
+CSci::Send(const char*,int,int)   H'0002202E               ENT
+CSci::SetBaudRate(long)           H'00021AFA               ENT
+CPTPIsr::SetBaudRate(long)        H'0002B6CE               ENT
+CMemBlock::SetBusy(unsigned char)
+                                  H'0002C1CA               ENT
+CMemBlock::SetCurSize(unsigned short)
+                                  H'0002C1A8               ENT
+CRTC::SetDateTime(int,int,int,int,int,int)
+                                  H'00021524               ENT
+CPTPLink::SetDriver(CPTPIsr*)     H'00029884               ENT
+CPTPLink::SetEvent(int)           H'0002AB44               ENT
+CRTC::SetGPSSeconds(unsigned long)
+                                  H'000212B8               ENT
+CPTPIsr::SetLink(CPTPLink*)       H'0002BE46               ENT
+CMailBox::SetMailEvent(unsigned char,unsigned short)
+                                  H'0002E390               ENT
+CMemBlock::SetOffset(int)         H'0002C1C4               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    10
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+CBaseProcess::SetPriority(unsigned char)
+                                  H'00020F50               ENT
+CDebug::SetPrompt(const char*)    H'00023E82               ENT
+CSci::SetSciNotification(CBaseProcess*,unsigned long)
+                                  H'000222FA               ENT
+CPTPLink::SetTaskSlot(unsigned char)
+                                  H'0002988A               ENT
+CRTC::SetTime(unsigned long)      H'000212B2               ENT
+CPTPLink::SetupClient(unsigned char,CBaseProcess*)
+                                  H'0002AA14               ENT
+CMemHeap::SetupList(int,int)      H'0002C652               ENT
+CBtmonDL::ShowData(char*,int)     H'00027A8A               ENT
+CBaseProcess::SignalEvent(unsigned short)
+                                  H'00020E46               ENT
+CAllProcess::StartAll(unsigned long)
+                                  H'00024AB8               ENT
+CBaseProcess::StartProcess(void)  H'00020E1A               ENT
+CPTPDnldProcess::StartSendCodeToTwinIOC(void)
+                                  H'0002E15E               ENT
+CPTPDnldSend::StartSendCode(void)
+                                  H'0002CC1E               ENT
+CPTPIsr::StartSend(void)          H'0002AD38               ENT
+CWatchDog::StartWatchDog(void)    H'0002EE8C               ENT
+CCheapTimer::Start(long)          H'000227F2               ENT
+CYModemRecv::Start(Ccomm*,CStorage*)
+                                  H'00027BCC               ENT
+CDebug::Start(Ccomm*,CFlash*,int)
+                                  H'00022E72               ENT
+CLoader::Start(unsigned long,int,unsigned char)
+                                  H'000291FC               ENT
+CBtmonDL::Start(Ccomm*,Ccomm*,CFlash*,unsigned long)
+                                  H'00026CB8               ENT
+CDebugDL::Start(CLoader*,Ccomm*,Ccomm*,CFlash*)
+                                  H'000261D0               ENT
+CWatchDog::StopWatchDog(void)     H'0002EEA6               ENT
+__TWOD                            H'00012972               DAT
+CPTPDnldRecv::TickTime(int)       H'0002DB3C               ENT
+CPTPDnldSend::TickTime(int)       H'0002D2A0               ENT
+CRTC::Tick(void)                  H'00021252               ENT
+CCheapTimer::TimeLeft(void)       H'00022828               ENT
+CCheapTimer::TimeOut(void)        H'000228A6               ENT
+CIntQueue::Top(void)              H'0002BF80               ENT
+__UNDEFINED                       H'00000500               DAT
+CYModemRecv::UpdateCrc(unsigned char,unsigned short*)
+                                  H'000288F6               ENT
+CCRC16::UpdateCrc(unsigned char)  H'0002C902               ENT
+CPTPDnldProcess::VersionStringQuery(CMemBlock*)
+                                  H'0002E254               ENT
+CAllProcess::WaitForChoice(void)  H'00025108               ENT
+CDebug::WaitSpace(void)           H'0002416A               ENT
+CSci::WaitTxDone(long)            H'00021F90               ENT
+CDebug::WordToASCII(unsigned short,char*)
+                                  H'00023A9A               ENT
+CAmd29B16::WriteBytes(unsigned long,int,const unsigned char*)
+                                  H'0002EA36               ENT
+CAmd29B16::WriteWord(unsigned long,unsigned short)
+                                  H'0002E8CE               ENT
+CCodeStorage::Write(const char*,int)
+                                  H'000289FE               ENT
+CAllProcess::_call__ctor_CAllProcess(void)
+                                  H'00024A7A               ENT
+CAmd29B16::_call__ctor_CAmd29B16(unsigned short,long*,const unsigned long*,unsigned long,CCheapTimer*,CPVOperation*)
+                                  H'0002E57E               ENT
+CAmd29DL161DB::_call__ctor_CAmd29DL161DB(unsigned long,CCheapTimer*,CPVOperation*)
+                                  H'0002E440               ENT
+CBaseProcess::_call__ctor_CBaseProcess(const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'00020CAE               ENT
+CCRC16::_call__ctor_CCRC16(void)  H'0002C804               ENT
+CCodeStorage::_call__ctor_CCodeStorage(CLoader*,unsigned long)
+                                  H'000289A2               ENT
+CDebugDL::_call__ctor_CDebugDL(const char*,CLoader*,CBaseProcess*)
+                                  H'000258FE               ENT
+CDebugProcess::_call__ctor_CDebugProcess(Ccomm*,CLoader*,CFlash*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'00024320               ENT
+CDebug::_call__ctor_CDebug(void)  H'00022E2E               ENT
+CDtcSci::_call__ctor_CDtcSci(unsigned int)
+                                  H'0002CA72               ENT
+CIntQueue::_call__ctor_CIntQueue(int)
+                                  H'0002BEA8               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    11
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+CMailBox::_call__ctor_CMailBox(void)
+                                  H'0002E32C               ENT
+CMemBlockList::_call__ctor_CMemBlockList(int,int)
+                                  H'0002C2C2               ENT
+CMemBlock::_call__ctor_CMemBlock(CMemBlockList*,int)
+                                  H'0002C0D2               ENT
+CMemHeap::_call__ctor_CMemHeap(void)
+                                  H'0002C5FE               ENT
+CPTPDnldProcess::_call__ctor_CPTPDnldProcess(CLoader*,CFlash*,CPTPLink*,CPTPLink*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'0002DE3C               ENT
+CPTPDnldRecv::_call__ctor_CPTPDnldRecv(CStorage*,unsigned long,unsigned short,CPTPLink*,unsigned char)
+                                  H'0002D3E4               ENT
+CPTPDnldSend::_call__ctor_CPTPDnldSend(CStorage*,unsigned short,CPTPLink*,unsigned char)
+                                  H'0002CBA8               ENT
+CPTPIsr::_call__ctor_CPTPIsr(st_sci*,long,unsigned int)
+                                  H'0002AC5E               ENT
+CPTPLink::_call__ctor_CPTPLink(const char*)
+                                  H'0002971C               ENT
+CPTPProcess::_call__ctor_CPTPProcess(CPTPLink*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'000293A0               ENT
+CQueue::_call__ctor_CQueue(unsigned char,int)
+                                  H'00021038               ENT
+CRTC::_call__ctor_CRTC(void)      H'000211D0               ENT
+CSci::_call__ctor_CSci(st_sci*,CCheapTimer*,CPVOperation*,long,unsigned int)
+                                  H'00021976               ENT
+CStorage::_call__ctor_CStorage(void)
+                                  H'00028950               ENT
+CUserProcess::_call__ctor_CUserProcess(Ccomm*,Ccomm*,CLoader*,CFlash*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'00025624               ENT
+CWatchDog::_call__ctor_CWatchDog(void)
+                                  H'0002EE66               ENT
+CYModemRecv::_call__ctor_CYModemRecv(void)
+                                  H'00027B70               ENT
+CAllProcess::_call__dtor_d_CAllProcess(int)
+                                  H'00024AA0               ENT
+CAmd29B16::_call__dtor_d_CAmd29B16(int)
+                                  H'0002E626               ENT
+CAmd29DL161DB::_call__dtor_d_CAmd29DL161DB(int)
+                                  H'0002E4C8               ENT
+CBaseProcess::_call__dtor_d_CBaseProcess(int)
+                                  H'00020D12               ENT
+CCRC16::_call__dtor_d_CCRC16(int)
+                                  H'0002C890               ENT
+CCodeStorage::_call__dtor_d_CCodeStorage(int)
+                                  H'000289E6               ENT
+CDebugDL::_call__dtor_d_CDebugDL(int)
+                                  H'000259E0               ENT
+CDebugProcess::_call__dtor_d_CDebugProcess(int)
+                                  H'0002440E               ENT
+CDtcSci::_call__dtor_d_CDtcSci(int)
+                                  H'0002CA98               ENT
+CIntQueue::_call__dtor_d_CIntQueue(int)
+                                  H'0002BF38               ENT
+CMailBox::_call__dtor_d_CMailBox(int)
+                                  H'0002E352               ENT
+CMemBlockList::_call__dtor_d_CMemBlockList(int)
+                                  H'0002C356               ENT
+CMemBlock::_call__dtor_d_CMemBlock(int)
+                                  H'0002C170               ENT
+CMemHeap::_call__dtor_d_CMemHeap(int)
+                                  H'0002C63A               ENT
+CPTPDnldProcess::_call__dtor_d_CPTPDnldProcess(int)
+                                  H'0002DECC               ENT
+CPTPDnldRecv::_call__dtor_d_CPTPDnldRecv(int)
+                                  H'0002D452               ENT
+CPTPDnldSend::_call__dtor_d_CPTPDnldSend(int)
+                                  H'0002CC06               ENT
+CPTPIsr::_call__dtor_d_CPTPIsr(int)
+                                  H'0002ACC4               ENT
+CPTPLink::_call__dtor_d_CPTPLink(int)
+                                  H'00029742               ENT
+CPTPProcess::_call__dtor_d_CPTPProcess(int)
+                                  H'00029436               ENT
+CQueue::_call__dtor_d_CQueue(int)
+                                  H'000210CE               ENT
+CRTC::_call__dtor_d_CRTC(int)     H'0002123A               ENT
+CStorage::_call__dtor_d_CStorage(int)
+                                  H'00028954               ENT
+CUserProcess::_call__dtor_d_CUserProcess(int)
+                                  H'0002572A               ENT
+CWatchDog::_call__dtor_d_CWatchDog(int)
+                                  H'0002EE74               ENT
+CYModemRecv::_call__dtor_d_CYModemRecv(int)
+                                  H'00027BB4               ENT
+CAllProcess::_call__dtor_s_CAllProcess(void)
+                                  H'00024AB6               ENT
+CAmd29B16::_call__dtor_s_CAmd29B16(void)
+                                  H'0002E63C               ENT
+CAmd29DL161DB::_call__dtor_s_CAmd29DL161DB(void)
+                                  H'0002E4EA               ENT
+CBaseProcess::_call__dtor_s_CBaseProcess(void)
+                                  H'00020D52               ENT
+CCRC16::_call__dtor_s_CCRC16(void)
+                                  H'0002C8A6               ENT
+CCodeStorage::_call__dtor_s_CCodeStorage(void)
+                                  H'000289FC               ENT
+CDebugDL::_call__dtor_s_CDebugDL(void)
+                                  H'00025A02               ENT
+CDebugProcess::_call__dtor_s_CDebugProcess(void)
+                                  H'00024430               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    12
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+CDtcSci::_call__dtor_s_CDtcSci(void)
+                                  H'0002CAAE               ENT
+CIntQueue::_call__dtor_s_CIntQueue(void)
+                                  H'0002BF64               ENT
+CMailBox::_call__dtor_s_CMailBox(void)
+                                  H'0002E368               ENT
+CMemBlockList::_call__dtor_s_CMemBlockList(void)
+                                  H'0002C36C               ENT
+CMemBlock::_call__dtor_s_CMemBlock(void)
+                                  H'0002C186               ENT
+CMemHeap::_call__dtor_s_CMemHeap(void)
+                                  H'0002C650               ENT
+CPTPDnldProcess::_call__dtor_s_CPTPDnldProcess(void)
+                                  H'0002DF06               ENT
+CPTPDnldRecv::_call__dtor_s_CPTPDnldRecv(void)
+                                  H'0002D468               ENT
+CPTPDnldSend::_call__dtor_s_CPTPDnldSend(void)
+                                  H'0002CC1C               ENT
+CPTPIsr::_call__dtor_s_CPTPIsr(void)
+                                  H'0002AD04               ENT
+CPTPLink::_call__dtor_s_CPTPLink(void)
+                                  H'00029758               ENT
+CPTPProcess::_call__dtor_s_CPTPProcess(void)
+                                  H'00029458               ENT
+CQueue::_call__dtor_s_CQueue(void)
+                                  H'000210E4               ENT
+CRTC::_call__dtor_s_CRTC(void)    H'00021250               ENT
+CStorage::_call__dtor_s_CStorage(void)
+                                  H'0002896A               ENT
+CUserProcess::_call__dtor_s_CUserProcess(void)
+                                  H'0002574C               ENT
+CWatchDog::_call__dtor_s_CWatchDog(void)
+                                  H'0002EE8A               ENT
+CYModemRecv::_call__dtor_s_CYModemRecv(void)
+                                  H'00027BCA               ENT
+CAllProcess::CAllProcess(void)    H'00024542               ENT
+CCheapTimer::CCheapTimer(void)    H'000227E2               ENT
+CPTPProcess::CPTPProcess(CPTPLink*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'0002933E               ENT
+CYModemRecv::CYModemRecv(void)    H'00027B4A               ENT
+CBaseProcess::CBaseProcess(const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'00020BA4               ENT
+CCodeStorage::CCodeStorage(CLoader*,unsigned long)
+                                  H'0002896C               ENT
+CPTPDnldRecv::CPTPDnldRecv(CStorage*,unsigned long,unsigned short,CPTPLink*,unsigned char)
+                                  H'0002D398               ENT
+CPTPDnldSend::CPTPDnldSend(CStorage*,unsigned short,CPTPLink*,unsigned char)
+                                  H'0002CB6A               ENT
+CUserProcess::CUserProcess(Ccomm*,Ccomm*,CLoader*,CFlash*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'0002557C               ENT
+CAmd29DL161DB::CAmd29DL161DB(unsigned long,CCheapTimer*,CPVOperation*)
+                                  H'0002E3E2               ENT
+CDebugProcess::CDebugProcess(Ccomm*,CLoader*,CFlash*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'00024284               ENT
+CMemBlockList::CMemBlockList(int,int)
+                                  H'0002C1EC               ENT
+CPTPDnldProcess::CPTPDnldProcess(CLoader*,CFlash*,CPTPLink*,CPTPLink*,const char*,unsigned char,unsigned short,void(*)(void))
+                                  H'0002DC46               ENT
+CRTC::CRTC(void)                  H'0002117A               ENT
+CSci::CSci(st_sci*,CCheapTimer*,CPVOperation*,long,unsigned int)
+                                  H'00021894               ENT
+CCRC16::CCRC16(void)              H'0002C792               ENT
+CDebug::CDebug(void)              H'00022E02               ENT
+CQueue::CQueue(unsigned char,int)
+                                  H'00020FB8               ENT
+CDtcSci::CDtcSci(unsigned int)    H'0002C92A               ENT
+CLoader::CLoader(CFlash*)         H'00028E2C               ENT
+CPTPIsr::CPTPIsr(st_sci*,long,unsigned int)
+                                  H'0002AB9E               ENT
+CBtmonDL::CBtmonDL(void)          H'00026C6A               ENT
+CDebugDL::CDebugDL(const char*,CLoader*,CBaseProcess*)
+                                  H'0002583E               ENT
+CMailBox::CMailBox(void)          H'0002E318               ENT
+CMemHeap::CMemHeap(void)          H'0002C5DA               ENT
+CPTPLink::CPTPLink(const char*)   H'00029592               ENT
+CStorage::CStorage(void)          H'0002894E               ENT
+CAmd29B16::CAmd29B16(unsigned short,long*,const unsigned long*,unsigned long,CCheapTimer*,CPVOperation*)
+                                  H'0002E516               ENT
+CIntQueue::CIntQueue(int)         H'0002BE4E               ENT
+CMemBlock::CMemBlock(CMemBlockList*,int)
+                                  H'0002C04E               ENT
+CWatchDog::CWatchDog(void)        H'0002EE64               ENT
+CAllProcess::~CAllProcess(void)   H'00024A9E               ENT
+CCheapTimer::~CCheapTimer(void)   H'000227F0               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    13
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+CPTPProcess::~CPTPProcess(void)   H'00029430               ENT
+CYModemRecv::~CYModemRecv(void)   H'00027BB2               ENT
+CBaseProcess::~CBaseProcess(void)
+                                  H'00020CEC               ENT
+CCodeStorage::~CCodeStorage(void)
+                                  H'000289E4               ENT
+CPTPDnldRecv::~CPTPDnldRecv(void)
+                                  H'0002D450               ENT
+CPTPDnldSend::~CPTPDnldSend(void)
+                                  H'0002CC04               ENT
+CUserProcess::~CUserProcess(void)
+                                  H'00025724               ENT
+CAmd29DL161DB::~CAmd29DL161DB(void)
+                                  H'0002E4C2               ENT
+CDebugProcess::~CDebugProcess(void)
+                                  H'00024408               ENT
+CMemBlockList::~CMemBlockList(void)
+                                  H'0002C354               ENT
+CPTPDnldProcess::~CPTPDnldProcess(void)
+                                  H'0002DEA4               ENT
+CRTC::~CRTC(void)                 H'00021238               ENT
+CSci::~CSci(void)                 H'000219BC               ENT
+CCRC16::~CCRC16(void)             H'0002C88E               ENT
+CDebug::~CDebug(void)             H'00022E70               ENT
+CQueue::~CQueue(void)             H'000210CC               ENT
+CDtcSci::~CDtcSci(void)           H'0002CA96               ENT
+CLoader::~CLoader(void)           H'00028E32               ENT
+CPTPIsr::~CPTPIsr(void)           H'0002AC96               ENT
+CBtmonDL::~CBtmonDL(void)         H'00026CB6               ENT
+CDebugDL::~CDebugDL(void)         H'000259DA               ENT
+CMailBox::~CMailBox(void)         H'0002E350               ENT
+CMemHeap::~CMemHeap(void)         H'0002C638               ENT
+CPTPLink::~CPTPLink(void)         H'00029740               ENT
+CStorage::~CStorage(void)         H'00028952               ENT
+CAmd29B16::~CAmd29B16(void)       H'0002E624               ENT
+CIntQueue::~CIntQueue(void)       H'0002BF22               ENT
+CMemBlock::~CMemBlock(void)       H'0002C16E               ENT
+CWatchDog::~CWatchDog(void)       H'0002EE72               ENT
+__add                             H'00033856               ENT
+__allzero                         H'00032546               ENT
+__calcnpw                         H'0003256E               ENT
+CCRC16::crcTable                  H'00FFB23E               DAT
+__ctype                           H'000125B6               DAT
+__dti                             H'00031FDC               ENT
+__dtoid                           H'000335C8               DAT
+CPTPProcess::entry(void)          H'0002951A               ENT
+CUserProcess::entry(void)         H'000257C8               ENT
+CDebugProcess::entry(void)        H'000244AA               ENT
+CPTPDnldProcess::entry(void)      H'0002DF7E               ENT
+__errno                           H'00FFB442               DAT
+__fmtout                          H'000300E6               ENT
+__freeptr                         H'00FFB4A2               DAT
+__idtod                           H'00033684               DAT
+__in_addd                         H'000338B2               DAT
+__in_eqd                          H'00033A8A               DAT
+__in_modfd                        H'00033776               ENT
+__in_subd                         H'000338A6               DAT
+__in_truncd                       H'00033A96               DAT
+CSci::init(void)                  H'000219E8               ENT
+CPTPIsr::init(void)               H'0002B708               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    14
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+CSci::isr_rxd(void)               H'00021BC8               ENT
+CPTPIsr::isr_rxd(void)            H'0002B14E               ENT
+CSci::isr_rxd_error(void)         H'00021B40               ENT
+CPTPIsr::isr_rxd_error(void)      H'0002B5F4               ENT
+CSci::isr_txd(void)               H'00021C8E               ENT
+CPTPIsr::isr_txd(void)            H'0002B502               ENT
+CSci::isr_txd_idle(void)          H'00021D00               ENT
+CPTPIsr::isr_txd_idle(void)       H'0002B67C               ENT
+__its                             H'00032378               ENT
+__log10                           H'00032658               ENT
+__lsft                            H'0003333E               ENT
+__lsfts                           H'000326FC               ENT
+CBaseProcess::m_TaskCounter       H'00FFB480               DAT
+CBaseProcess::m_TaskList          H'00FFB448               DAT
+CAmd29DL161DB::m_amd29DL161dbSectorList
+                                  H'0001246A               DAT
+CCRC16::m_bInited                 H'00FFB4A0               DAT
+CDebugDL::m_cmdList               H'00011636               DAT
+CDebug::m_debugCmdList            H'00010C66               DAT
+CMemBlock::m_idCnt                H'00FFB49E               DAT
+CAllProcess::m_pattern            H'00FFB48C               DAT
+CAllProcess::m_skipHeader         H'00FFB236               DAT
+__mult                            H'0003338C               ENT
+__mult64                          H'00032A3C               ENT
+__pow10                           H'0003352E               ENT
+__pow5                            H'0003277C               ENT
+__power                           H'00032AC0               ENT
+__rnd                             H'00032C0C               ENT
+__rsfts                           H'000327A4               ENT
+CQueue::s_queue_id_dispatch       H'00FFB482               DAT
+__sbrk_size                       H'000125B2               DAT
+__setsbit                         H'00032CF8               ENT
+__sub                             H'00032826               ENT
+__unpack                          H'000328E6               ENT
+__vtbl_CAllProcess                H'00010664               DAT
+__vtbl_CBaseProcess               H'0001052C               DAT
+__vtbl_CBaseProcess_CDebugProcess
+                                  H'0001060C               DAT
+__vtbl_CBaseProcess_CPTPDnldProcess
+                                  H'00010814               DAT
+__vtbl_CBaseProcess_CPTPProcess   H'00010744               DAT
+__vtbl_CBaseProcess_CUserProcess  H'00010674               DAT
+__vtbl_CCRC16                     H'000107E4               DAT
+__vtbl_CDebug                     H'000105F4               DAT
+__vtbl_CDebug_CDebugDL            H'000106CC               DAT
+__vtbl_CDtcSci                    H'000107EC               DAT
+__vtbl_CFlash_CAmd29B16           H'000108D4               DAT
+__vtbl_CFlash_CAmd29B16_CAmd29DL161DB
+                                  H'00010884               DAT
+__vtbl_CIntQueue                  H'000107C4               DAT
+__vtbl_CMailBox                   H'00010874               DAT
+__vtbl_CMemBlock                  H'000107CC               DAT
+__vtbl_CMemBlockList              H'000107D4               DAT
+__vtbl_CMemHeap                   H'000107DC               DAT
+__vtbl_CPTPDnldRecv               H'00010804               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    15
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+__vtbl_CPTPDnldSend               H'000107F4               DAT
+__vtbl_CPTPIsr                    H'000107B4               DAT
+__vtbl_CPTPLink                   H'000107AC               DAT
+__vtbl_CPVOperation_allprocess_cpp
+                                  H'0001066C               DAT
+__vtbl_CPVOperation_amd29b16_cpp  H'000108CC               DAT
+__vtbl_CPVOperation_amd29dl161db_cpp
+                                  H'0001087C               DAT
+__vtbl_CPVOperation_boot_cpp      H'000105EC               DAT
+__vtbl_CPVOperation_debugdl_cpp   H'000106EC               DAT
+__vtbl_CPVOperation_intprg_cpp    H'00010524               DAT
+__vtbl_CPVOperation_ptpdnldprocess_cpp
+                                  H'0001086C               DAT
+__vtbl_CPVOperation_ptpdnldrecv_cpp
+                                  H'0001080C               DAT
+__vtbl_CPVOperation_ptpdnldsend_cpp
+                                  H'000107FC               DAT
+__vtbl_CPVOperation_ptpisr_cpp    H'000107BC               DAT
+__vtbl_CPVOperation_ptplink_cpp   H'000107A4               DAT
+__vtbl_CPVOperation_ptpprocess_cpp
+                                  H'0001079C               DAT
+__vtbl_CPVOperation_rtc_cpp       H'00010594               DAT
+__vtbl_CPVOperation_sci_cpp       H'0001059C               DAT
+__vtbl_CPVOperation_storage_cpp   H'0001073C               DAT
+__vtbl_CQueue                     H'00010584               DAT
+__vtbl_CRTC                       H'0001058C               DAT
+__vtbl_CStorage_CCodeStorage      H'000106FC               DAT
+__vtbl_CWatchDog                  H'0001091C               DAT
+__vtbl_CYModemRecv                H'000106F4               DAT
+__vtbl_Ccomm_CSci                 H'000105A4               DAT
+_active_priority                  H'003C4800               DAT
+_activetcb                        H'003C47FC               DAT
+_bp_count                         H'00FFB11A               DAT
+_bp_table                         H'00FFB0B6               DAT
+_cmx_flag1                        H'00FFB22E               DAT
+_cmx_tcb                          H'003C2008               DAT
+_cmx_tick_count                   H'003C490C               DAT
+_cstart                           H'000206C4               ENT
+_cyclic_buf                       H'003C47D4               DAT
+_cyclic_lnk                       H'003C47DC               DAT
+_download_failure                 H'00FFB12E               DAT
+_exit                             H'00000BA0               DAT
+_free                             H'0002EF1C               ENT
+_frexp                            H'00033152               DAT
+_g_appFailCnt                     H'00FFB212               DAT
+_g_cmx_started                    H'00FFB213               DAT
+_g_monFlag1                       H'00FFB200               DAT
+_g_monFlag2                       H'00FFB204               DAT
+_g_nextBlock                      H'00FFB20A               DAT
+_g_pAll                           H'00FFB238               DAT
+_g_pRTC                           H'00FFB232               DAT
+_g_pSci0                          H'00FFB218               DAT
+_g_pSci1                          H'00FFB21C               DAT
+_g_pSci3                          H'00FFB220               DAT
+_g_pSci4                          H'00FFB224               DAT
+_g_quitCnt                        H'00FFB208               DAT
+_g_sBuildDate                     H'0001FF0C               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    16
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_g_sBuildTime                     H'0001FF10               DAT
+_g_systemTicks                    H'00FFB008               DAT
+_get_address_of_jump              H'00000E4C               ENT
+_get_displacement_of_branch       H'00000E1C               ENT
+_get_instruction_length           H'000025A6               ENT
+_global_char                      H'00FFB070               DAT
+_ie_holder                        H'00FFB230               DAT
+_in_ctr                           H'00FFB22C               DAT
+_init_ptp                         H'0002BDB6               ENT
+_initshv                          H'000007AC               DAT
+_int_count                        H'00FFB22F               DAT
+_int_storage                      H'003C382A               DAT
+_interrupt_stack                  H'003C47CC               DAT
+_locked_out                       H'00FFB22A               DAT
+_mail_box                         H'003C232C               DAT
+_main                             H'00022D20               ENT
+_malloc                           H'0002F022               ENT
+_mc_breakpoint_setting            H'00001BD4               ENT
+_mc_capability                    H'000014DA               ENT
+_mc_execute                       H'0000140C               ENT
+_mc_io_read                       H'00001D10               ENT
+_mc_io_write                      H'00001DDC               ENT
+_mc_memory_calculate_signature    H'00001930               ENT
+_mc_memory_fill                   H'000016CC               ENT
+_mc_memory_general                H'00001A42               ENT
+_mc_memory_scan                   H'00001810               ENT
+_memcmp                           H'00031C90               DAT
+_memcpy                           H'0002F17C               DAT
+_memory_scan                      H'000017E4               ENT
+_memset                           H'0002F1A6               DAT
+_message_box                      H'003C238C               DAT
+_message_free                     H'003C47F8               DAT
+_message_ptr                      H'003C47F4               DAT
+_mirror_INT_Vectors               H'00000008               DAT
+_modf                             H'0003320C               ENT
+_mon_main                         H'0000268C               ENT
+_mon_sci_init                     H'00FFB11C               DAT
+_mon_startup                      H'00000B3C               DAT
+_out_ctr                          H'00FFB22D               DAT
+_out_ptr                          H'003C4808               DAT
+_pipe                             H'003C480C               DAT
+_pipe_slots_avail                 H'00FFB22B               DAT
+_queue                            H'003C24EC               DAT
+_regs                             H'00FFB072               DAT
+_res_que                          H'003C22E6               DAT
+_rtc_count                        H'003C4806               DAT
+_sbrk                             H'00020638               ENT
+_sci0_rxd                         H'000223FA               ENT
+_sci0_rxd_error                   H'0002236A               ENT
+_sci0_txd                         H'00022414               ENT
+_sci0_txd_idle                    H'0002248E               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :    17
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_sci1_init                        H'0002270E               ENT
+_sci1_rxd                         H'000225CC               ENT
+_sci1_rxd_error                   H'0002253C               ENT
+_sci1_txd                         H'000225E6               ENT
+_sci1_txd_idle                    H'00022660               ENT
+_sci3_rxd                         H'0002B8AA               ENT
+_sci3_rxd_error                   H'0002B81A               ENT
+_sci3_txd                         H'0002BA82               ENT
+_sci3_txd_idle                    H'0002BA9C               ENT
+_sci4_rxd                         H'0002BB78               ENT
+_sci4_rxd_error                   H'0002BAE8               ENT
+_sci4_txd                         H'0002BD50               ENT
+_sci4_txd_idle                    H'0002BD6A               ENT
+_sci_init                         H'000227CA               ENT
+_sem_array                        H'003C2540               DAT
+_sprintf                          H'0002F1E4               ENT
+_stack_blk                        H'003C3826               DAT
+_stack_holder                     H'003C47D0               DAT
+_stack_pointer                    H'00FFB0A6               DAT
+_stack_storage                    H'003C2564               DAT
+_strcat                           H'0002F238               ENT
+_strcmp                           H'0002F25C               ENT
+_strcpy                           H'0002F286               ENT
+_strlen                           H'0002F2A2               ENT
+_strncmp                          H'0002F2BE               ENT
+_strncpy                          H'0002F30A               ENT
+_strstr                           H'0002F34C               ENT
+_tcproc                           H'003C228C               DAT
+_timertask                        H'003C4802               DAT
+_tsk_timer_buf                    H'003C47E4               DAT
+_tsk_timer_lnk                    H'003C47E0               DAT
+_tslice_count                     H'003C47FA               DAT

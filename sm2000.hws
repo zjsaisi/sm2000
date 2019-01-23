@@ -1,0 +1,25 @@
+[HIMDBVersion]
+2.0
+[DATABASE_VERSION]
+"1.0" 
+[WORKSPACE_DETAILS]
+"sm2000" "Z:\work\newtest\sm2000" "Z:\work\newtest\sm2000\sm2000.hws" "H8S,H8/300" "Hitachi H8S,H8/300 Standard" 
+[PROJECTS]
+"Boot" "Z:\work\newtest\sm2000\iocboot" "Z:\work\newtest\sm2000\iocboot\boot.hwp" 
+"IOCHeader" "Z:\work\newtest\sm2000\iocheader" "Z:\work\newtest\sm2000\iocheader\iocheader.hwp" 
+"Main" "Z:\work\newtest\sm2000\iocmain" "Z:\work\newtest\sm2000\iocmain\main.hwp" 
+[LAST_PROJECT]
+"Main" 
+[INFORMATION]
+"No information specified" 
+[SCRAP]
+"Debugger Exe" "" 
+[PROJECT_DEPENDENCY]
+[WORKSPACE_PROPERTIES]
+"GenerateLogFile" "OFF" 
+"Log File" "" 
+[VCS]
+"" "" "" 0 
+[VCS_PROJECT]
+[HELP_FILES]
+[END]

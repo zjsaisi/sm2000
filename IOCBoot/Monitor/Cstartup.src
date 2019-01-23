@@ -1,0 +1,104 @@
+;;; Cstartup.src
+
+;-----------------------------------------------------------------------;
+;
+;				cstartup.s37
+;
+;	This module contains the H8 startup routine and
+;	must be tailored to suit special hardware needs.
+;
+; Define the symbol IGNORE_SEG_INIT to remove segment initialization
+; code.  This can be done if you do not rely on having global/static
+; variables set to 0 or some explicit value at startup.
+;
+;
+;	Version: 1.01  ITHA	28/Aug/96
+;	Version: 1.0 2633 DGL 1/10/01 -- Built from the HMSE (IAR) 2623 Monitor
+;
+;-----------------------------------------------------------------------;
+
+	.include "2623bus.inc"
+
+;---------------------------------------------------------------;
+; C interrupt routines with defined [vectors] will reserve	;
+; space in this area. So will handlers written in assembler	;
+; if they follow the recommended format.			;
+;---------------------------------------------------------------;
+
+	.section S,STACK
+	.section INTVEC,CODE
+
+	.data.l	_mon_startup
+	.res.l	1
+
+	.import _mon_main
+	.export _mon_startup
+
+	.section PMONITOR,CODE
+
+_mon_startup:
+	mov.l	#STARTOF S + SIZEOF S,SP
+
+	mov.l   #ABWCR,er0     
+	mov.b	#H'FD, r1l	; Areas 1(SRAM) ;//2633 mod
+	mov.b   r1l,@er0 
+	
+	mov.l	#WCRL,er0
+	mov.b	#h'F3,r1l	; No wait states in area 1
+	mov.b	r1l,@er0
+
+    mov.l   #WCRH,er0  
+    mov.b   #H'D0, r1l
+  	mov.b	r1l, @er0    
+
+	mov.l	#PFCR,er0
+	mov.b	#H'0C, r1l	; Enable address lines to A19 (kh 9/5/01)
+	mov.b   r1l,@er0  
+
+    ;---------------------------------------------------------
+    ; Set the data direction for A0-A8 (PC) as address outputs
+    ;--------------------------------------------------------- 
+    
+    mov.l   #P1DDR,er0      
+    mov.b   #H'01, r1l	; A23-A20
+    mov.b   r1l,@er0
+
+    mov.l   #PADDR,er0      
+    mov.b   #H'FF, r1l  ; A19-A16
+    mov.b   r1l,@er0
+    
+    mov.l   #PBDDR,er0      
+    mov.b   #H'FF, r1l  ; A15-A8
+    mov.b   r1l,@er0
+    
+    mov.l   #PCDDR,er0      
+    mov.b   #H'FF, r1l	; A7-A0
+    mov.b   r1l,@er0 
+    
+	bset.b  #3,@H'00FFFE3F:16	; configure /CS1
+    	
+;--------------------------------------------------------------;
+; Call C main() with no parameters.                            ;
+;--------------------------------------------------------------;
+
+	jsr	@_mon_main
+
+;---------------------------------------------------------------;
+; Now when we are ready with our C program (usually H8/300H     ;
+; programs are continouous) we must perform a system-dependent  ;
+; action.  In this case we just stop.				;
+;---------------------------------------------------------------;
+
+	jmp	@_exit		; Exit
+
+
+	.export _exit
+_exit:
+;---------------------------------------------------------------;
+; The next line can be replaced with user defined code.		;
+; Remember to set the m-flag to the value you want and		;
+; tell the assembler about it as usual.				;
+;---------------------------------------------------------------;
+	bra	$
+
+	.END

@@ -1,0 +1,7 @@
+"Z:\work\newtest\sm2000\iocboot\monitor\intv.src"
+-cpu=2600a:24
+-nodebug
+-object="Z:\work\newtest\sm2000\iocboot\Release\intv.obj"
+-nolist
+-chgincpath
+-errorpath

@@ -1,0 +1,760 @@
+          .CPU        2600A:24
+          .EXPORT     _INT_Treace
+          .EXPORT     _INT_Direct_Transition
+          .EXPORT     _INT_NMI
+          .EXPORT     _INT_TRAP1
+          .EXPORT     _INT_TRAP2
+          .EXPORT     _INT_TRAP3
+          .EXPORT     _INT_TRAP4
+          .EXPORT     _INT_IRQ0
+          .EXPORT     _INT_IRQ1
+          .EXPORT     _INT_IRQ2
+          .EXPORT     _INT_IRQ3
+          .EXPORT     _INT_IRQ5
+          .EXPORT     _INT_IRQ7
+          .EXPORT     _INT_SWDTEND_DTC
+          .EXPORT     _INT_WOVI0
+          .EXPORT     _INT_CMI
+          .EXPORT     _INT_PC_Break
+          .EXPORT     _INT_WOVI1
+          .EXPORT     _INT_TGI0A_TPU0
+          .EXPORT     _INT_TGI0B_TPU0
+          .EXPORT     _INT_TGI0C_TPU0
+          .EXPORT     _INT_TGI0D_TPU0
+          .EXPORT     _INT_TCI0V_TPU0
+          .EXPORT     _INT_TGI1A_TPU1
+          .EXPORT     _INT_TGI1B_TPU1
+          .EXPORT     _INT_TCI1V_TPU1
+          .EXPORT     _INT_TCI1U_TPU1
+          .EXPORT     _INT_TGI2A_TPU2
+          .EXPORT     _INT_TGI2B_TPU2
+          .EXPORT     _INT_TCI2V_TPU2
+          .EXPORT     _INT_TCI2U_TPU2
+          .EXPORT     _INT_TGI3A_TPU3
+          .EXPORT     _INT_TGI3B_TPU3
+          .EXPORT     _INT_TGI3C_TPU3
+          .EXPORT     _INT_TGI3D_TPU3
+          .EXPORT     _INT_TCI3V_TPU3
+          .EXPORT     _INT_TGI4A_TPU4
+          .EXPORT     _INT_TGI4B_TPU4
+          .EXPORT     _INT_TCI4V_TPU4
+          .EXPORT     _INT_TCI4U_TPU4
+          .EXPORT     _INT_TGI5A_TPU5
+          .EXPORT     _INT_TGI5B_TPU5
+          .EXPORT     _INT_TCI5V_TPU5
+          .EXPORT     _INT_TCI5U_TPU5
+          .EXPORT     _INT_CMIB0A
+          .EXPORT     _INT_OVI0A
+          .EXPORT     _INT_CMIA1A
+          .EXPORT     _INT_CMIB1A
+          .EXPORT     _INT_OVI1A
+          .EXPORT     _INT_DEND0A
+          .EXPORT     _INT_DEND0B
+          .EXPORT     _INT_DEND1A
+          .EXPORT     _INT_DEND1B
+          .EXPORT     _INT_ERI2_SCI2
+          .EXPORT     _INT_RXI2_SCI2
+          .EXPORT     _INT_TXI2_SCI2
+          .EXPORT     _INT_TEI2_SCI2
+          .EXPORT     _INT_CMIA0B
+          .EXPORT     _INT_CMIB0B
+          .EXPORT     _INT_OVI0B
+          .EXPORT     _INT_CMIB1B
+          .EXPORT     _INT_OVI1B
+          .EXPORT     _INT_IICI0
+          .EXPORT     _INT_DDCSWI
+          .EXPORT     _INT_IICI1
+          .EXPORT     _Dummy
+          .SECTION    PIntPRG,CODE,ALIGN=2
+		.IMPORT		_K_OS_Intrp_Entry  
+		.IMPORT		_K_OS_Intrp_Exit 
+		.IMPORT		_RTOS_TICK
+		.IMPORT		_sci3_rxd
+		.IMPORT		_sci3_txd
+		.IMPORT		_sci3_txd_idle
+		.IMPORT		_sci4_rxd_error
+		.IMPORT		_sci4_rxd
+		.IMPORT		_sci4_txd
+		.IMPORT		_sci4_txd_idle
+		
+          .LINE       "C:\test\newtest\sm2000\iocmain\h2633f\intprg.cpp",51
+_INT_Treace:                     ; function: INT_Treace()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       51
+          .LINE       51
+          POP.L       ER6
+          RTE
+          .LINE       53
+_INT_Direct_Transition:          ; function: INT_Direct_Transition()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       53
+          .LINE       53
+          POP.L       ER6
+          RTE
+          .LINE       55
+_INT_NMI:                        ; function: INT_NMI()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       55
+          .LINE       55
+          POP.L       ER6
+          RTE
+          .LINE       57
+_INT_TRAP1:                      ; function: INT_TRAP1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       57
+          .LINE       57
+          POP.L       ER6
+          RTE
+          .LINE       59
+_INT_TRAP2:                      ; function: INT_TRAP2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       59
+          .LINE       59
+          POP.L       ER6
+          RTE
+          .LINE       61
+_INT_TRAP3:                      ; function: INT_TRAP3()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       61
+          .LINE       61
+          POP.L       ER6
+          RTE
+          .LINE       63
+_INT_TRAP4:                      ; function: INT_TRAP4()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       63
+          .LINE       63
+          POP.L       ER6
+          RTE
+          .LINE       73
+_INT_IRQ0:                       ; function: INT_IRQ0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       73
+          .LINE       73
+          POP.L       ER6
+          RTE
+          .LINE       75
+_INT_IRQ1:                       ; function: INT_IRQ1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       75
+          .LINE       75
+          POP.L       ER6
+          RTE
+          .LINE       77
+_INT_IRQ2:                       ; function: INT_IRQ2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       77
+          .LINE       77
+          POP.L       ER6
+          RTE
+          .LINE       79
+_INT_IRQ3:                       ; function: INT_IRQ3()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       79
+          .LINE       79
+          POP.L       ER6
+          RTE
+		.IMPORT _isr_fpga1
+		.EXPORT _INT_IRQ4
+_INT_IRQ4:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_isr_fpga1:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+          .LINE       96
+_INT_IRQ5:                       ; function: INT_IRQ5()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       96
+          .LINE       96
+          POP.L       ER6
+          RTE
+		.IMPORT _isr_fpga2
+		.EXPORT _INT_IRQ6
+_INT_IRQ6:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_isr_fpga2:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+          .LINE       114
+_INT_IRQ7:                       ; function: INT_IRQ7()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       114
+          .LINE       114
+          POP.L       ER6
+          RTE
+          .LINE       116
+_INT_SWDTEND_DTC:                ; function: INT_SWDTEND_DTC()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       116
+          .LINE       116
+          POP.L       ER6
+          RTE
+          .LINE       118
+_INT_WOVI0:                      ; function: INT_WOVI0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       118
+          .LINE       118
+          POP.L       ER6
+          RTE
+          .LINE       120
+_INT_CMI:                        ; function: INT_CMI()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       120
+          .LINE       120
+          POP.L       ER6
+          RTE
+          .LINE       122
+_INT_PC_Break:                   ; function: INT_PC_Break()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       122
+          .LINE       122
+          POP.L       ER6
+          RTE
+		.IMPORT		_isr_adc   
+		.EXPORT		_INT_ADI
+_INT_ADI:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_isr_adc:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+          .LINE       140
+_INT_WOVI1:                      ; function: INT_WOVI1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       140
+          .LINE       140
+          POP.L       ER6
+          RTE
+          .LINE       146
+_INT_TGI0A_TPU0:                 ; function: INT_TGI0A_TPU0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       146
+          .LINE       146
+          POP.L       ER6
+          RTE
+          .LINE       148
+_INT_TGI0B_TPU0:                 ; function: INT_TGI0B_TPU0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       148
+          .LINE       148
+          POP.L       ER6
+          RTE
+          .LINE       150
+_INT_TGI0C_TPU0:                 ; function: INT_TGI0C_TPU0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       150
+          .LINE       150
+          POP.L       ER6
+          RTE
+          .LINE       152
+_INT_TGI0D_TPU0:                 ; function: INT_TGI0D_TPU0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       152
+          .LINE       152
+          POP.L       ER6
+          RTE
+          .LINE       154
+_INT_TCI0V_TPU0:                 ; function: INT_TCI0V_TPU0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       154
+          .LINE       154
+          POP.L       ER6
+          RTE
+          .LINE       162
+_INT_TGI1A_TPU1:                 ; function: INT_TGI1A_TPU1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       162
+          .LINE       162
+          POP.L       ER6
+          RTE
+          .LINE       164
+_INT_TGI1B_TPU1:                 ; function: INT_TGI1B_TPU1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       164
+          .LINE       164
+          POP.L       ER6
+          RTE
+          .LINE       166
+_INT_TCI1V_TPU1:                 ; function: INT_TCI1V_TPU1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       166
+          .LINE       166
+          POP.L       ER6
+          RTE
+          .LINE       168
+_INT_TCI1U_TPU1:                 ; function: INT_TCI1U_TPU1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       168
+          .LINE       168
+          POP.L       ER6
+          RTE
+          .LINE       170
+_INT_TGI2A_TPU2:                 ; function: INT_TGI2A_TPU2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       170
+          .LINE       170
+          POP.L       ER6
+          RTE
+          .LINE       172
+_INT_TGI2B_TPU2:                 ; function: INT_TGI2B_TPU2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       172
+          .LINE       172
+          POP.L       ER6
+          RTE
+          .LINE       174
+_INT_TCI2V_TPU2:                 ; function: INT_TCI2V_TPU2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       174
+          .LINE       174
+          POP.L       ER6
+          RTE
+          .LINE       176
+_INT_TCI2U_TPU2:                 ; function: INT_TCI2U_TPU2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       176
+          .LINE       176
+          POP.L       ER6
+          RTE
+          .LINE       178
+_INT_TGI3A_TPU3:                 ; function: INT_TGI3A_TPU3()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       178
+          .LINE       178
+          POP.L       ER6
+          RTE
+          .LINE       180
+_INT_TGI3B_TPU3:                 ; function: INT_TGI3B_TPU3()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       180
+          .LINE       180
+          POP.L       ER6
+          RTE
+          .LINE       182
+_INT_TGI3C_TPU3:                 ; function: INT_TGI3C_TPU3()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       182
+          .LINE       182
+          POP.L       ER6
+          RTE
+          .LINE       184
+_INT_TGI3D_TPU3:                 ; function: INT_TGI3D_TPU3()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       184
+          .LINE       184
+          POP.L       ER6
+          RTE
+          .LINE       186
+_INT_TCI3V_TPU3:                 ; function: INT_TCI3V_TPU3()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       186
+          .LINE       186
+          POP.L       ER6
+          RTE
+          .LINE       194
+_INT_TGI4A_TPU4:                 ; function: INT_TGI4A_TPU4()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       194
+          .LINE       194
+          POP.L       ER6
+          RTE
+          .LINE       196
+_INT_TGI4B_TPU4:                 ; function: INT_TGI4B_TPU4()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       196
+          .LINE       196
+          POP.L       ER6
+          RTE
+          .LINE       198
+_INT_TCI4V_TPU4:                 ; function: INT_TCI4V_TPU4()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       198
+          .LINE       198
+          POP.L       ER6
+          RTE
+          .LINE       200
+_INT_TCI4U_TPU4:                 ; function: INT_TCI4U_TPU4()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       200
+          .LINE       200
+          POP.L       ER6
+          RTE
+          .LINE       202
+_INT_TGI5A_TPU5:                 ; function: INT_TGI5A_TPU5()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       202
+          .LINE       202
+          POP.L       ER6
+          RTE
+          .LINE       204
+_INT_TGI5B_TPU5:                 ; function: INT_TGI5B_TPU5()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       204
+          .LINE       204
+          POP.L       ER6
+          RTE
+          .LINE       206
+_INT_TCI5V_TPU5:                 ; function: INT_TCI5V_TPU5()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       206
+          .LINE       206
+          POP.L       ER6
+          RTE
+          .LINE       208
+_INT_TCI5U_TPU5:                 ; function: INT_TCI5U_TPU5()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       208
+          .LINE       208
+          POP.L       ER6
+          RTE
+		.EXPORT		_INT_CMIA0A
+_INT_CMIA0A:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_RTOS_TICK:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+          .LINE       235
+_INT_CMIB0A:                     ; function: INT_CMIB0A()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       235
+          .LINE       235
+          POP.L       ER6
+          RTE
+          .LINE       237
+_INT_OVI0A:                      ; function: INT_OVI0A()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       237
+          .LINE       237
+          POP.L       ER6
+          RTE
+          .LINE       241
+_INT_CMIA1A:                     ; function: INT_CMIA1A()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       241
+          .LINE       241
+          POP.L       ER6
+          RTE
+          .LINE       243
+_INT_CMIB1A:                     ; function: INT_CMIB1A()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       243
+          .LINE       243
+          POP.L       ER6
+          RTE
+          .LINE       245
+_INT_OVI1A:                      ; function: INT_OVI1A()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       245
+          .LINE       245
+          POP.L       ER6
+          RTE
+          .LINE       249
+_INT_DEND0A:                     ; function: INT_DEND0A()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       249
+          .LINE       249
+          POP.L       ER6
+          RTE
+          .LINE       251
+_INT_DEND0B:                     ; function: INT_DEND0B()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       251
+          .LINE       251
+          POP.L       ER6
+          RTE
+          .LINE       253
+_INT_DEND1A:                     ; function: INT_DEND1A()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       253
+          .LINE       253
+          POP.L       ER6
+          RTE
+          .LINE       255
+_INT_DEND1B:                     ; function: INT_DEND1B()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       255
+          .LINE       255
+          POP.L       ER6
+          RTE
+		.IMPORT		_sci0_rxd_error
+		.EXPORT		_INT_ERI0_SCI0
+_INT_ERI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L654:
+		.IMPORT		_sci0_rxd
+		.EXPORT		_INT_RXI0_SCI0
+_INT_RXI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L655:
+		.IMPORT		_sci0_txd
+		.EXPORT		_INT_TXI0_SCI0
+_INT_TXI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L656:
+		.IMPORT		_sci0_txd_idle
+		.EXPORT		_INT_TEI0_SCI0
+_INT_TEI0_SCI0:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci0_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L657:
+		.IMPORT		_sci1_rxd_error
+		.EXPORT		_INT_ERI1_SCI1
+_INT_ERI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L658:
+		.IMPORT		_sci1_rxd
+		.EXPORT		_INT_RXI1_SCI1
+_INT_RXI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L659:
+		.IMPORT		_sci1_txd
+		.EXPORT		_INT_TXI1_SCI1
+_INT_TXI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L660:
+		.IMPORT		_sci1_txd_idle
+		.EXPORT		_INT_TEI1_SCI1
+_INT_TEI1_SCI1:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci1_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+          .LINE       416
+_INT_ERI2_SCI2:                  ; function: INT_ERI2_SCI2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       416
+          .LINE       416
+          POP.L       ER6
+          RTE
+          .LINE       418
+_INT_RXI2_SCI2:                  ; function: INT_RXI2_SCI2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       418
+          .LINE       418
+          POP.L       ER6
+          RTE
+          .LINE       420
+_INT_TXI2_SCI2:                  ; function: INT_TXI2_SCI2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       420
+          .LINE       420
+          POP.L       ER6
+          RTE
+          .LINE       422
+_INT_TEI2_SCI2:                  ; function: INT_TEI2_SCI2()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       422
+          .LINE       422
+          POP.L       ER6
+          RTE
+          .LINE       424
+_INT_CMIA0B:                     ; function: INT_CMIA0B()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       424
+          .LINE       424
+          POP.L       ER6
+          RTE
+          .LINE       426
+_INT_CMIB0B:                     ; function: INT_CMIB0B()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       426
+          .LINE       426
+          POP.L       ER6
+          RTE
+          .LINE       428
+_INT_OVI0B:                      ; function: INT_OVI0B()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       428
+          .LINE       428
+          POP.L       ER6
+          RTE
+		.EXPORT		_INT_CMIA1B
+_INT_CMIA1B:
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_RTOS_TICK:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+          .LINE       454
+_INT_CMIB1B:                     ; function: INT_CMIB1B()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       454
+          .LINE       454
+          POP.L       ER6
+          RTE
+          .LINE       456
+_INT_OVI1B:                      ; function: INT_OVI1B()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       456
+          .LINE       456
+          POP.L       ER6
+          RTE
+          .LINE       460
+_INT_IICI0:                      ; function: INT_IICI0()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       460
+          .LINE       460
+          POP.L       ER6
+          RTE
+          .LINE       462
+_INT_DDCSWI:                     ; function: INT_DDCSWI()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       462
+          .LINE       462
+          POP.L       ER6
+          RTE
+          .LINE       464
+_INT_IICI1:                      ; function: INT_IICI1()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       464
+          .LINE       464
+          POP.L       ER6
+          RTE
+		.IMPORT		_sci3_rxd_error
+		.EXPORT		_INT_ERI3_SCI3
+_INT_ERI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L661:
+		.EXPORT		_INT_RXI3_SCI3
+_INT_RXI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L662:
+		.EXPORT		_INT_TXI3_SCI3
+_INT_TXI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L663:
+		.EXPORT		_INT_TEI3_SCI3
+_INT_TEI3_SCI3:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci3_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L664:
+		.EXPORT		_INT_ERI4_SCI4
+_INT_ERI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_rxd_error:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L665:
+		.EXPORT		_INT_RXI4_SCI4
+_INT_RXI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_rxd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L666:
+		.EXPORT		_INT_TXI4_SCI4
+_INT_TXI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_txd:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+L667:
+		.EXPORT		_INT_TEI4_SCI4
+_INT_TEI4_SCI4:			
+        JSR         @_K_OS_Intrp_Entry:24
+        JSR         @_sci4_txd_idle:24
+        JSR         @_K_OS_Intrp_Exit:24
+        RTE
+          .LINE       597
+_Dummy:                          ; function: Dummy()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       597
+          .LINE       597
+          POP.L       ER6
+          RTE
+          .END

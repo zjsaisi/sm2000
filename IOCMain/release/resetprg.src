@@ -1,0 +1,66 @@
+          .CPU        2600A:24
+          .IMPORT     _main
+          .IMPORT     __INITSCT
+          .IMPORT     _HardwareSetup
+          .IMPORT     ___call_init__Fv
+          .IMPORT     ___call_end__Fv
+          .EXPORT     _g_sBuildDate
+          .EXPORT     _g_sBuildTime
+          .EXPORT     _PowerON_Reset
+          .EXPORT     _Manual_Reset
+          .SECTION    PResetPRG,CODE,ALIGN=2
+;*** File resetprg.c, Line 65    ; block
+_PowerON_Reset:                  ; function: PowerON_Reset()
+          MOV.L       #STARTOF S+SIZEOF S:32,SP
+;*** File resetprg.c, Line 66    ; block
+;*** File resetprg.c, Line 70    ; expression statement
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+;*** File resetprg.c, Line 71    ; expression statement
+          MOV.B       @16776677:16,R0L
+          AND.B       #-49:8,R0L
+          OR.B        #32:8,R0L
+          MOV.B       R0L,@16776677:16
+;*** File resetprg.c, Line 74    ; expression statement
+          BSET.B      #0,@16776677:16
+;*** File resetprg.c, Line 76    ; expression statement
+          MOV.B       #-1:8,R0L
+          MOV.B       R0L,@16776763:16
+;*** File resetprg.c, Line 79    ; expression statement
+          JSR         @_HardwareSetup:24
+;*** File resetprg.c, Line 82    ; expression statement
+          JSR         @__INITSCT:24
+;*** File resetprg.c, Line 92    ; expression statement
+          JSR         @___call_init__Fv:24
+;*** File resetprg.c, Line 94    ; expression statement
+          JSR         @_main:24
+;*** File resetprg.c, Line 96    ; expression statement
+          JSR         @___call_end__Fv:24
+;*** File resetprg.c, Line 100   ; expression statement
+          SLEEP
+;*** File resetprg.c, Line 101   ; block
+          RTS
+;*** File resetprg.c, Line 104   ; block
+_Manual_Reset:                   ; function: Manual_Reset()
+;*** File resetprg.c, Line 105   ; block
+;*** File resetprg.c, Line 106   ; block
+          RTS
+          .SECTION    CBldDate,DATA,ALIGN=2
+_$version:                       ; static: version
+          .DATA.L     H'00000001
+_$release_date:                  ; static: release_date
+          .DATA.L     H'00046FFB
+_$release_number:                ; static: release_number
+          .DATA.L     H'00010001
+_g_sBuildDate:                   ; static: g_sBuildDate
+          .DATA.L     L159
+_g_sBuildTime:                   ; static: g_sBuildTime
+          .DATA.L     L160
+L159:
+          .SDATAZ     "Jun 19 2015"
+L160:
+          .SDATAZ     "10:29:54"
+          .SECTION    S,STACK,ALIGN=2
+          .END        _PowerON_Reset

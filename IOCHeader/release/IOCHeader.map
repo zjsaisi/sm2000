@@ -1,0 +1,100 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -ws=C:\Users\ADMINI~1\AppData\Local\Temp\$OP2B74.tmp 
+
+
+
+LINK SUBCOMMANDS
+
+EXCLUDE
+ALIGN_SECTION
+INPUT "C:\Users\ADMINI~1\AppData\Local\Temp\$OP2B75.tmp"
+OUTPUT "Z:\work\newtest\sm2000\iocheader\Release\IOCHeader.abs"
+FORM A
+START CHeadSec(0210000)
+START CHead1(0210200)
+START CHead2(0210400)
+START CHead3(0210600)
+START CHead4(0210800)
+START CHead5(0210a00)
+SYSROF
+PRINT "Z:\work\newtest\sm2000\iocheader\Release\IOCHeader.map"
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CHeadSec                          H'00210000  -  H'0021003F  H'00000040
+              header                           IOCHeader                       
+
+* TOTAL ADDRESS *                 H'00210000  -  H'0021003F  H'00000040
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CHead1                            H'00210200  -  H'002102B3  H'000000B4
+              header                           IOCHeader                       
+
+* TOTAL ADDRESS *                 H'00210200  -  H'002102B3  H'000000B4
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CHead2                            H'00210400  -  H'00210413  H'00000014
+              header                           IOCHeader                       
+
+* TOTAL ADDRESS *                 H'00210400  -  H'00210413  H'00000014
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CHead3                            H'00210600  -  H'00210613  H'00000014
+              header                           IOCHeader                       
+
+* TOTAL ADDRESS *                 H'00210600  -  H'00210613  H'00000014
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CHead4                            H'00210800  -  H'00210813  H'00000014
+              header                           IOCHeader                       
+
+* TOTAL ADDRESS *                 H'00210800  -  H'00210813  H'00000014
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+CHead5                            H'00210A00  -  H'00210A01  H'00000002
+              header                           IOCHeader                       
+
+* TOTAL ADDRESS *                 H'00210A00  -  H'00210A01  H'00000002
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_firmwareVersion                  H'00210010               DAT
+_hardwareSupported1               H'00210200               DAT
+_hardwareSupported2               H'00210400               DAT
+_hardwareSupported3               H'00210600               DAT
+_hardwareSupported4               H'00210800               DAT
+_hardwareSupported5               H'00210A00               DAT
+_magic                            H'00210030               DAT
+_projectName                      H'00210000               DAT

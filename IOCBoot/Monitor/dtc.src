@@ -1,0 +1,146 @@
+;;; dtc.src
+
+; ******************************************************************************
+; *                    
+; *  FILE         :  DTC.S20
+; *  DATE         :  25/03/99
+; *  AUTHOR       :  DTH
+; *  DESCRIPTION  :  DTC vector table for the H8S/2623 HDI Monitor.
+; *
+; ******************************************************************************
+; *
+; *                     VERSION - MODIFICATION HISTORY
+; *  CURRENT
+; *  VERSION      :  1.0
+;	Version: 1.0 2633 DGL 1/10/01 -- Built from the HMSE (IAR) 2623 Monitor
+; *
+; *-----------------------------------------------------------------------------
+; *
+; *  ORIG VERSION :  <???>
+; *  NEW VERSION  :  <???>
+; *  MOD DATE     :  <???>
+; *  DETAILS      :  <???>
+; *
+; ******************************************************************************
+
+; ------
+; NOTE :
+; ------------------------------------------------------------------------------
+; For the H8S/2623 we are building two versions of the monitor, 1 for
+; the final EVB which will use an external UART as the host port, but
+; only in MODE6, and 1 for the PROTOTYPE board / final EVB MODE7
+; which uses SCI2 as the host port.
+; ------------------------------------------------------------------------------
+; No use for me. Reference only. Zheng Miao (2/12/2003)
+
+	.section INT_DTC,CODE
+
+; Set the four register blocks used for the DTC vectors.
+; Each register group is 12 bytes in size and must be located within
+; area H'EBC0 - H'EFBF (see section 8 Hardware Manual - DTC)
+; -------------------------------------------------------------------
+
+REG_BLOCK_1 .equ	H'EF8C
+REG_BLOCK_2 .equ	H'EF98
+REG_BLOCK_3 .equ	H'EFA4
+REG_BLOCK_4 .equ	H'EFB0
+
+; Set the start address of the DTC vector addresses
+; -------------------------------------------------------------------
+
+; Software interrupt sources                            000  -   015
+;                                                     H'0400 - H'0419
+; -------------------------------------------------------------------
+	.DATA.W REG_BLOCK_1
+	.DATA.W REG_BLOCK_2
+	.DATA.W REG_BLOCK_3
+	.DATA.W REG_BLOCK_4
+
+	.DATA.W REG_BLOCK_1
+	.DATA.W REG_BLOCK_2
+	.DATA.W REG_BLOCK_3
+	.DATA.W REG_BLOCK_4
+
+	.DATA.W REG_BLOCK_1
+	.DATA.W REG_BLOCK_2
+	.DATA.W REG_BLOCK_3
+	.DATA.W REG_BLOCK_4
+
+	.DATA.W REG_BLOCK_1
+	.DATA.W REG_BLOCK_2
+	.DATA.W REG_BLOCK_3
+	.DATA.W REG_BLOCK_4
+
+	.DATA.W REG_BLOCK_1	; IRQ0                     Vector 16 : H'0420
+	.DATA.W REG_BLOCK_2	; IRQ1                     Vector 17 : H'0422
+	.DATA.W REG_BLOCK_2	; IRQ2                     Vector 18 : H'0424
+	.DATA.W REG_BLOCK_4	; IRQ3                     Vector 19 : H'0426
+
+	.DATA.W REG_BLOCK_1	; IRQ4                     Vector 20 : H'0428
+	.DATA.W REG_BLOCK_2	; IRQ5                     Vector 21 : H'042A	
+
+	.RES.B H'C			; RESERVED x 6             Vectors 22 - 27
+
+	.DATA.W REG_BLOCK_1	; ADI                      Vector 28 : H'0438
+
+	.RES.B H'6			; RESERVED x 3             Vectors 29 - 31	
+
+	.DATA.W REG_BLOCK_1	; TGI0A                    Vector 32 : H'0440	
+	.DATA.W REG_BLOCK_2	; TGI0B                    Vector 33 : H'0442
+	.DATA.W REG_BLOCK_3	; TGI0C                    Vector 34 : H'0444	
+	.DATA.W REG_BLOCK_4	; TGI0D                    Vector 35 : H'0446	
+
+	.RES.B H'8			; RESERVED x 4             Vectors 36 - 39
+
+	.DATA.W REG_BLOCK_1	; TGI1A                    Vector 40 : H'0450
+	.DATA.W REG_BLOCK_2	; TGI1B                    Vector 41 : H'0452
+
+	.RES.B H'4			; RESERVED x 2             Vectors 42 - 43
+
+	.DATA.W REG_BLOCK_1	; TGI2A                    Vector 44 : H'0458
+	.DATA.W REG_BLOCK_2	; TGI2B                    Vector 45 : H'045A
+	
+	.RES.B H'4			; RESERVED x 2             Vectors 46 - 47
+
+	.DATA.W REG_BLOCK_1	; TGI3A                    Vector 48 : H'0460
+	.DATA.W REG_BLOCK_2	; TGI3B                    Vector 49 : H'0462
+	.DATA.W REG_BLOCK_3	; TGI3C                    Vector 50 : H'0464
+	.DATA.W REG_BLOCK_4	; TGI3D                    Vector 51 : H'0466
+
+	.RES.B H'8			; RESERVED x 4             Vectors 52 - 55
+
+	.DATA.W REG_BLOCK_1	; TGI4A                    Vector 56 : H'0470
+	.DATA.W REG_BLOCK_2	; TGI4B                    Vector 57 : H'0472
+	
+	.RES.B H'4			; RESERVED x 2             Vectors 58 - 59
+
+	.DATA.W REG_BLOCK_1	; TGI5A                    Vector 60 : H'0478
+	.DATA.W REG_BLOCK_2	; TGI5A                    Vector 61 : H'047A
+
+	.RES.B H'26			; RESERVED x 19            Vectors 62 - 80
+	
+	.DATA.W REG_BLOCK_1	; RXI0                     Vector 81 : H'04A2
+	.DATA.W REG_BLOCK_2	; TXI0                     Vector 82 : H'04A4
+
+	.RES.B H'4			; RESERVED x 2             Vectors 83 - 84
+
+	.DATA.W REG_BLOCK_1	; RXI1                     Vector 85 : H'04AA
+	.DATA.W REG_BLOCK_2	; TXI1                     Vector 86 : H'04AC
+
+	.RES.B H'4			; RESERVED x 2             Vectors 87 - 88
+	
+	.DATA.W REG_BLOCK_1	; RXI2                     Vector 89 : H'04B2
+	.DATA.W REG_BLOCK_2	; TXI2                     Vector 90 : H'04B4
+
+	.RES.B H'22			; RESERVED x 17            Vectors 91 - 107
+
+	.DATA.W REG_BLOCK_1	; RM0                      Vector 108 : H'04D8
+
+
+
+	.END
+
+
+
+
+

@@ -1,0 +1,576 @@
+[HIMDBVersion]
+2.0
+[DATABASE_VERSION]
+"1.0" 
+[PROJECT_DETAILS]
+"Boot" "Z:\work\newtest\sm2000\iocboot" "Z:\work\newtest\sm2000\iocboot\boot.hwp" "Hitachi H8S,H8/300 Standard" "H8S,H8/300" "Application" 
+[TOOL_CHAIN]
+"Hitachi H8S,H8/300 Standard Toolchain" "3.0A.0" 
+[SCRAP]
+"Project Generator Setup File" "" 
+"Debugger Session File" "" 
+"Debugger Down Load Module" "" 
+[MAPPINGS]
+"Assembly source file" "Hitachi H8S,H8/300 Assembler" "Hitachi H8S,H8/300 C/C++ Compiler" 
+"Object file" "Hitachi H8S,H8/300 IM OptLinker" "Hitachi H8S,H8/300 C/C++ Compiler" 
+"Object file" "Hitachi H8S,H8/300 IM OptLinker" "Hitachi H8S,H8/300 Assembler" 
+"Absolute file" "Hitachi H Series Stype Converter" "Hitachi H8S,H8/300 IM OptLinker" 
+[BUILD_ORDER]
+"Hitachi H8S,H8/300 C/C++ Compiler" 1 
+"Hitachi H8S,H8/300 Assembler" 1 
+"Hitachi H8S,H8/300 IM OptLinker" 1 
+"Hitachi H Series Stype Converter" 1 
+[PROJECT_TOOLS]
+1 "Hitachi H Series Librarian Interface" "1.0" "" "" "" 0 0 1 
+[TOOLCHAIN_PHASE]
+"Hitachi H8S,H8/300 C/C++ Compiler" 
+"Hitachi H Series Stype Converter" 
+"Hitachi H8S,H8/300 IM OptLinker" 
+"Hitachi H8S,H8/300 Assembler" 
+[UTILITY_PHASE]
+[BUILD_PHASES]
+"Hitachi H8S,H8/300 C/C++ Compiler" 1 
+"Hitachi H Series Stype Converter" 1 
+"Hitachi H8S,H8/300 IM OptLinker" 1 
+"Hitachi H8S,H8/300 Assembler" 1 
+[EXTENSIONS]
+"C source file" "C" 
+"C header file" "H" 
+"C list file" "LST" 
+"Preprocessed C source file" "P" 
+"C++ source file" "CPP" 
+"C++ header file" "HPP" 
+"C++ list file" "LPP" 
+"Preprocessed C++ source file" "PP" 
+"Object file" "OBJ" 
+"Assembly source file" "SRC" 
+"Assembly source file" "MAR" 
+"Assembly list file" "LIS" 
+"Expanded assembly source file" "EXP" 
+"Linkage symbol file" "FSY" 
+"Assembly include file" "INC" 
+"Library file" "LIB" 
+"Absolute file" "ABS" 
+"Relocatable file" "REL" 
+"Linkage map file" "MAP" 
+"CPU information file" "CPU" 
+"Optimized linkage list file" "LOP" 
+"S-Record file" "MOT" 
+"Library list file" "LSL" 
+"Library section list file" "SCT" 
+[FILE_GROUPS]
+"C source file" "TEXT" "EDITOR" "" 
+"C header file" "TEXT" "EDITOR" "" 
+"C list file" "TEXT" "EDITOR" "" 
+"Preprocessed C source file" "TEXT" "EDITOR" "" 
+"C++ source file" "TEXT" "EDITOR" "" 
+"C++ header file" "TEXT" "EDITOR" "" 
+"C++ list file" "TEXT" "EDITOR" "" 
+"Preprocessed C++ source file" "TEXT" "EDITOR" "" 
+"Object file" "BIN" "NONE" "" 
+"Assembly source file" "TEXT" "EDITOR" "" 
+"Assembly list file" "TEXT" "EDITOR" "" 
+"Expanded assembly source file" "TEXT" "EDITOR" "" 
+"Linkage symbol file" "TEXT" "EDITOR" "" 
+"Assembly include file" "TEXT" "EDITOR" "" 
+"Library file" "BIN" "NONE" "" 
+"Absolute file" "BIN" "NONE" "" 
+"Relocatable file" "BIN" "NONE" "" 
+"Linkage map file" "TEXT" "EDITOR" "" 
+"CPU information file" "BIN" "NONE" "" 
+"Optimized linkage list file" "TEXT" "EDITOR" "" 
+"S-Record file" "TEXT" "EDITOR" "" 
+"Library list file" "TEXT" "EDITOR" "" 
+"Library section list file" "TEXT" "EDITOR" "" 
+[ASSOCIATED_APPLICATIONS]
+[SYNTAX_COLOURING_ATTRIBUTES]
+"(Default)" "COMMENTBLOCKSTART" "" 
+"(Default)" "COMMENTBLOCKEND" "" 
+"(Default)" "LINECOMMENT" "" 
+"(Default)" "NOCASE" "OFF" 
+"(Default)" "NOQUOTES" "OFF" 
+"C source file" "COMMENTBLOCKSTART" "/*" 
+"C source file" "COMMENTBLOCKEND" "*/" 
+"C source file" "LINECOMMENT" "//" 
+"C source file" "NOCASE" "OFF" 
+"C source file" "NOQUOTES" "OFF" 
+"C header file" "COMMENTBLOCKSTART" "/*" 
+"C header file" "COMMENTBLOCKEND" "*/" 
+"C header file" "LINECOMMENT" "//" 
+"C header file" "NOCASE" "OFF" 
+"C header file" "NOQUOTES" "OFF" 
+"C list file" "COMMENTBLOCKSTART" "/*" 
+"C list file" "COMMENTBLOCKEND" "*/" 
+"C list file" "LINECOMMENT" "//" 
+"C list file" "NOCASE" "OFF" 
+"C list file" "NOQUOTES" "OFF" 
+"Preprocessed C source file" "COMMENTBLOCKSTART" "/*" 
+"Preprocessed C source file" "COMMENTBLOCKEND" "*/" 
+"Preprocessed C source file" "LINECOMMENT" "//" 
+"Preprocessed C source file" "NOCASE" "OFF" 
+"Preprocessed C source file" "NOQUOTES" "OFF" 
+"C++ source file" "COMMENTBLOCKSTART" "/*" 
+"C++ source file" "COMMENTBLOCKEND" "*/" 
+"C++ source file" "LINECOMMENT" "//" 
+"C++ source file" "NOCASE" "OFF" 
+"C++ source file" "NOQUOTES" "OFF" 
+"C++ header file" "COMMENTBLOCKSTART" "/*" 
+"C++ header file" "COMMENTBLOCKEND" "*/" 
+"C++ header file" "LINECOMMENT" "//" 
+"C++ header file" "NOCASE" "OFF" 
+"C++ header file" "NOQUOTES" "OFF" 
+"C++ list file" "COMMENTBLOCKSTART" "/*" 
+"C++ list file" "COMMENTBLOCKEND" "*/" 
+"C++ list file" "LINECOMMENT" "//" 
+"C++ list file" "NOCASE" "OFF" 
+"C++ list file" "NOQUOTES" "OFF" 
+"Preprocessed C++ source file" "COMMENTBLOCKSTART" "/*" 
+"Preprocessed C++ source file" "COMMENTBLOCKEND" "*/" 
+"Preprocessed C++ source file" "LINECOMMENT" "//" 
+"Preprocessed C++ source file" "NOCASE" "OFF" 
+"Preprocessed C++ source file" "NOQUOTES" "OFF" 
+"Assembly source file" "COMMENTBLOCKSTART" "" 
+"Assembly source file" "COMMENTBLOCKEND" "" 
+"Assembly source file" "LINECOMMENT" ";" 
+"Assembly source file" "NOCASE" "ON" 
+"Assembly source file" "NOQUOTES" "OFF" 
+"Assembly list file" "COMMENTBLOCKSTART" "" 
+"Assembly list file" "COMMENTBLOCKEND" "" 
+"Assembly list file" "LINECOMMENT" ";" 
+"Assembly list file" "NOCASE" "ON" 
+"Assembly list file" "NOQUOTES" "OFF" 
+"Expanded assembly source file" "COMMENTBLOCKSTART" "" 
+"Expanded assembly source file" "COMMENTBLOCKEND" "" 
+"Expanded assembly source file" "LINECOMMENT" ";" 
+"Expanded assembly source file" "NOCASE" "ON" 
+"Expanded assembly source file" "NOQUOTES" "OFF" 
+"Linkage symbol file" "COMMENTBLOCKSTART" "" 
+"Linkage symbol file" "COMMENTBLOCKEND" "" 
+"Linkage symbol file" "LINECOMMENT" ";" 
+"Linkage symbol file" "NOCASE" "ON" 
+"Linkage symbol file" "NOQUOTES" "OFF" 
+"Assembly include file" "COMMENTBLOCKSTART" "" 
+"Assembly include file" "COMMENTBLOCKEND" "" 
+"Assembly include file" "LINECOMMENT" ";" 
+"Assembly include file" "NOCASE" "ON" 
+"Assembly include file" "NOQUOTES" "OFF" 
+"Linkage map file" "COMMENTBLOCKSTART" "" 
+"Linkage map file" "COMMENTBLOCKEND" "" 
+"Linkage map file" "LINECOMMENT" "" 
+"Linkage map file" "NOCASE" "OFF" 
+"Linkage map file" "NOQUOTES" "OFF" 
+"Optimized linkage list file" "COMMENTBLOCKSTART" "" 
+"Optimized linkage list file" "COMMENTBLOCKEND" "" 
+"Optimized linkage list file" "LINECOMMENT" "" 
+"Optimized linkage list file" "NOCASE" "OFF" 
+"Optimized linkage list file" "NOQUOTES" "OFF" 
+"S-Record file" "COMMENTBLOCKSTART" "" 
+"S-Record file" "COMMENTBLOCKEND" "" 
+"S-Record file" "LINECOMMENT" "" 
+"S-Record file" "NOCASE" "OFF" 
+"S-Record file" "NOQUOTES" "OFF" 
+"Library list file" "COMMENTBLOCKSTART" "" 
+"Library list file" "COMMENTBLOCKEND" "" 
+"Library list file" "LINECOMMENT" "" 
+"Library list file" "NOCASE" "OFF" 
+"Library list file" "NOQUOTES" "OFF" 
+"Library section list file" "COMMENTBLOCKSTART" "" 
+"Library section list file" "COMMENTBLOCKEND" "" 
+"Library section list file" "LINECOMMENT" "" 
+"Library section list file" "NOCASE" "OFF" 
+"Library section list file" "NOQUOTES" "OFF" 
+[SYNTAX_COLOURING_CATEGORIES]
+"(Default)" "Comments" "SYSTEM" "SYSTEM" "" 
+"(Default)" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"(Default)" "Selected Text" "WHITE" "BLACK" "" 
+"(Default)" "Text" "SYSTEM" "SYSTEM" "" 
+"C source file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"C source file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"C source file" "Selected Text" "WHITE" "BLACK" "" 
+"C source file" "Text" "BLACK" "SYSTEM" "" 
+"C source file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"C source file" "Control" "RED" "SYSTEM" "break|case|continue|default|do|else|for|goto|if|return|switch|while" 
+"C source file" "Declaration" "BLUE" "SYSTEM" "auto|char|const|double|enum|extern|float|int|long|register|short|signed|static|struct|typedef|union|unsigned|void|volatile" 
+"C source file" "Operator" "CYAN" "SYSTEM" "sizeof" 
+"C header file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"C header file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"C header file" "Selected Text" "WHITE" "BLACK" "" 
+"C header file" "Text" "BLACK" "SYSTEM" "" 
+"C header file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"C header file" "Control" "RED" "SYSTEM" "break|case|continue|default|do|else|for|goto|if|return|switch|while" 
+"C header file" "Declaration" "BLUE" "SYSTEM" "auto|char|const|double|enum|extern|float|int|long|register|short|signed|static|struct|typedef|union|unsigned|void|volatile" 
+"C header file" "Operator" "CYAN" "SYSTEM" "sizeof" 
+"C list file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"C list file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"C list file" "Selected Text" "WHITE" "BLACK" "" 
+"C list file" "Text" "BLACK" "SYSTEM" "" 
+"C list file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"C list file" "Control" "RED" "SYSTEM" "break|case|continue|default|do|else|for|goto|if|return|switch|while" 
+"C list file" "Declaration" "BLUE" "SYSTEM" "auto|char|const|double|enum|extern|float|int|long|register|short|signed|static|struct|typedef|union|unsigned|void|volatile" 
+"C list file" "Operator" "CYAN" "SYSTEM" "sizeof" 
+"Preprocessed C source file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"Preprocessed C source file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Preprocessed C source file" "Selected Text" "WHITE" "BLACK" "" 
+"Preprocessed C source file" "Text" "BLACK" "SYSTEM" "" 
+"Preprocessed C source file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"Preprocessed C source file" "Control" "RED" "SYSTEM" "break|case|continue|default|do|else|for|goto|if|return|switch|while" 
+"Preprocessed C source file" "Declaration" "BLUE" "SYSTEM" "auto|char|const|double|enum|extern|float|int|long|register|short|signed|static|struct|typedef|union|unsigned|void|volatile" 
+"Preprocessed C source file" "Operator" "CYAN" "SYSTEM" "sizeof" 
+"C++ source file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"C++ source file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"C++ source file" "Selected Text" "WHITE" "BLACK" "" 
+"C++ source file" "Text" "BLACK" "SYSTEM" "" 
+"C++ source file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"C++ source file" "Control" "RED" "SYSTEM" "break|case|catch|continue|default|do|else|for|goto|if|return|switch|throw|try|while" 
+"C++ source file" "Declaration" "BLUE" "SYSTEM" "asm|auto|bool|char|class|const|double|enum|explicit|extern|float|friend|inline|int|long|mutable|namespace|private|protected|public|register|short|signed|static|struct|template|typedef|typename|union|unsigned|using|virtual|void|volatile|wchar_t" 
+"C++ source file" "Operator" "CYAN" "SYSTEM" "const_cast|delete|dynamic_cast|new|operator|reinterpret_cast|sizeof|static_cast|typeid" 
+"C++ source file" "Value" "DARKYELLOW" "SYSTEM" "false|true|this" 
+"C++ header file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"C++ header file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"C++ header file" "Selected Text" "WHITE" "BLACK" "" 
+"C++ header file" "Text" "BLACK" "SYSTEM" "" 
+"C++ header file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"C++ header file" "Control" "RED" "SYSTEM" "break|case|catch|continue|default|do|else|for|goto|if|return|switch|throw|try|while" 
+"C++ header file" "Declaration" "BLUE" "SYSTEM" "asm|auto|bool|char|class|const|double|enum|explicit|extern|float|friend|inline|int|long|mutable|namespace|private|protected|public|register|short|signed|static|struct|template|typedef|typename|union|unsigned|using|virtual|void|volatile|wchar_t" 
+"C++ header file" "Operator" "CYAN" "SYSTEM" "const_cast|delete|dynamic_cast|new|operator|reinterpret_cast|sizeof|static_cast|typeid" 
+"C++ header file" "Value" "DARKYELLOW" "SYSTEM" "false|true|this" 
+"C++ list file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"C++ list file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"C++ list file" "Selected Text" "WHITE" "BLACK" "" 
+"C++ list file" "Text" "BLACK" "SYSTEM" "" 
+"C++ list file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"C++ list file" "Control" "RED" "SYSTEM" "break|case|catch|continue|default|do|else|for|goto|if|return|switch|throw|try|while" 
+"C++ list file" "Declaration" "BLUE" "SYSTEM" "asm|auto|bool|char|class|const|double|enum|explicit|extern|float|friend|inline|int|long|mutable|namespace|private|protected|public|register|short|signed|static|struct|template|typedef|typename|union|unsigned|using|virtual|void|volatile|wchar_t" 
+"C++ list file" "Operator" "CYAN" "SYSTEM" "const_cast|delete|dynamic_cast|new|operator|reinterpret_cast|sizeof|static_cast|typeid" 
+"C++ list file" "Value" "DARKYELLOW" "SYSTEM" "false|true|this" 
+"Preprocessed C++ source file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"Preprocessed C++ source file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Preprocessed C++ source file" "Selected Text" "WHITE" "BLACK" "" 
+"Preprocessed C++ source file" "Text" "BLACK" "SYSTEM" "" 
+"Preprocessed C++ source file" "PreProcessor" "BLUE" "SYSTEM" "#define|#undef|#include|#if|#ifdef|#ifndef|#else|#endif|#elif|#line|#error|#pragma" 
+"Preprocessed C++ source file" "Control" "RED" "SYSTEM" "break|case|catch|continue|default|do|else|for|goto|if|return|switch|throw|try|while" 
+"Preprocessed C++ source file" "Declaration" "BLUE" "SYSTEM" "asm|auto|bool|char|class|const|double|enum|explicit|extern|float|friend|inline|int|long|mutable|namespace|private|protected|public|register|short|signed|static|struct|template|typedef|typename|union|unsigned|using|virtual|void|volatile|wchar_t" 
+"Preprocessed C++ source file" "Operator" "CYAN" "SYSTEM" "const_cast|delete|dynamic_cast|new|operator|reinterpret_cast|sizeof|static_cast|typeid" 
+"Preprocessed C++ source file" "Value" "DARKYELLOW" "SYSTEM" "false|true|this" 
+"Assembly source file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"Assembly source file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Assembly source file" "Selected Text" "WHITE" "BLACK" "" 
+"Assembly source file" "Text" "BLACK" "SYSTEM" "" 
+"Assembly source file" "PreProcessor" "BLUE" "SYSTEM" ".INCLUDE|.ASSIGNA|.ASSIGNC|.DEFINE|.AIF|.AELIF|.AELSE|.AENDI|.AIFDEF|.AREPEAT|.AENDR|.AWHILE|.AENDW|.AERROR|.ALIMIT|.MACRO|.ENDM|.EXITM|.LEN|.INSTR|.SUBSTR" 
+"Assembly source file" "Directive" "RED" "SYSTEM" ".CPU|.EXPORT|.IMPORT|.GLOBAL|.OUTPUT|.DEBUG|.ENDIAN|.LINE|.DISPSIZE|.PRINT|.LIST|.FORM|.HEADING|.PAGE|.SPACE|.PROGRAM|.RADIX|.END|.POOL|.NOPOOL|.IF|.IF.B|.IF.W|.IF.L|.ELSE|.ENDI|.SWITCH|.SWITCH.B|.SWITCH.W|.SWITCH.L|.CASE|.BREAK|.OTHERS|.ENDS|.FOR|.FOR.B|.FOR.W|.FOR.L|.FORU|.FORU.B|.FORU.W|.FORU.L|.ENDF|.WHILE|.WHILE.B|.WHILE.W|.WHILE.L|.ENDW|.REPEAT|.UNTIL|.UNTIL.B|.UNTIL.W|.UNTIL.L|.CONTINUE" 
+"Assembly source file" "Data" "PURPLE" "SYSTEM" ".SECTION|.ORG|.ALIGN|.EQU|.ASSIGN|.REG|.FREG|.BEQU|.DATA|.DATA.B|.DATA.W|.DATA.L|.DATAB|.DATAB.B|.DATAB.W|.DATAB.L|.SDATA|.SDATAB|.SDATAC|.SDATAZ|.FDATA|.FDATA.S|.FDATAB|.FDATAB.S|.XDATA|.XDATA.W|.XDATA.L|.RES|.RES.B|.RES.W|.RES.L|.SRES|.SRESC|.SRESZ|.FRES|.FRES.S" 
+"Assembly list file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"Assembly list file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Assembly list file" "Selected Text" "WHITE" "BLACK" "" 
+"Assembly list file" "Text" "BLACK" "SYSTEM" "" 
+"Assembly list file" "PreProcessor" "BLUE" "SYSTEM" ".INCLUDE|.ASSIGNA|.ASSIGNC|.DEFINE|.AIF|.AELIF|.AELSE|.AENDI|.AIFDEF|.AREPEAT|.AENDR|.AWHILE|.AENDW|.AERROR|.ALIMIT|.MACRO|.ENDM|.EXITM|.LEN|.INSTR|.SUBSTR" 
+"Assembly list file" "Directive" "RED" "SYSTEM" ".CPU|.EXPORT|.IMPORT|.GLOBAL|.OUTPUT|.DEBUG|.ENDIAN|.LINE|.DISPSIZE|.PRINT|.LIST|.FORM|.HEADING|.PAGE|.SPACE|.PROGRAM|.RADIX|.END|.POOL|.NOPOOL|.IF|.IF.B|.IF.W|.IF.L|.ELSE|.ENDI|.SWITCH|.SWITCH.B|.SWITCH.W|.SWITCH.L|.CASE|.BREAK|.OTHERS|.ENDS|.FOR|.FOR.B|.FOR.W|.FOR.L|.FORU|.FORU.B|.FORU.W|.FORU.L|.ENDF|.WHILE|.WHILE.B|.WHILE.W|.WHILE.L|.ENDW|.REPEAT|.UNTIL|.UNTIL.B|.UNTIL.W|.UNTIL.L|.CONTINUE" 
+"Assembly list file" "Data" "PURPLE" "SYSTEM" ".SECTION|.ORG|.ALIGN|.EQU|.ASSIGN|.REG|.FREG|.BEQU|.DATA|.DATA.B|.DATA.W|.DATA.L|.DATAB|.DATAB.B|.DATAB.W|.DATAB.L|.SDATA|.SDATAB|.SDATAC|.SDATAZ|.FDATA|.FDATA.S|.FDATAB|.FDATAB.S|.XDATA|.XDATA.W|.XDATA.L|.RES|.RES.B|.RES.W|.RES.L|.SRES|.SRESC|.SRESZ|.FRES|.FRES.S" 
+"Expanded assembly source file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"Expanded assembly source file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Expanded assembly source file" "Selected Text" "WHITE" "BLACK" "" 
+"Expanded assembly source file" "Text" "BLACK" "SYSTEM" "" 
+"Expanded assembly source file" "PreProcessor" "BLUE" "SYSTEM" ".INCLUDE|.ASSIGNA|.ASSIGNC|.DEFINE|.AIF|.AELIF|.AELSE|.AENDI|.AIFDEF|.AREPEAT|.AENDR|.AWHILE|.AENDW|.AERROR|.ALIMIT|.MACRO|.ENDM|.EXITM|.LEN|.INSTR|.SUBSTR" 
+"Expanded assembly source file" "Directive" "RED" "SYSTEM" ".CPU|.EXPORT|.IMPORT|.GLOBAL|.OUTPUT|.DEBUG|.ENDIAN|.LINE|.DISPSIZE|.PRINT|.LIST|.FORM|.HEADING|.PAGE|.SPACE|.PROGRAM|.RADIX|.END|.POOL|.NOPOOL|.IF|.IF.B|.IF.W|.IF.L|.ELSE|.ENDI|.SWITCH|.SWITCH.B|.SWITCH.W|.SWITCH.L|.CASE|.BREAK|.OTHERS|.ENDS|.FOR|.FOR.B|.FOR.W|.FOR.L|.FORU|.FORU.B|.FORU.W|.FORU.L|.ENDF|.WHILE|.WHILE.B|.WHILE.W|.WHILE.L|.ENDW|.REPEAT|.UNTIL|.UNTIL.B|.UNTIL.W|.UNTIL.L|.CONTINUE" 
+"Expanded assembly source file" "Data" "PURPLE" "SYSTEM" ".SECTION|.ORG|.ALIGN|.EQU|.ASSIGN|.REG|.FREG|.BEQU|.DATA|.DATA.B|.DATA.W|.DATA.L|.DATAB|.DATAB.B|.DATAB.W|.DATAB.L|.SDATA|.SDATAB|.SDATAC|.SDATAZ|.FDATA|.FDATA.S|.FDATAB|.FDATAB.S|.XDATA|.XDATA.W|.XDATA.L|.RES|.RES.B|.RES.W|.RES.L|.SRES|.SRESC|.SRESZ|.FRES|.FRES.S" 
+"Linkage symbol file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"Linkage symbol file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Linkage symbol file" "Selected Text" "WHITE" "BLACK" "" 
+"Linkage symbol file" "Text" "BLACK" "SYSTEM" "" 
+"Linkage symbol file" "PreProcessor" "BLUE" "SYSTEM" ".INCLUDE|.ASSIGNA|.ASSIGNC|.DEFINE|.AIF|.AELIF|.AELSE|.AENDI|.AIFDEF|.AREPEAT|.AENDR|.AWHILE|.AENDW|.AERROR|.ALIMIT|.MACRO|.ENDM|.EXITM|.LEN|.INSTR|.SUBSTR" 
+"Linkage symbol file" "Directive" "RED" "SYSTEM" ".CPU|.EXPORT|.IMPORT|.GLOBAL|.OUTPUT|.DEBUG|.ENDIAN|.LINE|.DISPSIZE|.PRINT|.LIST|.FORM|.HEADING|.PAGE|.SPACE|.PROGRAM|.RADIX|.END|.POOL|.NOPOOL|.IF|.IF.B|.IF.W|.IF.L|.ELSE|.ENDI|.SWITCH|.SWITCH.B|.SWITCH.W|.SWITCH.L|.CASE|.BREAK|.OTHERS|.ENDS|.FOR|.FOR.B|.FOR.W|.FOR.L|.FORU|.FORU.B|.FORU.W|.FORU.L|.ENDF|.WHILE|.WHILE.B|.WHILE.W|.WHILE.L|.ENDW|.REPEAT|.UNTIL|.UNTIL.B|.UNTIL.W|.UNTIL.L|.CONTINUE" 
+"Linkage symbol file" "Data" "PURPLE" "SYSTEM" ".SECTION|.ORG|.ALIGN|.EQU|.ASSIGN|.REG|.FREG|.BEQU|.DATA|.DATA.B|.DATA.W|.DATA.L|.DATAB|.DATAB.B|.DATAB.W|.DATAB.L|.SDATA|.SDATAB|.SDATAC|.SDATAZ|.FDATA|.FDATA.S|.FDATAB|.FDATAB.S|.XDATA|.XDATA.W|.XDATA.L|.RES|.RES.B|.RES.W|.RES.L|.SRES|.SRESC|.SRESZ|.FRES|.FRES.S" 
+"Assembly include file" "Comments" "DARKGREEN" "SYSTEM" "" 
+"Assembly include file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Assembly include file" "Selected Text" "WHITE" "BLACK" "" 
+"Assembly include file" "Text" "BLACK" "SYSTEM" "" 
+"Assembly include file" "PreProcessor" "BLUE" "SYSTEM" ".INCLUDE|.ASSIGNA|.ASSIGNC|.DEFINE|.AIF|.AELIF|.AELSE|.AENDI|.AIFDEF|.AREPEAT|.AENDR|.AWHILE|.AENDW|.AERROR|.ALIMIT|.MACRO|.ENDM|.EXITM|.LEN|.INSTR|.SUBSTR" 
+"Assembly include file" "Directive" "RED" "SYSTEM" ".CPU|.EXPORT|.IMPORT|.GLOBAL|.OUTPUT|.DEBUG|.ENDIAN|.LINE|.DISPSIZE|.PRINT|.LIST|.FORM|.HEADING|.PAGE|.SPACE|.PROGRAM|.RADIX|.END|.POOL|.NOPOOL|.IF|.IF.B|.IF.W|.IF.L|.ELSE|.ENDI|.SWITCH|.SWITCH.B|.SWITCH.W|.SWITCH.L|.CASE|.BREAK|.OTHERS|.ENDS|.FOR|.FOR.B|.FOR.W|.FOR.L|.FORU|.FORU.B|.FORU.W|.FORU.L|.ENDF|.WHILE|.WHILE.B|.WHILE.W|.WHILE.L|.ENDW|.REPEAT|.UNTIL|.UNTIL.B|.UNTIL.W|.UNTIL.L|.CONTINUE" 
+"Assembly include file" "Data" "PURPLE" "SYSTEM" ".SECTION|.ORG|.ALIGN|.EQU|.ASSIGN|.REG|.FREG|.BEQU|.DATA|.DATA.B|.DATA.W|.DATA.L|.DATAB|.DATAB.B|.DATAB.W|.DATAB.L|.SDATA|.SDATAB|.SDATAC|.SDATAZ|.FDATA|.FDATA.S|.FDATAB|.FDATAB.S|.XDATA|.XDATA.W|.XDATA.L|.RES|.RES.B|.RES.W|.RES.L|.SRES|.SRESC|.SRESZ|.FRES|.FRES.S" 
+"Linkage map file" "Comments" "SYSTEM" "SYSTEM" "" 
+"Linkage map file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Linkage map file" "Selected Text" "WHITE" "BLACK" "" 
+"Linkage map file" "Text" "SYSTEM" "SYSTEM" "" 
+"Optimized linkage list file" "Comments" "SYSTEM" "SYSTEM" "" 
+"Optimized linkage list file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Optimized linkage list file" "Selected Text" "WHITE" "BLACK" "" 
+"Optimized linkage list file" "Text" "SYSTEM" "SYSTEM" "" 
+"S-Record file" "Comments" "SYSTEM" "SYSTEM" "" 
+"S-Record file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"S-Record file" "Selected Text" "WHITE" "BLACK" "" 
+"S-Record file" "Text" "SYSTEM" "SYSTEM" "" 
+"Library list file" "Comments" "SYSTEM" "SYSTEM" "" 
+"Library list file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Library list file" "Selected Text" "WHITE" "BLACK" "" 
+"Library list file" "Text" "SYSTEM" "SYSTEM" "" 
+"Library section list file" "Comments" "SYSTEM" "SYSTEM" "" 
+"Library section list file" "Bookmarks" "WHITE" "DARKGREEN" "" 
+"Library section list file" "Selected Text" "WHITE" "BLACK" "" 
+"Library section list file" "Text" "SYSTEM" "SYSTEM" "" 
+[SYNTAX_COLOURING_FILE_GROUP]
+"(Default)" "" "" "DEFAULT" 
+"C source file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"C header file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"C list file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"Preprocessed C source file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"C++ source file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"C++ header file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"C++ list file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"Preprocessed C++ source file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"Assembly source file" "Hitachi H8S,H8/300 C/C++ Compiler" "3.0A" "SYSTEM" 
+"Assembly list file" "Hitachi H8S,H8/300 Assembler" "3.0B" "SYSTEM" 
+"Expanded assembly source file" "Hitachi H8S,H8/300 Assembler" "3.0B" "SYSTEM" 
+"Linkage symbol file" "Hitachi H8S,H8/300 Assembler" "3.0B" "SYSTEM" 
+"Assembly include file" "Hitachi H8S,H8/300 Assembler" "3.0B" "SYSTEM" 
+"Linkage map file" "" "" "USER" 
+"Optimized linkage list file" "" "" "USER" 
+"S-Record file" "" "" "USER" 
+"Library list file" "" "" "USER" 
+"Library section list file" "" "" "USER" 
+[TOOL_ENVIRONMENT]
+[CUSTOM_PHASES]
+[PROJECT_FILES]
+"Z:\work\newtest\sm2000\iocboot\h2633f\hwsetup.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\intprg.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\resetprg.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\sbrk.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\dbsct.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\global\g_cmx.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\resource.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\cstart.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\cmx_init.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\cxsk5ha.src" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\starth8s.src" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\asm.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\baseprocess.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\queue.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\rtc.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\sci.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\timer.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\boot.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\vector\vecttbl.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\vector\ram_vect.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debug.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debugprocess.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\allprocess.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\userprocess.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debugdl.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\btmondl.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\ymodemrecv.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\storage.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\version.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\loader.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\dtc_vector.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\msghndl.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\branch.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\break.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\control.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\exe.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv1.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv2.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv3.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv4.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\init.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\instleng.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\main.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\bptable.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\sci_mon.c" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\execute.src" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\initshv.src" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\cstartup.src" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\release\boot.map" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\intv.src" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\dtc.src" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptpprocess.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptplink.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptpisr.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\intqueue.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memblock.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memblocklist.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memheap.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\crc16.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\dtcsci.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldsend.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldrecv.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldprocess.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\mailbox.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\amd29dl161db.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\app\amd29b16.cpp" "User" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\watchdog.cpp" "User" 0 
+[CURRENT_CONFIGURATION]
+"Release" 
+[INFORMATION]
+"HEW Project" 
+[EXTERNAL_EVENTS]
+[CONFIGURATIONS]
+"Debug" "Debug" 
+"Release" "Release" 
+[EDITORFILES]
+[BUILD_FILE_ORDER_C++ source file]
+"Hitachi H8S,H8/300 C/C++ Compiler" 1 
+[BUILD_FILE_ORDER_C source file]
+"Hitachi H8S,H8/300 C/C++ Compiler" 1 
+[BUILD_FILE_ORDER_Assembly source file]
+"Hitachi H8S,H8/300 Assembler" 1 
+[BUILD_FILE_ORDER_Linkage symbol file]
+"Hitachi H8S,H8/300 Assembler" 1 
+[OPTIONS_Debug_Hitachi H8S,H8/300 C/C++ Compiler]
+"Z:\work\newtest\sm2000\iocboot\app\allprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:214" 0 
+"Z:\work\newtest\sm2000\iocboot\app\amd29b16.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2005:08:02:16:25:01:722" 0 
+"Z:\work\newtest\sm2000\iocboot\app\amd29dl161db.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2005:08:02:16:21:13:335" 0 
+"Z:\work\newtest\sm2000\iocboot\app\boot.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:204" 0 
+"Z:\work\newtest\sm2000\iocboot\app\btmondl.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:224" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debug.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:214" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debugdl.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:214" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debugprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:214" 0 
+"Z:\work\newtest\sm2000\iocboot\app\dtc_vector.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:234" 0 
+"Z:\work\newtest\sm2000\iocboot\app\loader.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:224" 0 
+"Z:\work\newtest\sm2000\iocboot\app\storage.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:224" 0 
+"Z:\work\newtest\sm2000\iocboot\app\userprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:214" 0 
+"Z:\work\newtest\sm2000\iocboot\app\ymodemrecv.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:224" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\cmx_init.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:144" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\cstart.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:144" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\resource.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:194" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\asm.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUT|ASMCODE] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).src^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:144" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\baseprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:194" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\mailbox.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:36:42:944" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\queue.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:204" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\rtc.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:204" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\version.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:224" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\watchdog.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2008:03:12:11:54:28:180" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:254" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldrecv.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:254" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldsend.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:244" 0 
+"Z:\work\newtest\sm2000\iocboot\global\g_cmx.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:194" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\dbsct.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:144" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\hwsetup.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUT|ASMCODE] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).src^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:184" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\intprg.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUT|ASMCODE] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).src^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:184" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\resetprg.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUT|ASMCODE] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).src^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:194" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\sbrk.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:144" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\bptable.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:174" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\branch.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:154" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\break.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:164" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\control.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:164" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\exe.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:164" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv1.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:164" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv2.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:164" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv3.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:174" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv4.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:174" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\init.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:174" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\instleng.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:174" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\main.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:174" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\msghndl.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:154" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\sci_mon.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:184" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\crc16.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:244" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\dtcsci.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:244" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\intqueue.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:234" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memblock.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:244" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memblocklist.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:244" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memheap.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:244" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptpisr.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:234" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptplink.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:234" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptpprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:234" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\sci.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:204" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\timer.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:204" 0 
+"Z:\work\newtest\sm2000\iocboot\vector\ram_vect.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:154" 0 
+"Z:\work\newtest\sm2000\iocboot\vector\vecttbl.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:154" 0 
+"C source file" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:184" 0 
+"C++ source file" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_DEBUG=1|RUN_IN_RAM=1|RUN_IN_ROM=0|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [B|LIST|0] [S|SHOW|ALLOCATION] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2003:05:28:14:25:42:254" 0 
+[OPTIONS_Debug_Hitachi H Series Stype Converter]
+"Single Shot" "[V|VERSION|1] [S|OUTPUT|^"$(CONFIGDIR)\$(PROJECTNAME).mot^"]" "2005:12:01:14:11:21:838" 0 
+[OPTIONS_Debug_Hitachi H8S,H8/300 Assembler]
+"Z:\work\newtest\sm2000\iocboot\cmx\cxsk5ha.src" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:19:15:25:03:323" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\starth8s.src" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:19:15:25:03:393" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\cstartup.src" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:20:46:086" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\dtc.src" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:44:08:853" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\execute.src" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:20:32:386" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\initshv.src" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:20:46:056" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\intv.src" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:44:08:843" 0 
+"Assembly source file" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:18:14:18:56:642" 0 
+"Linkage symbol file" "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:18:14:18:56:642" 0 
+[OPTIONS_Debug_Hitachi H8S,H8/300 IM OptLinker]
+"Single Shot" "[V|VERSION|1] [S|INPUTLIBRARY|^"$(TCINSTALL)\lib\c8s26a.lib^"|^"C:\CMX\Libhsa.lib^"] [B|DEBUG|1] [S|ROM|(D,R)|(DHEAP,RHEAP)|(DCMX,RCMX)] [S|OUTPUT|^"$(CONFIGDIR)\$(PROJECTNAME).abs^"] [B|PRINT|1] [S|MAPPATH|^"$(CONFIGDIR)\$(PROJECTNAME).map^"] [B|OPTIMIZE|0] [S|START|DVECTTBL,DINTTBL(0200000)|PResetPRG,PIntPRG(0200400)|P,C,CDTC,D,C$DSEC,C$BSEC,C$VTBL,DVECTTBL_C,DHEAP,DCMX,CBldDate,CCheckSum,PMONITOR,CMONITOR,INTVEC,INTV2,INT_DTC,CResetPRG(0201800)|B,R,BMONFLAG,BBootAPI,BSCI,RHEAP,BCMX,BHEAP,RCMX,BResetPRG,BMONITOR,STACK(03C0000)|S(03FFF00)|BRTC(0FFB000)] [B|EXCLUDE|1] [B|ALIGN_SECTION|1] [B|UDFCHECK|1] [B|CHECK_SECTION|1]" "2005:12:01:14:11:21:838" 0 
+[OPTIONS_Release_Hitachi H8S,H8/300 C/C++ Compiler]
+"Z:\work\newtest\sm2000\iocboot\app\allprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\amd29b16.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:071" 0 
+"Z:\work\newtest\sm2000\iocboot\app\amd29dl161db.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:071" 0 
+"Z:\work\newtest\sm2000\iocboot\app\boot.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\btmondl.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debug.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debugdl.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\debugprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\dtc_vector.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\loader.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|LOOP|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\storage.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\userprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\app\ymodemrecv.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\cmx_init.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:977" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\cstart.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:977" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\resource.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\asm.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUT|ASMCODE] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).src^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:45:14:487" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\baseprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\mailbox.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\queue.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\rtc.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\version.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:039" 0 
+"Z:\work\newtest\sm2000\iocboot\cmxwrap\watchdog.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:071" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldrecv.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\download\ptpdnldsend.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\global\g_cmx.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\dbsct.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:977" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\hwsetup.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\intprg.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUT|ASMCODE] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).src^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:44:45:127" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\resetprg.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUT|ASMCODE] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).src^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:44:45:127" 0 
+"Z:\work\newtest\sm2000\iocboot\h2633f\sbrk.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:977" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\bptable.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\branch.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:993" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\break.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:993" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\control.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:993" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\exe.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv1.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv2.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv3.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\ilreslv4.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\init.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\instleng.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\main.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\msghndl.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:993" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\sci_mon.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:008" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\crc16.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\dtcsci.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\intqueue.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memblock.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memblocklist.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\memheap.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptpisr.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptplink.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\ptpprocess.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:055" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\sci.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\serial\timer.cpp" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"Z:\work\newtest\sm2000\iocboot\vector\ram_vect.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:993" 0 
+"Z:\work\newtest\sm2000\iocboot\vector\vecttbl.c" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:18:993" 0 
+"C source file" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:024" 0 
+"C++ source file" "[V|VERSION|1] [S|INCLUDE|^"$(PROJDIR)\H2633F^"|^"$(PROJDIR)\Include^"|^"$(PROJDIR)\Global^"|^"$(PROJDIR)\CMX^"|^"$(PROJDIR)\CMXWRAP^"|^"$(PROJDIR)\Serial^"|^"$(PROJDIR)\Vector^"|^"$(PROJDIR)\App^"|^"$(PROJDIR)\Monitor^"|^"$(PROJDIR)\Download^"] [S|DEFINE|_NDEBUG=1|RUN_IN_RAM=0|RUN_IN_ROM=1|NDEBUG=1|H8S2623=1|MON_SCI0=1|RAM_START=0x200000] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|SPEED|1] [S|SPEED|REGISTER|SHIFT|LOOP|SWITCH|STRUCT|EXPRESSION|INLINE=105] [B|CHGINCPATH|1] [S|CPU|2600A:24]" "2015:05:07:17:12:19:071" 0 
+[OPTIONS_Release_Hitachi H Series Stype Converter]
+"Single Shot" "[V|VERSION|1] [S|OUTPUT|^"$(CONFIGDIR)\$(PROJECTNAME).mot^"]" "2015:05:09:11:19:50:374" 0 
+[OPTIONS_Release_Hitachi H8S,H8/300 Assembler]
+"Z:\work\newtest\sm2000\iocboot\cmx\cxsk5ha.src" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:19:15:25:03:393" 0 
+"Z:\work\newtest\sm2000\iocboot\cmx\starth8s.src" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:19:15:25:03:393" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\cstartup.src" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:20:46:086" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\dtc.src" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:44:08:853" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\execute.src" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:20:32:386" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\initshv.src" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:20:46:056" 0 
+"Z:\work\newtest\sm2000\iocboot\monitor\intv.src" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2003:02:12:15:44:08:843" 0 
+"Assembly source file" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:18:14:18:56:642" 0 
+"Linkage symbol file" "[V|VERSION|1] [B|DEBUG|0] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LIST|0] [B|CHGINCPATH|1] [B|ERRORPATH|1] [S|CPU|2600A:24]" "2002:09:18:14:18:56:642" 0 
+[OPTIONS_Release_Hitachi H8S,H8/300 IM OptLinker]
+"Single Shot" "[V|VERSION|1] [S|INPUTLIBRARY|^"$(TCINSTALL)\lib\c8s26a.lib^"|^"$(WORKSPDIR)\IOCBoot\CMX\Libhsa.lib^"] [S|ROM|(D,R)|(DHEAP,RHEAP)|(DCMX,RCMX)] [S|OUTPUT|^"$(CONFIGDIR)\$(PROJECTNAME).abs^"] [B|PRINT|1] [S|MAPPATH|^"$(CONFIGDIR)\$(PROJECTNAME).map^"] [B|OPTIMIZE|0] [S|START|DVECTTBL,DINTTBL(00)|CDTC,PMONITOR,CMONITOR,INTVEC,INTV2,INT_DTC(0400)|PResetPRG,PIntPRG,D,C$DSEC,C$BSEC,C$VTBL,DHEAP,DCMX,CResetPRG,C(010000)|CBldDate(01FF00)|CCheckSum(01FFF8)|P(020000)|STACK,BBootAPI,BCMX,RCMX,BHEAP(03C0000)|BRTC,BMONITOR(0FFB000)|BMONFLAG,BResetPRG,RHEAP,BSCI,B,R(0FFB200)|S(0FFEBC0)] [B|EXCLUDE|1] [B|ALIGN_SECTION|1] [B|UDFCHECK|1] [B|CHECK_SECTION|1]" "2015:05:09:11:19:50:364" 0 
+[GENERAL_TOOLS]
+[BUILD_FILE_ORDER_Absolute file]
+[BUILD_FILE_ORDER_Object file]
+[BUILD_FILE_ORDER_Relocatable file]
+[BUILD_FILE_ORDER_Library file]
+[EXCLUDED_FILES_Debug]
+[EXCLUDED_FILES_Release]
+[END]

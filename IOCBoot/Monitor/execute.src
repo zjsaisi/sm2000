@@ -1,0 +1,413 @@
+;;; execute.src
+
+; 18/11/96 ported DS
+;===============================================================
+;   H8S monitor									
+; 	11/12/97 1.0	EJ 		Stenkil Software     
+;                           #ifdef H8S2655 added.
+;                           _NMIinterrupt: added
+;                           Registers EXR, MACH and MACL added
+;
+;	28/02/99		DTH		Ported to 2623
+;	Version: 1.0 2633 DGL 1/10/01 -- Built from the HMSE (IAR) 2623 Monitor
+;
+;===============================================================
+
+		.section PMONITOR,CODE
+
+		.EXPORT 	_Execute		;Target code execution function    
+		.IMPORT   	_Execute_return_code
+
+;-- The following exported addresses should be placed in appropriate locations of the interrupt vector table --		
+
+		.EXPORT		_BreakPoint		;Breakpoint trap ISR
+		.EXPORT		_NMIcapture		;NMI trap
+		.EXPORT		_SCIrx			;SCI receive interrupt
+		.EXPORT		_SCIrxError		;SCI receive error
+
+    	.EXPORT		__UNDEFINED
+      	.IMPORT		_regs			;Table of registers in the monitor code
+		.IMPORT		_stack_pointer	;Variable in monitor that stores its stack pointer      
+
+;-- Execution error codes --
+ERCD_OK		.EQU		0
+ERCD_BP		.EQU		6
+ERCD_NMI	.EQU		8              
+ERCD_SCIERR	.EQU		9
+ERCD_SCI	.EQU		10
+
+			.aifdef		MON_SCI0
+SCI1_SCR	.EQU		H'00FFFF7A
+SCI1_SSR	.EQU		H'00FFFF7C
+SCI1_RDR	.EQU		H'00FFFF7D
+			.aelse
+SCI1_SCR	.EQU		H'00FFFF8A
+SCI1_SSR	.EQU		H'00FFFF8C
+SCI1_RDR	.EQU		H'00FFFF8D
+			.aendi
+
+RIE_BIT		.EQU		H'BF; sets the 7th bit to 0        
+	
+__UNDEFINED:
+
+	BRA     $
+	NOP
+	             
+;------------------------------------------------------------------------------
+;-- This is the interrupt routine called for data received on the SCI/UART.  --
+;------------------------------------------------------------------------------
+_SCIrx:   	
+		MOV.L		ER1, @-ER7
+		MOV.L		ER0, @-ER7
+		MOV.L		ER2, @-ER7
+		
+		;initialise counter
+		MOV.L		#0, ER2
+		                         
+ 		;initialise FSM
+		MOV.L		#ST_1, ER1
+		
+	
+;------------------------------------------------
+read_me:
+		INC.L		#1,ER2
+		CMP.L		#H'50000,ER2		;time out number
+		BEQ			fail_break_state
+		
+		BTST		#6,@SCI1_SSR
+		BEQ			read_me
+		
+		;read receive register
+		MOV.B		@SCI1_RDR,R0L
+		
+		;read SSR
+		MOV.B		@SCI1_SSR,R0H
+		
+		;then, clear SSR
+		BCLR		#6,@SCI1_SSR
+		
+		;goto correct state
+		JMP			@ER1      
+ST_1:								; *** START state - Looking for SOM (H'AA)
+		CMP.B		#H'AA,R0L
+		BNE			fail_break_state
+		MOV.L		#ST_2,ER1
+		BRA			read_me
+		
+ST_2:								; *** SOM state - Looking for ID (H'03)
+		CMP.B		#H'3,R0L
+		BNE			fail_break_state
+		MOV.L		#ST_3,ER1                      
+		BRA 		read_me
+		
+		;failed to match MC_BREAK command, so return to user program
+fail_break_state:   ;// Moved this so the branch wasn't as long
+
+		MOV.L		@ER7+,ER2
+		MOV.L		@ER7+,ER0
+		MOV.L		@ER7+,ER1
+		
+		RTE
+ST_3:								; *** MC_BREAK state - Looking for EOM (H'CC)
+		CMP.B		#H'CC,R0L
+		BNE			fail_break_state
+		MOV.L		#ST_4,ER1                       
+		BRA 		read_me
+ST_4:								; *** EOM state - Looking for CRC1 (H'80)
+		CMP.B		#H'80,R0L
+		BNE			fail_break_state
+		MOV.L		#ST_5,ER1
+		BRA			read_me
+		
+ST_5:								; *** CRC1 state - Looking for CRC2 (H'03)
+		CMP.B		#H'3,R0L
+		BNE 		fail_break_state
+		
+		;the incoming message is valid
+      	MOV.B		#ERCD_SCI, R1L
+		MOV.L		@ER7+, ER2
+		MOV.L		@ER7+, ER0
+
+
+      	BRA			IntRecovery
+      	
+
+
+;--------------------------------------------------------------------------------
+;-- This is the interrupt routine called when an SCI receive error is detected.--
+;--------------------------------------------------------------------------------
+_SCIrxError:   	
+		MOV.L		ER1, @-ER7
+		MOV.L		ER0, @-ER7
+
+		MOV.L		@ER7+, ER0
+
+	    MOV.B		#ERCD_SCIERR, R1L
+    	BRA			IntRecovery        
+
+;------------------------------------------------------------------------------
+;-- This is the interrupt routine called for a NMI.			     --
+;------------------------------------------------------------------------------
+_NMIcapture:   	
+        MOV.L		ER1, @-ER7
+        MOV.B		#ERCD_NMI, R1L
+        BRA			IntRecovery        
+
+
+;---------------------------------------------------
+;-- This routine is called by the breakpoint trap --
+;---------------------------------------------------
+_BreakPoint:
+
+		MOV.L		ER1, @-ER7 
+		MOV.L		ER0, @-ER7                                                 
+
+		;Decrement the PC on the stack by two to take into account trap.  
+
+; DS if interrupt control mode 2 or 3, remember that EXR is also stored
+
+		mov.b		@h'fffde5:32,r0l	; get SYSCR
+		and.b		#h'30,r0l	; mask all non-important bits
+		mov.b		#h'20,r0h
+		sub.b		r0h,r0l
+		blt X2
+		
+		mov.l		@(10,er7),er1
+		MOV.L		ER1,ER0
+		;ER0,ER1 now both contain CCR and PC (CCR contained in Most Significant Byte)
+		AND.L		#H'00FFFFFF, ER1	;getting PC
+		DEC.L		#2, ER1			;PC=PC-2
+		AND.L		#H'FF000000, ER0	;getting CCR
+		OR.L		ER0,ER1
+		MOV.L		ER1, @(10,ER7)
+		bra X3
+X2:	
+		MOV.L		@(8,ER7), ER1
+		MOV.L		ER1,ER0
+		;ER0,ER1 now both contain CCR and PC (CCR contained in Most Significant Byte)
+		AND.L		#H'00FFFFFF, ER1	;getting PC
+		DEC.L		#2, ER1			;PC=PC-2
+		AND.L		#H'FF000000, ER0	;getting CCR
+		OR.L		ER0,ER1
+		MOV.L		ER1, @(8,ER7)
+X3:
+		MOV.L		@ER7+, ER0		;restore ER0
+
+		;this method is a bit convoluted as the PC is 24 bits, and you do not want to
+		;corrupt the CCR when decrementing the PC
+
+		;Indicate a breakpoint has been reached and recover from interrupt
+	    MOV.B		#ERCD_BP, R1L  
+      	BRA			IntRecovery
+            	
+
+;-----------------------------------------------------------------
+;-- This routine is branched to from interrupt service routines --
+;-----------------------------------------------------------------
+IntRecovery:
+
+		MOV.L		ER0, @-ER7		
+
+		;Write status code from R1 into a variable
+		MOV.L		#_Execute_return_code, ER0				
+		MOV.B		#0, R1H
+		MOV.W		R1, @ER0
+
+		;Start recovery procedure
+		MOV.L		@ER7+, ER0										
+		MOV.L		@ER7+, ER1
+		BRA			Recovery               	     																			
+
+
+;-----------------------------------------------------
+;-- Main monitor recovery & context storage routine --
+;-----------------------------------------------------
+;On entry all registers must be set as the target code left them, except the PC & SR which must be the next items to
+;be removed from the stack.
+	
+;Store context of target code		
+Recovery:	
+
+		MOV.L		ER0,@-ER7 	;save R0
+		MOV.L		#_regs, ER0  	;R0 = start of the external structure _regs    
+		ADD.L		#52,ER0         ; go to tail of structure    
+
+; ER0 represents the pointer to the target stack which we wish to save to
+
+		MOV.L		ER6,@-ER7	;Temporary use ER6 (MAC/SYSCR), Push old value
+
+            ;Registers EXR, MACH and MACL added 
+		STMAC		MACL,ER6
+		MOV.L		ER6,@-ER0
+		STMAC		MACH,ER6
+		MOV.L		ER6,@-ER0
+
+		mov.b		@h'fffde5:32,r6l	; get SYSCR
+		and.b		#h'30,r6l	; mask all non-important bits
+		mov.b		#h'20,r6h
+		sub.b		r6h,r6l
+		blt 		ICRM01
+; Interrupt control mode is 2 or 3
+		mov.w		@(8,er7),r6
+		mov.w		r6,@-er0
+		mov.w		r6,@-er0
+		bra 		ENDICRTEST1
+ICRM01:
+; Interrupt control mode is 0 or 1
+		STC.W		EXR,@-ER0   ;Push twice to align correctly in memory
+		STC.W		EXR,@-ER0
+ENDICRTEST1:
+; DS end of EXR save
+
+		MOV.L		@ER7+,ER6	;Restore ER6 back off of stack 
+		MOV.L		ER1,@-ER0	;Push ER1
+		MOV.L		@ER7+,ER1	;Get ER0
+		MOV.L		ER1,@-ER0	;Push ER0 
+
+		mov.b		@h'fffde5:32,r1l	; get SYSCR
+		and.b		#h'30,r1l	; mask all non-important bits
+		mov.b		#h'20,r1h
+		sub.b		r1h,r1l
+		blt X1
+		add.l		#2,er7
+X1:
+
+		MOV.W		@ER7,R1		;Get CCR (no postincrement on @ER7)
+							        ;which is contained in R1H
+		MOV.B		R1H, R1L
+		MOV.B		#0, R1H 
+		MOV.W		R1,@-ER0	;Push CCR 
+		MOV.B		#0, R1L
+		MOV.W		R1,@-ER0	;align on double word boundary
+				
+		MOV.L		@ER7+,ER1	;Get PC
+		MOV.L		ER1,@-ER0	;Push PC
+		MOV.B		#0,R1L		
+		MOV.B		R1L,@ER0	;PC is only 24 bits, other 8 bits are CCR
+	
+		MOV.L		ER7,@-ER0
+		MOV.L		ER6,@-ER0
+		MOV.L		ER5,@-ER0
+		MOV.L		ER4,@-ER0
+		MOV.L		ER3,@-ER0
+		MOV.L		ER2,@-ER0
+
+		;Restore context of monitor program
+		;Restore monitor stack pointer                                  
+	
+		MOV.L		#_stack_pointer, ER0
+		MOV.L		@ER0, ER7
+
+;       Registers EXR, MACH and MACL added
+		MOV.L		@ER7+, ER6      
+		LDMAC		ER6, MACL       
+		MOV.L		@ER7+, ER6      
+		LDMAC		ER6, MACH       
+		LDC.W		@ER7+, EXR
+
+		;Restore registers (ER0, ER1 are restored on return from the routine call)
+		LDC.W		@ER7+, CCR
+		MOV.L		@ER7+, ER6
+		MOV.L		@ER7+, ER5
+		MOV.L		@ER7+, ER4
+		MOV.L		@ER7+, ER3
+		MOV.L		@ER7+, ER2  
+		MOV.L		@ER7+, ER1	; these are added because different compilers do different 
+		MOV.L		@ER7+, ER0  ; register saves, so to be on the safe side save all regs.
+
+		RTS  		
+                
+
+;---------------------------------------------------------------------------------
+;-- This routine will start execution of the target program code.  First it pushes
+;-- unsaved registers and saves ER7 to  --
+;-- a variable.  Next, the target registers are restored including the PC.
+;---------------------------------------------------------------------------------
+_Execute:   
+
+
+;Save context of monitor program
+		;Save registers (ER0, ER1 are saved before the routine call)
+	
+		MOV.L		ER0, @-ER7 	;	these are added because differenet compilers do different
+		MOV.L		ER1, @-ER7  ;	register saves, so to be on the safe side save all regs
+		MOV.L		ER2, @-ER7
+		MOV.L		ER3, @-ER7
+		MOV.L		ER4, @-ER7
+		MOV.L		ER5, @-ER7
+		MOV.L		ER6, @-ER7
+		STC.W		CCR, @-ER7	;aligned on even address
+
+;       Registers EXR, MACH and MACL added 
+		STC.W		EXR, @-ER7              
+		STMAC		MACH, ER6               
+		MOV.L		ER6, @-ER7              
+		STMAC		MACL, ER6               
+		MOV.L		ER6, @-ER7
+ 
+ 		;Save monitor stack pointer (ER7)
+		MOV.L		#_stack_pointer, ER0
+		MOV.L		ER7, @ER0	
+		
+		;This code returns control to the target program
+		MOV.L		#_regs, ER1  	;ER1 = start of the external structure _regs (Register table)  
+     
+		MOV.L		@ER1+, ER2
+		MOV.L		@ER1+, ER3
+		MOV.L		@ER1+, ER4
+		MOV.L		@ER1+, ER5
+		MOV.L		@ER1+, ER6
+		MOV.L		@ER1+, ER7   
+
+		;Fetch target PC, then CCR & set them up on the target stack for an 
+		;RTE instruction later on.                
+
+		;first, restore PC 
+		
+		MOV.L		@ER1+, ER0	;Get PC
+		MOV.L		ER0, @-ER7	;Push PC
+
+		;then, restore CCR 
+		
+		MOV.L		@ER1+, ER0	;Get CCR-CCR contained in LSB
+		MOV.B		R0L, @ER7	;Push CCR (no predecrement on @ER7)
+
+        ;wait with ER0 and ER1 because these registers are used for EXR and MACH, MACL
+        ADD.L		#8, ER1     
+
+        ;Registers EXR, MACH and MACL added after ER0 and ER1
+       
+		mov.b		@h'fffde5:32,r0l	; get SYSCR
+		and.b		#h'30,r0l		; mask all non-important bits
+		mov.b		#h'20,r0h
+		sub.b		r0h,r0l
+		blt 		INTCRM01
+; Interrupt Control mode 2 or 3
+		mov.w		@er1+,r0
+		mov.w		r0,@-er7
+		add.l		#2,er1
+		bra			CARRYON
+INTCRM01:
+; Interrupt control mode 0 or 1
+		;Restore EXR twice to align correctly from memory
+		LDC.W		@ER1+, EXR  
+		LDC.W		@ER1+, EXR
+CARRYON:		
+        ;Restore MACH, MACL
+		MOV.L		@ER1+, ER0
+		LDMAC		ER0, MACH
+		MOV.L		@ER1, ER0
+		LDMAC		ER0, MACL
+  
+	    SUB.L		#16, ER1    
+
+     ; finally retrieve R1, R0
+	    MOV.L		@ER1+, ER0	
+      	MOV.L		@ER1,  ER1  
+
+      	RTE				;Restore EXR if applicable, then CCR, then PC			
+      		
+EndOfTrap .EQU		$          
+
+
+		.END		

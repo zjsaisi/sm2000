@@ -1,0 +1,72 @@
+          .CPU        2600A:24
+          .IMPORT     _main
+          .IMPORT     __INITSCT
+          .IMPORT     _HardwareSetup
+          .IMPORT     ___call_init__Fv
+          .IMPORT     ___call_end__Fv
+          .EXPORT     _g_sBuildDate
+          .EXPORT     _g_sBuildTime
+          .EXPORT     _PowerON_Reset
+          .EXPORT     _Manual_Reset
+          .SECTION    PResetPRG,CODE,ALIGN=2
+          .LINE       "C:\test\newtest\sm2000\iocmain\h2633f\resetprg.cpp",65
+_PowerON_Reset:                  ; function: PowerON_Reset()
+          MOV.L       #STARTOF S+SIZEOF S:32,SP
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       66
+          .LINE       70
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+          .LINE       71
+          MOV.B       @16776677:16,R0L
+          AND.B       #-49:8,R0L
+          OR.B        #32:8,R0L
+          MOV.B       R0L,@16776677:16
+          .LINE       74
+          BSET.B      #0,@16776677:16
+          .LINE       76
+          MOV.B       #-1:8,R0L
+          MOV.B       R0L,@16776763:16
+          .LINE       79
+          JSR         @_HardwareSetup:24
+          .LINE       82
+          JSR         @__INITSCT:24
+          .LINE       92
+          JSR         @___call_init__Fv:24
+          .LINE       94
+          JSR         @_main:24
+          .LINE       96
+          JSR         @___call_end__Fv:24
+          .LINE       100
+          SLEEP
+          .LINE       101
+          POP.L       ER6
+          RTS
+          .LINE       104
+_Manual_Reset:                   ; function: Manual_Reset()
+          PUSH.L      ER6
+          MOV.L       SP,ER6
+          .LINE       105
+          .LINE       106
+          POP.L       ER6
+          RTS
+          .SECTION    CBldDate,DATA,ALIGN=2
+_$version:                       ; static: version
+          .DATA.L     H'00000001
+_$release_date:                  ; static: release_date
+          .DATA.L     H'00046FFB
+_$release_number:                ; static: release_number
+          .DATA.L     H'00010001
+_g_sBuildDate:                   ; static: g_sBuildDate
+          .DATA.L     L159
+_g_sBuildTime:                   ; static: g_sBuildTime
+          .DATA.L     L160
+L159:
+          .SDATAZ     "May  8 2015"
+L160:
+          .SDATAZ     "16:29:00"
+          .SECTION    S,STACK,ALIGN=2
+          .END        _PowerON_Reset

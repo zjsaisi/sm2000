@@ -1,0 +1,113 @@
+          .CPU        2600A:24
+          .EXPORT     _SetNextBlock_Step1
+          .EXPORT     _SetNextBlock_Step2
+          .EXPORT     _GetNextBlock_Step1
+          .EXPORT     _GetNextBlock_Step2
+          .EXPORT     _Quit
+          .EXPORT     _Repeat
+          .EXPORT     _Reboot
+          .SECTION    P,CODE,ALIGN=2
+;*** File asm.c     , Line 22    ; block
+_SetNextBlock_Step1:             ; function: SetNextBlock_Step1
+;*** File asm.c     , Line 23    ; block
+;*** File asm.c     , Line 24    ; expression statement
+          MOV.L       ER0,@_$NEXT_BLOCK:32
+;*** File asm.c     , Line 25    ; expression statement
+          MOV.L       ER1,@_$CURR_BLOCK:32
+;*** File asm.c     , Line 26    ; block
+          RTS
+;*** File asm.c     , Line 28    ; block
+_SetNextBlock_Step2:             ; function: SetNextBlock_Step2
+;*** File asm.c     , Line 29    ; block
+;*** File asm.c     , Line 31    ; expression statement
+	MOV.L @_$NEXT_BLOCK:32, ER4
+	MOV.L @_$CURR_BLOCK:32, ER3
+;*** File asm.c     , Line 34    ; block
+          RTS
+;*** File asm.c     , Line 37    ; block
+_GetNextBlock_Step1:             ; function: GetNextBlock_Step1
+;*** File asm.c     , Line 38    ; block
+;*** File asm.c     , Line 40    ; expression statement
+	MOV.L ER4, @_$NEXT_BLOCK:32
+	MOV.L ER3, @_$CURR_BLOCK:32	
+;*** File asm.c     , Line 44    ; block
+          RTS
+;*** File asm.c     , Line 45    ; block
+_GetNextBlock_Step2:             ; function: GetNextBlock_Step2
+          STM.L       (ER4-ER6),@-SP
+;*** File asm.c     , Line 46    ; block
+          MOV.L       ER0,ER6
+          MOV.L       ER1,ER5
+;*** File asm.c     , Line 47    ; if
+          MOV.L       ER6,ER6
+          BEQ         L90
+;*** File asm.c     , Line 47    ; block
+;*** File asm.c     , Line 48    ; expression statement
+          MOV.L       @_$NEXT_BLOCK:32,ER4
+          MOV.L       ER4,@ER6
+L90:                              
+;*** File asm.c     , Line 50    ; if
+          MOV.L       ER5,ER5
+          BEQ         L91
+;*** File asm.c     , Line 50    ; block
+;*** File asm.c     , Line 51    ; expression statement
+          MOV.L       @_$CURR_BLOCK:32,ER0
+          MOV.L       ER0,@ER5
+L91:                              
+;*** File asm.c     , Line 53    ; block
+          LDM.L       @SP+,(ER4-ER6)
+          RTS
+;*** File asm.c     , Line 55    ; block
+_Quit:                           ; function: Quit
+;*** File asm.c     , Line 56    ; block
+;*** File asm.c     , Line 57    ; expression statement
+          ORC.B       #-128:8,CCR
+;*** File asm.c     , Line 58    ; expression statement
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+;*** File asm.c     , Line 60    ; expression statement
+	MOV.L @_$NEXT_BLOCK:32, ER4
+;*** File asm.c     , Line 62    ; expression statement
+          TRAPA       #3
+;*** File asm.c     , Line 63    ; block
+          RTS
+;*** File asm.c     , Line 65    ; block
+_Repeat:                         ; function: Repeat
+;*** File asm.c     , Line 66    ; block
+;*** File asm.c     , Line 68    ; expression statement
+          ORC.B       #-128:8,CCR
+;*** File asm.c     , Line 69    ; expression statement
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+;*** File asm.c     , Line 71    ; expression statement
+	MOV.L @_$CURR_BLOCK:32, ER4                                       
+;*** File asm.c     , Line 73    ; expression statement
+          TRAPA       #3
+;*** File asm.c     , Line 74    ; block
+          RTS
+;*** File asm.c     , Line 76    ; block
+_Reboot:                         ; function: Reboot
+;*** File asm.c     , Line 77    ; block
+;*** File asm.c     , Line 79    ; expression statement
+          ORC.B       #-128:8,CCR
+;*** File asm.c     , Line 80    ; expression statement
+          STC.B       EXR,R0L
+          AND.B       #-8:8,R0L
+          OR.B        #7:8,R0L
+          LDC.B       R0L,EXR
+;*** File asm.c     , Line 82    ; expression statement
+	MOV.L #0:32, ER4
+;*** File asm.c     , Line 84    ; expression statement
+          TRAPA       #3
+;*** File asm.c     , Line 85    ; block
+          RTS
+          .SECTION    BBootAPI,DATA,ALIGN=2
+_$NEXT_BLOCK:                    ; static: NEXT_BLOCK
+          .RES.L      1
+_$CURR_BLOCK:                    ; static: CURR_BLOCK
+          .RES.L      1
+          .END

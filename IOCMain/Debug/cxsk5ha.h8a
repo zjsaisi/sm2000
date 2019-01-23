@@ -1,0 +1,7 @@
+"C:\test\newtest\sm2000\iocmain\cmx\cxsk5ha.src"
+-cpu=2600a:24
+-debug
+-object="C:\test\newtest\sm2000\iocmain\Debug\cxsk5ha.obj"
+-nolist
+-chgincpath
+-errorpath

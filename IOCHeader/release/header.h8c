@@ -1,0 +1,7 @@
+-cpu=2600a:24
+-include="Z:\work\newtest\sm2000\IOCMain\Include\"
+-object="Z:\work\newtest\sm2000\iocheader\Release\header.obj"
+-nolist
+-chgincpath
+"Z:\work\newtest\sm2000\iocheader\header.c"
+-lang=c

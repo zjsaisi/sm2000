@@ -1,0 +1,9 @@
+-cpu=2600a:24
+-include="Z:\work\newtest\sm2000\iocboot\H2633F","Z:\work\newtest\sm2000\iocboot\Include","Z:\work\newtest\sm2000\iocboot\Global","Z:\work\newtest\sm2000\iocboot\CMX","Z:\work\newtest\sm2000\iocboot\CMXWRAP","Z:\work\newtest\sm2000\iocboot\Serial","Z:\work\newtest\sm2000\iocboot\Vector","Z:\work\newtest\sm2000\iocboot\App","Z:\work\newtest\sm2000\iocboot\Monitor","Z:\work\newtest\sm2000\iocboot\Download"
+-define=_NDEBUG=1,RUN_IN_RAM=0,RUN_IN_ROM=1,NDEBUG=1,H8S2623=1,MON_SCI0=1,RAM_START=0x200000
+-object="Z:\work\newtest\sm2000\iocboot\Release\bptable.obj"
+-nolist
+-speed=register,shift,loop,switch,struct,expression,inline=105
+-chgincpath
+"Z:\work\newtest\sm2000\iocboot\monitor\bptable.c"
+-lang=c

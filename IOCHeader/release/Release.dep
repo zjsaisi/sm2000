@@ -1,0 +1,8 @@
+[HIMDBVersion]
+2.0
+[DEPENDENCIES]
+"Z:\work\newtest\sm2000\iocheader\header.c" "Hitachi H8S,H8/300 C/C++ Compiler" 30444105 -607667376 "" "" "" 
+"Z:\work\newtest\sm2000\iocheader\header.c" "Hitachi H8S,H8/300 C/C++ Compiler" 0 0 "Z:\work\newtest\sm2000\IOCMain\Include\version.h" "0" "C header file" 
+"Z:\work\newtest\sm2000\iocheader\header.c" "Hitachi H8S,H8/300 C/C++ Compiler" 0 0 "Z:\work\newtest\sm2000\IOCMain\Include\constdef.h" "0" "C header file" 
+"Z:\work\newtest\sm2000\iocheader\header.c" "Hitachi H8S,H8/300 C/C++ Compiler" 0 0 "Z:\work\newtest\sm2000\IOCMain\Include\CodeOpt.h" "0" "C header file" 
+[END]

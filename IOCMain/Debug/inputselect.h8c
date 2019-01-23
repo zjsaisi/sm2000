@@ -1,0 +1,12 @@
+-cpu=2600a:24
+-include="C:\test\newtest\sm2000\iocmain\H2633F","C:\test\newtest\sm2000\iocmain\Include","C:\test\newtest\sm2000\iocmain\Global","C:\test\newtest\sm2000\iocmain\CMX","C:\test\newtest\sm2000\iocmain\CMXWRAP","C:\test\newtest\sm2000\iocmain\Serial","C:\test\newtest\sm2000\iocmain\Vector","C:\test\newtest\sm2000\iocmain\Download","C:\test\newtest\sm2000\iocmain\Hardware","C:\test\newtest\sm2000\iocmain\App","C:\test\newtest\sm2000\iocmain\Istate","C:\test\newtest\sm2000\iocmain\CardState","C:\test\newtest\sm2000\iocmain\Event","C:\test\newtest\sm2000\iocmain\Bestime","C:\test\newtest\sm2000\iocmain\NVStore","C:\test\newtest\sm2000\iocmain\Share","C:\test\newtest\sm2000\iocmain\Debugger","C:\test\newtest\sm2000\iocmain\Flash","C:\test\newtest\sm2000\iocmain\Export","C:\test\newtest\sm2000\iocmain\RmtDbg","C:\test\newtest\sm2000\iocmain\Output","C:\test\newtest\sm2000\iocmain\BestWrap","C:\test\newtest\sm2000\iocmain\Rubidium"
+-define=_DEBUG=1,RUN_IN_RAM=1,RUN_IN_ROM=0
+-object="C:\test\newtest\sm2000\iocmain\Debug\inputselect.obj"
+-debug
+-nolist
+-optimize=0
+-speed=register
+-ecpp
+-chgincpath
+"C:\test\newtest\sm2000\iocmain\cardstate\inputselect.cpp"
+-lang=cpp

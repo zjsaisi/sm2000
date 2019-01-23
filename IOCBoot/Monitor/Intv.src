@@ -1,0 +1,185 @@
+;;; Intv.src
+
+;-----------------------------------------------------------------------------
+;
+;   H8S/2623	HDI Monitor vector table		
+;						
+; 	15-03-99	DTH
+;	Version: 1.0 2633 DGL 1/10/01 -- Built from the HMSE (IAR) 2623 Monitor
+;
+;				Defines the vector table for the H8S/2633 ONLY.
+;				This has been defined from scratch, rather than from #defining
+;				for this target as the code was getting out of hand, having 
+;				been ported from one platform to another.
+;
+;-----------------------------------------------------------------------------
+; No use for me. Reference only. Zheng Miao (2/12/2003)
+
+	.section INTV2,CODE
+    .IMPORT	_NMIcapture
+	.IMPORT	_BreakPoint
+	.IMPORT	_SCIrx
+	.IMPORT _SCIrxError
+
+	
+START	.EQU	H'200000		; Start of external RAM
+
+; The actual vector table...
+; - signifies a RESERVED / UNDEFINED entry in the vector table.
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'8		; Vector 002 : -
+	.DATA.L	START + H'C		; Vector 003 : -
+	.DATA.L	START + H'10		; Vector 004 : -
+	.DATA.L	START + H'14		; Vector 005 : TRACE
+	.DATA.L	START + H'28		; Vector 006 : Direct Transition
+	.DATA.L	_NMIcapture			; Vector 007 : NMI 
+	.DATA.L	_BreakPoint			; Vector 008 : TRAPA(0)
+ 	.DATA.L	START + H'24		; Vector 009 : TRAPA(1)
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'28		; Vector 010 : TRAPA(2)
+	.DATA.L	START + H'2C		; Vector 011 : TRAPA(3)
+	.DATA.L	START + H'30		; Vector 012 : -
+	.DATA.L	START + H'34		; Vector 013 : -
+	.DATA.L	START + H'38		; Vector 014 : -
+	.DATA.L	START + H'3C		; Vector 015 : -
+	.DATA.L	START + H'40		; Vector 016 : IRQ0
+	.DATA.L	START + H'44		; Vector 017 : IRQ1
+	.DATA.L	START + H'48		; Vector 018 : IRQ2
+	.DATA.L	START + H'4C		; Vector 019 : IRQ3
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'50		; Vector 020 : IRQ4
+	.DATA.L	START + H'54		; Vector 021 : IRQ5
+	.DATA.L	START + H'58		; Vector 022 : IRQ6
+	.DATA.L	START + H'5C		; Vector 023 : IRQ7
+	.DATA.L	START + H'60		; Vector 024 : SWDTEND 
+	.DATA.L	START + H'64		; Vector 025 : WOVI0
+	.DATA.L	START + H'68		; Vector 026 : CMI
+	.DATA.L	START + H'6C		; Vector 027 : PC BREAK
+	.DATA.L	START + H'70		; Vector 028 : ADI
+	.DATA.L	START + H'74		; Vector 029 : WOVI1 
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'78        ; Vector 030 : -
+	.DATA.L	START + H'7C		; Vector 031 : -
+	.DATA.L	START + H'80        ; Vector 032 : TGI0A
+	.DATA.L	START + H'84        ; Vector 033 : TGI0B		
+	.DATA.L	START + H'88        ; Vector 034 : TGI0C
+	.DATA.L	START + H'8C        ; Vector 035 : TGI0D
+	.DATA.L	START + H'90        ; Vector 036 : TCI0V
+	.DATA.L	START + H'94		; Vector 037 : -
+	.DATA.L	START + H'98		; Vector 038 : -
+	.DATA.L	START + H'9C		; Vector 039 : -
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'A0        ; Vector 040 : TGI1A
+	.DATA.L	START + H'A4        ; Vector 041 : TGI1B
+	.DATA.L	START + H'A8        ; Vector 042 : TCI1V
+	.DATA.L	START + H'AC        ; Vector 043 : TCI1U
+	.DATA.L	START + H'B0        ; Vector 044 : TGI2A
+	.DATA.L	START + H'B4        ; Vector 045 : TGI2B
+	.DATA.L	START + H'B8        ; Vector 046 : TCI2V
+	.DATA.L	START + H'BC        ; Vector 047 : TCI2U
+	.DATA.L	START + H'C0        ; Vector 048 : TGI3A
+	.DATA.L	START + H'C4        ; Vector 049 : TGI3B
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'C8        ; Vector 050 : TGI3C
+	.DATA.L	START + H'CC        ; Vector 051 : TGI3D
+	.DATA.L	START + H'D0        ; Vector 052 : TGI3V  
+	
+	.DATA.L	START + H'D4        ; Vector 053 : -  
+	.DATA.L	START + H'D8        ; Vector 054 : -  
+	.DATA.L	START + H'DC        ; Vector 055 : -  
+	
+	.DATA.L	START + H'E0        ; Vector 056 : TGI4A
+	.DATA.L	START + H'E4        ; Vector 057 : TGI4B
+	.DATA.L	START + H'E8        ; Vector 058 : TCI4V
+	.DATA.L	START + H'EC        ; Vector 059 : TCI4U
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'F0        ; Vector 060 : TGI5A
+	.DATA.L	START + H'F4        ; Vector 061 : TGIFB
+	.DATA.L	START + H'F8        ; Vector 062 : TCI5V
+	.DATA.L	START + H'FC        ; Vector 063 : TCI5U
+	.DATA.L	START + H'100        ; Vector 064 : -
+	.DATA.L	START + H'104        ; Vector 065 : -
+	.DATA.L	START + H'108        ; Vector 066 : -
+	.DATA.L	START + H'10C        ; Vector 067 : -
+	.DATA.L	START + H'110        ; Vector 068 : -
+	.DATA.L	START + H'114        ; Vector 069 : -
+	.DATA.L	START + H'118        ; Vector 070 : -
+	.DATA.L	START + H'11C        ; Vector 071 : -
+	.DATA.L	START + H'120        ; Vector 072 : -
+	.DATA.L	START + H'124        ; Vector 073 : -
+	.DATA.L	START + H'128        ; Vector 074 : -
+	.DATA.L	START + H'12C        ; Vector 075 : -
+	.DATA.L	START + H'130        ; Vector 076 : -
+	.DATA.L	START + H'134        ; Vector 077 : -
+	.DATA.L	START + H'138        ; Vector 078 : -
+	.DATA.L	START + H'13C        ; Vector 079 : -
+
+;-----------------------------------------------------------------------------
+	.aifdef	MON_SCI0
+	.DATA.L	 _SCIrxError		; If using SCI0 for the monitor port
+	.DATA.L	 _SCIrx				; If using SCI0 for the monitor port
+	.aelse
+	.DATA.L	START + H'140		; Vector 080 : ERI0
+	.DATA.L	START + H'144		; Vector 081 : RXI0
+	.aendi
+
+	.DATA.L	START + H'148		; Vector 082 : TXI0
+	.DATA.L	START + H'14C		; Vector 083 : TEI0
+	.DATA.L	START + H'150   	; Vector 084 : ERI1
+	.DATA.L	START + H'154		; Vector 085 : RXI1
+	.DATA.L	START + H'158		; Vector 086 : TXI1
+	.DATA.L	START + H'15C		; Vector 087 : TEI1
+
+	.aifdef MON_SCI2
+	.DATA.L	 _SCIrxError		; For the PROTOTYPE/EVB MODE7 using SCI2
+	.DATA.L	 _SCIrx				; For the PROTOTYPE/EVB MODE7 using SCI2
+	.aelse
+	.DATA.L	START + H'160		; Vector 088 : ERI2 - Final EVB MODE6 uses a UART
+	.DATA.L	START + H'164		; Vector 089 : RXI2 - Final EVB MODE6 uses a UART
+	.aendi
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'168		; Vector 090 : TXI2
+	.DATA.L	START + H'16C		; Vector 091 : TEI2
+	.DATA.L	START + H'170		; Vector 092 : CMIA0 
+	.DATA.L	START + H'174		; Vector 093 : CMIB0 
+	.DATA.L	START + H'178		; Vector 094 : OVI0 
+	.DATA.L	START + H'17C		; Vector 095 : - 
+	.DATA.L	START + H'180		; Vector 096 : CMIA1 
+	.DATA.L	START + H'184		; Vector 097 : CMIB1 
+	.DATA.L	START + H'188		; Vector 098 : OVI1 
+	.DATA.L	START + H'18C		; Vector 099 : - 
+;-----------------------------------------------------------------------------
+	.DATA.L	START + H'190		; Vector 100 : IICI0 
+	.DATA.L	START + H'164		; Vector 101 : DDCSW1 									
+	.DATA.L	START + H'168		; Vector 102 : IICI1 
+	 
+	.DATA.L	START + H'19C		; Vector 103 : -  
+	.DATA.L	START + H'1A0		; Vector 104 : -  
+	.DATA.L	START + H'1A4		; Vector 105 : -  
+	.DATA.L	START + H'1A8		; Vector 106 : -  
+	.DATA.L	START + H'1AC		; Vector 107 : -  
+	.DATA.L	START + H'1B0		; Vector 108 : -  
+	.DATA.L	START + H'1B4		; Vector 109 : -  
+	.DATA.L	START + H'1B8		; Vector 110 : -  
+	.DATA.L	START + H'1BC		; Vector 111 : -  
+	.DATA.L	START + H'1C0		; Vector 112 : -  
+	.DATA.L	START + H'1C4		; Vector 113 : -  
+	.DATA.L	START + H'1C8		; Vector 114 : -  
+	.DATA.L	START + H'1CC		; Vector 115 : -  
+	.DATA.L	START + H'1D0		; Vector 116 : -  
+	.DATA.L	START + H'1D4		; Vector 117 : -  
+	.DATA.L	START + H'1D8		; Vector 118 : -  
+	.DATA.L	START + H'1DC		; Vector 119 : -  
+	                            
+	.DATA.L	START + H'1E0		; Vector 120 : ERI3 
+	.DATA.L	START + H'1E4		; Vector 121 : RXI3 
+	.DATA.L	START + H'1E8		; Vector 122 : TXI3 
+	.DATA.L	START + H'1EC		; Vector 123 : TEI3 
+	.DATA.L	START + H'1F0		; Vector 124 : ERI4
+	.DATA.L	START + H'1F4		; Vector 125 : RXI4 
+	.DATA.L	START + H'1F8		; Vector 126 : TXI4
+	.DATA.L	START + H'1FC		; Vector 127 : TEI4 
+;-----------------------------------------------------------------------------
+   
+	
+	.END
